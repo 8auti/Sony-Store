@@ -1,3 +1,15 @@
+<?php
+
+  try{
+    $conexion = new PDO('mysql:host=localhost;dbname=PLACEHOLDER', 'root', '');
+  }catch(PDOException $e){
+    header("pages/error.html");
+    // exit;
+  }
+
+  // $consulta = $conexion->query('SELECT id, nombre, apellido FROM empleados'); // Una query, devuelve un array asociativo de arrays asociativos :O
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

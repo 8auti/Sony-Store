@@ -1,13 +1,14 @@
 <?php
 
   try{
-    $conexion = new PDO('mysql:host=localhost;dbname=PLACEHOLDER', 'root', '');
+    $conexion = new PDO('mysql:host=localhost;dbname=tienda_pc', 'root', '');
   }catch(PDOException $e){
-    header("pages/error.html");
-    // exit;
+    header("Location: pages/error.html");
+    exit;
   }
 
-  // $consulta = $conexion->query('SELECT id, nombre, apellido FROM empleados'); // Una query, devuelve un array asociativo de arrays asociativos :O
+  $consulta = $conexion->query('SELECT nombre_producto from productos'); // Una query, devuelve un array asociativo de arrays asociativos :O
+  var_dump($consulta);
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +17,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sony Store - Home</title>
+  <title>Nexus Store - Home</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -25,7 +26,7 @@
   <script
     src="https://kit.fontawesome.com/592dce0dd2.js"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="stylesheet" href="./styles/style.css"/>
 </head>
 
 <body>

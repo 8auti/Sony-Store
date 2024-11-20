@@ -27,7 +27,7 @@ CREATE TABLE productos (
     );
 
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
-('01','Motherboard'),
+('01','Motherboards'),
 ('02','Procesadores'),
 ('03','Tarjetas Gráficas'),
 ('04','Memorias RAM'),

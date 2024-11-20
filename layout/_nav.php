@@ -13,71 +13,60 @@
         class="nav nav-pills flex-column mb-4 align-items-center align-items-sm-start"
         id="menu">
         <li class="text-secondary">
-          <a href="#" class="align-middle px-0">
-            <i class="fa-regular fa-user"></i><span class="ms-2 d-none d-sm-inline align-bottom">Profile</span>
-          </a>
-        </li>
-        <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <span class="ms-1 d-none d-sm-inline align-bottom">Search</span></a>
-        </li>
-        <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
-            <i class="fa-regular fa-heart"></i>
-            <span class="ms-1 d-none d-sm-inline align-bottom">Favorite</span></a>
-        </li>
-        <li class="text-secondary">
           <a href="./pages/checkout.php" class="px-0 align-middle">
             <i class="fa-solid fa-cart-shopping"></i>
-            <span class="ms-1 d-none d-sm-inline align-bottom">Cart</span></a>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Carrito</span></a>
         </li>
         <li class="text-secondary">
           <a href="./pages/contact.php" class="px-0 align-middle">
             <i class="fa-regular fa-envelope"></i>
-            <span class="ms-1 d-sm-inline align-bottom">Contact</span>
+            <span class="ms-1 d-sm-inline align-bottom">Contacto</span>
           </a>
         </li>
       </ul>
-      <span class="fs-5 d-none d-sm-inline mb-3 text-uppercase fw-bolder">Category</span>
+      <span class="fs-5 d-none d-sm-inline mb-3 text-uppercase fw-bolder">Categorias</span>
       <ul
         class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
         id="menu">
         <li class="text-secondary">
           <a href="#" class="align-middle px-0">
-            <i class="fa-solid fa-tv"></i>
-            <span class="ms-1 d-none d-sm-inline align-bottom">Televisions</span>
+            <i class="fa-regular fa-user"></i><span class="ms-2 d-none d-sm-inline align-bottom">Motherboards</span>
           </a>
         </li>
         <li class="text-secondary">
           <a href="#" class="px-0 align-middle">
-            <i class="fa-solid fa-headphones"></i>
-            <span class="ms-2 d-none d-sm-inline align-bottom">Headphones</span></a>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Placas de Video</span></a>
         </li>
         <li class="text-secondary">
           <a href="#" class="px-0 align-middle">
-            <i class="fa-solid fa-gamepad"></i>
-            <span class="ms-1 d-none d-sm-inline align-bottom">Consoles</span></a>
+            <i class="fa-regular fa-heart"></i>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Memorias RAM</span></a>
         </li>
         <li class="text-secondary">
           <a href="#" class="px-0 align-middle">
-            <i class="fa-solid fa-camera"></i>
-            <span class="ms-2 d-none d-sm-inline align-bottom">Cameras</span></a>
+            <i class="fa-regular fa-heart"></i>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Refrigeración</span></a>
         </li>
         <li class="text-secondary">
           <a href="#" class="px-0 align-middle">
-            <i class="fa-solid fa-radio"></i>
-            <span class="ms-2 d-none d-sm-inline align-bottom">Speakers</span></a>
+            <i class="fa-regular fa-heart"></i>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Gabinetes</span></a>
         </li>
         <li class="text-secondary">
           <a href="#" class="px-0 align-middle">
-            <i class="fa-solid fa-ear-listen"></i>
-            <span class="ms-2 d-none d-sm-inline align-bottom">Home Theatre</span></a>
+            <i class="fa-regular fa-heart"></i>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Fuentes</span></a>
         </li>
         <li class="text-secondary">
           <a href="#" class="px-0 align-middle">
-            <i class="fa-solid fa-car"></i>
-            <span class="ms-2 d-none d-sm-inline align-bottom">Car Audio</span></a>
+            <i class="fa-regular fa-heart"></i>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Monitores</span></a>
+        </li>
+        <li class="text-secondary">
+          <a href="#" class="px-0 align-middle">
+            <i class="fa-regular fa-heart"></i>
+            <span class="ms-1 d-none d-sm-inline align-bottom">Periféricos</span></a>
         </li>
       </ul>
     </div>

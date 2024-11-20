@@ -7,8 +7,7 @@
     exit;
   }
 
-  $consulta = $conexion->query('SELECT nombre_producto from productos'); // Una query, devuelve un array asociativo de arrays asociativos :O
-  var_dump($consulta);
+  $consulta = $conexion->query('SELECT nombre_producto from productos');
 ?>
 
 <!DOCTYPE html>
@@ -66,10 +65,10 @@
         </div>
       </section>
 
-      <!-- Categories -->
+      <!-- Categorias -->
       <section
         class="d-flex flex-wrap align-items-flex-end gap-3 my-4 flex-center-mobile">
-        <h2 class="m-0 p-0 me-5">Categories</h2>
+        <h2 class="m-0 p-0 me-5">Categorias</h2>
         <ul class="d-flex gap-3 m-0 p-0">
           <li
             class="cursor-pointer badge bg-pill-selected px-4 rounded-pill p-2">
@@ -179,7 +178,7 @@
       <!-- Categories -->
       <section
         class="d-flex flex-wrap align-items-flex-end gap-3 my-4 flex-center-mobile">
-        <h2 class="m-0 p-0 me-5">Games</h2>
+        <h2 class="m-0 p-0 me-5">Juegos</h2>
         <ul class="d-flex gap-3 m-0 p-0">
           <li
             class="cursor-pointer badge bg-pill-selected px-4 rounded-pill p-2">
@@ -189,7 +188,7 @@
             Popular
           </li>
           <li class="cursor-pointer badge bg-pill px-4 rounded-pill p-2">
-            Most Sold
+            Mas vendidos
           </li>
         </ul>
       </section>

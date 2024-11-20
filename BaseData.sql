@@ -59,6 +59,7 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('Crucial P5 500GB','SSD NVMe de 500GB, ideal para usuarios de alto rendimiento.',60.00,'05','crucial_p5_500gb.jpg'),
 ('Western Digital Blue 1TB HDD','HDD confiable para almacenamiento general.',50.00,'05','western_digital_blue_1tb_hdd.jpg'),
 ('Seagate FireCuda 530 2TB NVMe','SSD NVMe de alto rendimiento para gaming.',300.00,'05','seagate_firecuda_530_2tb_nvme.jpg'),
+
 -- Monitores
 ('LG UltraGear 27GN950-B 4K','Monitor 4K IPS con tasa de refresco de 144Hz y G-Sync.',800.00,'06','lg_ultragear_27gn950_b_4k.jpg'),
 ('Samsung Odyssey G7 32"','Monitor curvo 240Hz con tecnología QLED para gamers.',550.00,'06','samsung_odyssey_g7_32.jpg'),
@@ -67,6 +68,7 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('MSI Optix G27C5','Monitor curvo de 27 pulgadas para gaming.',300.00,'06','msi_optix_g27c5.jpg'),
 ('Logitech G502 HERO','Ratón gaming de alta precisión y personalización.',50.00,'11','logitech_g502_hero.jpg'),
 ('Razer BlackWidow V3','Teclado mecánico con iluminación RGB.',140.00,'11','razer_blackwidow_v3.jpg'),
+
 -- Periféricos
 ('Logitech G Pro X Superlight','Ratón gaming ultraligero con sensor HERO 25K.',150.00,'11','logitech_g_pro_x_superlight.jpg'),
 ('Razer Huntsman Elite','Teclado mecánico con switches opto-mecánicos y retroiluminación RGB.',200.00,'11','razer_huntsman_elite.jpg'),
@@ -99,6 +101,7 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('Phanteks P400A','Gabinete con malla frontal y excelente flujo de aire.',80.00,'09','phanteks_p400a.jpg'),
 ('Cooler Master HAF 700','Gabinete grande con soporte para múltiples radiadores y gran espacio.',220.00,'09','cooler_master_haf_700.jpg'),
 ('NZXT H510','Gabinete compacto con diseño minimalista y fácil cableado.',80.00,'09','nzxt_h510.jpg'),
+
 -- Fuentes
 ('EVGA SuperNOVA 750W G5','Fuente de poder 750W con certificación Gold.',110.00,'10','evga_supernova_750w_g5.jpg'),
 ('Corsair RM850x 850W','Fuente de poder modular y eficiente.',130.00,'10','corsair_rm850x_850w.jpg'),

@@ -6,8 +6,8 @@
       <a href="../index.php">
         <img
           class="h-40px mb-3 mt-1"
-          src="../img/sony-logo.webp"
-          alt="Sony Logo White" />
+          src="../img/nexus-logo.webp"
+          alt="Nexus Logo White" />
       </a>
       <ul
         class="nav nav-pills flex-column mb-4 align-items-center align-items-sm-start"

@@ -1,15 +1,13 @@
 <?php
 
-//  try{
-//    $conexion = new PDO('mysql:host=localhost;dbname=PLACEHOLDER', 'root', '');
-//  }catch(PDOException $e){
-//    header("pages/error.html");
-//    // exit;
-//  }
+  try{
+    $conexion = new PDO('mysql:host=localhost;dbname=PLACEHOLDER', 'root', '');
+  }catch(PDOException $e){
+    header("pages/error.html");
+    // exit;
+  }
 
   // $consulta = $conexion->query('SELECT id, nombre, apellido FROM empleados'); // Una query, devuelve un array asociativo de arrays asociativos :O
-
-  $var=1;
 ?>
 
 <!DOCTYPE html>
@@ -95,7 +93,7 @@
             <div
               class="dual-card d-flex flex-column justify-content-between rounded gaming-card-1">
               <div>
-                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Playstation</span>
+                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Gaming</span>
                 <span class="ms-3 d-block fw-bolder text-secondary">Accessories</span>
               </div>
               <p class="ms-3 fw-bolder">PS5 DualSense™ Wireless Control</p>
@@ -105,8 +103,8 @@
             <div
               class="dual-card border-gaming-card d-flex flex-column justify-content-between rounded gaming-card-2 bg-grey-200">
               <div>
-                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Playstation</span>
-                <span class="ms-3 d-block fw-bolder text-secondary">Accessories</span>
+                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Gaming</span>
+                <span class="ms-3 d-block fw-bolder text-secondary">Headsets</span>
               </div>
               <p class="ms-3 fw-bolder">INZONE H7</p>
             </div>
@@ -148,8 +146,8 @@
               <div
                 class="dual-card border-gaming-card d-flex flex-column justify-content-between rounded gaming-card-2 bg-grey-200">
                 <div>
-                  <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Playstation</span>
-                  <span class="ms-3 d-block fw-bolder text-secondary">Accessories</span>
+                  <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Gaming</span>
+                  <span class="ms-3 d-block fw-bolder text-secondary">Headsets</span>
                 </div>
                 <p class="ms-3 fw-bolder">INZONE H7</p>
               </div>

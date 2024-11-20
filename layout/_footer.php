@@ -45,17 +45,17 @@
         </article>
         <article class="col-6 col-lg-2 text-start">
             <ul>
-                <li>Alpha Community</li>
-                <li class="text-secondary">Playstation Blog</li>
+                <li>Nexus Community</li>
+                <li class="text-secondary">Nexus Blog</li>
                 <li class="text-secondary">My Product Help</li>
             </ul>
         </article>
         <article class="col-6 col-lg-2 text-start">
             <ul>
-                <li>About Sony</li>
+                <li>About Nexus</li>
                 <li class="text-secondary">Corporate Information</li>
                 <li class="text-secondary">Press Center</li>
-                <li class="text-secondary">Sony and the Environment</li>
+                <li class="text-secondary">Nexus and the Environment</li>
                 <li class="text-secondary">Terms & Conditions</li>
             </ul>
         </article>

@@ -6,7 +6,7 @@
       <a href="../index.php">
         <img
           class="h-40px mb-3 mt-1"
-          src="../img/nexus-logo.webp"
+          src="../img/nexus-logo.png"
           alt="Nexus Logo White" />
       </a>
       <ul

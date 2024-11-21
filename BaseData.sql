@@ -58,9 +58,9 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('Noctua NH-D15', 'Disipador silencioso de alta eficiencia térmica.', 100.00, '07', 'Coolers', 'https://techgaming.nl/wp-content/uploads/2024/07/Noctua-NH-D-15-G2-779x768.png'),
 
 -- Gabinetes
-('NZXT H510 Elite', 'Gabinete compacto con diseño moderno y RGB.', 150.00, '09', 'Gabinetes', 'https://i0.wp.com/www.aslanstoreuy.com/wp-content/uploads/2024/05/NZXT-H510-Elite-1.png'),
-('Cooler Master MasterBox Q300L', 'Gabinete pequeño con excelente flujo de aire.', 60.00, '09', 'Gabinetes', 'https://www.coolermaster.com/wp-content/uploads/2019/06/q300l-11.jpg'),
-('Fractal Design Meshify C', 'Gabinete ATX con panel frontal de malla para una mejor refrigeración.', 100.00, '09', 'Gabinetes', 'https://www.fractal-design.com/wp-content/uploads/2021/02/Meshify-C-front-web.png'),
+('NZXT H510 Elite', 'Gabinete compacto con diseño moderno y RGB.', 150.00, '09', 'Gabinetes', 'https://mcegamer.com/wp-content/uploads/2019/08/h510-2-1-600x600.png'),
+('Cooler Master MasterBox Q300L', 'Gabinete pequeño con excelente flujo de aire.', 60.00, '09', 'Gabinetes', 'https://png.pngtree.com/png-vector/20240811/ourmid/pngtree-full-tower-led-cabinet-gaming-atx-industrial-aluminum-metal-alloy-server-png-image_13446693.png'),
+('Fractal Design Meshify C', 'Gabinete ATX con panel frontal de malla para una mejor refrigeración.', 100.00, '09', 'Gabinetes', 'https://logg.api.cygnus.market/static/logg/Global/Gabinete%20Cooler%20Master%20TD300%20Mesh%20Negro%20Mini%20Tower/1866ab90c26f44578707148cad7d0daf.png'),
 
 -- Fuentes de Poder
 ('Corsair RM850x', 'Fuente de poder de 850W, modular y eficiente.', 120.00, '10', 'Fuentes', 'https://cwsmgmt.corsair.com/landing/PSU-Family-Page/images/psu-with-badge-cx750f-rgb.png'),

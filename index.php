@@ -3,9 +3,9 @@
   require_once('./consultas/conexion.php');
   require_once('./consultas/consultas_componentes.php');
 
-  $usuarios = getUsuarios($conexion);
+  $productos = getProducts($conexion);
 
-  // var_dump($usuarios)
+  // var_dump($productos)
 
   //$consulta = $conexion->query('SELECT nombre_producto from productos');
 ?>

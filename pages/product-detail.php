@@ -86,7 +86,7 @@ if ($category) {
                 alt="<?php echo $title ?>" />
             </div>
           </article>
-          <article class="col-lg-6">
+          <article class="col-lg-8">
             <!-- Carrousel on Mobile -->
             <div
               id="carouselExampleIndicators"
@@ -123,19 +123,19 @@ if ($category) {
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 1" />
+                  <img src="<?php echo $imageUrl ?>" class=" w-100 h-100 fit-contain aspect-square" alt=" Image 1" />
                 </div>
                 <div class="carousel-item">
-                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 2" />
+                  <img src="<?php echo $imageUrl ?>" class=" w-100 h-100 fit-contain aspect-square" alt=" Image 2" />
                 </div>
                 <div class="carousel-item">
-                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 3" />
+                  <img src="<?php echo $imageUrl ?>" class=" w-100 h-100 fit-contain aspect-square" alt=" Image 3" />
                 </div>
                 <div class="carousel-item">
-                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 4" />
+                  <img src="<?php echo $imageUrl ?>" class=" w-100 h-100 fit-contain aspect-square" alt=" Image 4" />
                 </div>
                 <div class="carousel-item">
-                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 5" />
+                  <img src="<?php echo $imageUrl ?>" class=" w-100 h-100 fit-contain aspect-square" alt=" Image 5" />
                 </div>
               </div>
               <button

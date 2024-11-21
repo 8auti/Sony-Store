@@ -65,8 +65,16 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 -- Fuentes de Poder
 ('Corsair RM850x', 'Fuente de poder de 850W, modular y eficiente.', 120.00, '06', 'Fuentes de Poder', 'https://www.corsair.com/corsairmedia/sys_master/productcontent/corsair-psu-rm850x-0030.png'),
 ('EVGA SuperNOVA 1000 G5', 'Fuente de poder de 1000W, 80+ Gold.', 180.00, '06', 'Fuentes de Poder', 'https://www.evga.com/evga/power-supplies/g5/1000G5_hero.png'),
-('Seasonic FOCUS GX-750', 'Fuente de poder de 750W, modular y certificación 80+ Gold.', 110.00, '06', 'Fuentes de Poder', 'https://www.seasonic.com/media/products/focusgx-750.png');
+('Seasonic FOCUS GX-750', 'Fuente de poder de 750W, modular y certificación 80+ Gold.', 110.00, '06', 'Fuentes de Poder', 'https://www.seasonic.com/media/products/focusgx-750.png'),
 
+-- Monitores
+('LG UltraGear 27GN950-B 4K','Monitor 4K IPS con tasa de refresco de 144Hz y G-Sync.',800.00,'06','Monitores','Monitores','https://i0.wp.com/www.aslanstoreuy.com/wp-content/uploads/2023/06/Monitor-Gamer-LG-UltraGear-27-1ms-240Hz-Aslan-Store-1.png?fit=900%2C900&ssl=1'),
+('Samsung Odyssey G7 32"','Monitor curvo 240Hz con tecnología QLED para gamers.',550.00,'06','Monitores','Monitores','https://images.samsung.com/is/image/samsung/levant-ar-odyssey-g7-lc32g75tqsmxzn-frontblack-255149820?$650_519_PNG$'),
 
+-- Periféricos
+('Logitech G Pro X Superlight','Ratón gaming ultraligero con sensor HERO 25K.',150.00,'11','Perifericos','Perifericos','https://www.stec.com.ar/cdn/shop/files/Mouse-Inalambrico-Logitech-G-PRO-X-Superlight-2-White-Aslan-Store-1.png?v=1729285015&width=2048'),
+('Razer Huntsman Elite','Teclado mecánico con switches opto-mecánicos y retroiluminación RGB.',200.00,'11','Perifericos','Perifericos','https://assets3.razerzone.com/41R27mmpkpi7bp6usvS6UJpMKao=/1920x1280/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png'),
+('SteelSeries Arctis 7','Auriculares inalámbricos para gaming con sonido envolvente 7.1.',150.00,'11','Perifericos','Perifericos','https://media.steelseriescdn.com/thumbs/catalog/items/61467/b2a580f20a3e41e2969d8680d8ec09ff.png.500x400_q100_crop-fit_optimize.png'),
+('Logitech G203','Raton gaming ultraligero con sensor HERO de 15K.',120.00,'11','Perifericos','Perifericos','https://acdn.mitiendanube.com/stores/877/534/products/image-removebg-preview-711-ccbe7f811cde877b4f16902199593365-1024-1024.png');
 
 select nombre_producto from productos; 

@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS tienda_pc;
 
 CREATE DATABASE tienda_pc;
+
 USE tienda_pc;
 
 CREATE TABLE categorias (
@@ -41,7 +42,7 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 -- Mothers
 ('ASUS ROG Crosshair X670E Hero','Motherboard premium para procesadores AMD Ryzen serie 7000.',600.00,'01', 'https://dlcdnwebimgs.asus.com/gain/F17834FA-586C-40FA-A2AD-24D07A3431A0/h300/w300'),
 ('MSI MAG B550 TOMAHAWK WIFI','Motherboard versátil para Ryzen con Wi-Fi y PCIe 4.0.',150.00, '01','https://asset.msi.com/resize/image/global/product/product_16492305296ff2084c3e2e35c03546e01e5e2bf0c9.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png'),
-('Gigabyte Z690 AORUS ELITE DDR4','Motherboard potente para procesadores Intel Alder Lake.', 250.00, '01', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1aZeUD2yv9WawzkL3_WZ8hv4Yzg9Zk6_Y9A&s'),
+('Gigabyte Z690 AORUS ELITE DDR4','Motherboard potente para procesadores Intel Alder Lake.', 250.00, '01', 'https://static.gigabyte.com/StaticFile/Image/Global/aa552f0fa095306d8c46f84350ec3bfc/Product/29915/png/500'),
 
 -- Monitores
 ('LG UltraGear 27GN950-B 4K','Monitor 4K IPS con tasa de refresco de 144Hz y G-Sync.',800.00,'06','https://i0.wp.com/www.aslanstoreuy.com/wp-content/uploads/2023/06/Monitor-Gamer-LG-UltraGear-27-1ms-240Hz-Aslan-Store-1.png?fit=900%2C900&ssl=1'),

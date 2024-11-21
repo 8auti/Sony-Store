@@ -9,12 +9,14 @@ require_once __DIR__ . '/../../consultas/consultas_componentes.php';
 $title = $product['nombre_producto'] ?? 'Unknown Product';
 $imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
 $category = $product['nombre_categoria'];
+$category = $product['nombre_categoria'];
+$productId = $product['id_producto'];
 
 ?>
 
 <article class="col-6 col-md-4 col-lg-3 text-center product-card my-3 p-1">
     <div class="p-1 bg-grey-100 h-100">
-        <a href="/nexus/pages/product-detail.php">
+        <a href="/nexus/pages/product-detail.php?id=<?php echo $productId ?>">
             <figure class="product-card">
                 <img
                     class="w-100 aspect-square fit-contain"

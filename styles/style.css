@@ -38,6 +38,22 @@
   transition: all 0.2s ease;
 }
 
+.flip-horizontal {
+  transform: scaleX(-1);
+}
+.rotate-1 {
+  transform: rotate(0deg);
+}
+.rotate-2 {
+  transform: rotate(90deg);
+}
+.rotate-3 {
+  transform: rotate(180deg);
+}
+.rotate-4 {
+  transform: rotate(270deg);
+}
+
 ul {
   list-style: none;
 }

@@ -1,7 +1,13 @@
 <?php
-require_once('./consultas/conexion.php');
-require_once('./consultas/consultas_componentes.php');
-$product = getProductById($conexion, $productId);
+require_once('../consultas/conexion.php');
+require_once('../consultas/consultas_componentes.php');
+
+if (isset($_GET['id'])) {
+  $productId = $_GET['id'];
+  $product = getProductById($conexion, $productId);
+}
+
+echo var_dump($product);
 
 $title = $product['nombre_producto'] ?? 'Unknown Product';
 $imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
@@ -46,32 +52,28 @@ $description = $product['descripcion'] ?? '. . .';
           <article class="d-none d-lg-block col-lg-3 detail-card">
             <figure>
               <img
-                class="w-100 aspect-square fit-contain"
-                src="../img/sony-ps5.webp"
-                alt="PS5" />
-              <figcaption class="text-center">PS5</figcaption>
+                class="w-100 aspect-square fit-contain flip-horizontal"
+                src="<?php echo $imageUrl ?>"
+                alt="<?php echo $title ?>" />
+              <figcaption class="text-center"><?php echo $title ?></figcaption>
             </figure>
             <div class="row mt-5">
               <img
-                class="col-3 aspect-square fit-cover p-1"
-                src="../img/sony-joystick-ps5-1.webp"
-                alt="sony-joystick-ps5-1" />
+                class="col-3 aspect-square fit-cover p-1 rotate-1"
+                src="<?php echo $imageUrl ?>"
+                alt="<?php echo $title ?>" />
               <img
-                class="col-3 aspect-square fit-cover p-1"
-                src="../img/sony-joystick-ps5-2.webp"
-                alt="sony-joystick-ps5-2" />
+                class="col-3 aspect-square fit-cover p-1 rotate-2"
+                src="<?php echo $imageUrl ?>"
+                alt="<?php echo $title ?>" />
               <img
-                class="col-3 aspect-square fit-cover p-1"
-                src="../img/sony-joystick-ps5-3.webp"
-                alt="sony-joystick-ps5-3" />
+                class="col-3 aspect-square fit-cover p-1 rotate-3"
+                src="<?php echo $imageUrl ?>"
+                alt="<?php echo $title ?>" />
               <img
-                class="col-3 aspect-square fit-cover p-1"
-                src="../img/sony-joystick-ps5-4.webp"
-                alt="sony-joystick-ps5-4" />
-              <img
-                class="col-3 aspect-square fit-cover p-1"
-                src="../img/sony-joystick-ps5-5.webp"
-                alt="sony-joystick-ps5-5" />
+                class="col-3 aspect-square fit-cover p-1 rotate-4"
+                src="<?php echo $imageUrl ?>"
+                alt="<?php echo $title ?>" />
             </div>
           </article>
           <article class="col-lg-6">
@@ -111,24 +113,19 @@ $description = $product['descripcion'] ?? '. . .';
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="../img/sony-joystick-ps5-1.webp" class="d-block
-                      w-100 h-100 fit-contain aspect-square alt=" Image 1" />
+                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 1" />
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/sony-joystick-ps5-2.webp" class="d-block
-                      w-100 h-100 fit-contain aspect-square alt=" Image 2" />
+                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 2" />
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/sony-joystick-ps5-3.webp" class="d-block
-                      w-100 h-100 fit-contain aspect-square alt=" Image 3" />
+                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 3" />
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/sony-joystick-ps5-4.webp" class="d-block
-                      w-100 h-100 fit-contain aspect-square alt=" Image 4" />
+                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 4" />
                 </div>
                 <div class="carousel-item">
-                  <img src="../img/sony-joystick-ps5-5.webp" class="d-block
-                      w-100 h-100 fit-contain aspect-square alt=" Image 5" />
+                  <img src="<?php echo $imageUrl ?> class=" w-100 h-100 fit-contain aspect-square" alt=" Image 5" />
                 </div>
               </div>
               <button
@@ -156,14 +153,14 @@ $description = $product['descripcion'] ?? '. . .';
             <figure class="bg-grey-300 p-3 d-none d-lg-block">
               <img
                 class="w-100"
-                src="../img/sony-joystick-ps5.webp"
+                src="<?php echo $imageUrl ?>"
                 alt="PS5 Dualsense Wireless Control" />
               <figcaption class="text-secondary fw-bolder">
-                Playstation Accesories
+                <?php echo $category ?>
               </figcaption>
             </figure>
             <h1 class="text-uppercase my-4">
-              PS5 Dualsense Wireless Control
+              <?php echo $title ?>
             </h1>
             <section class="my-3">
               <i class="fa-solid fa-star"></i>
@@ -173,7 +170,7 @@ $description = $product['descripcion'] ?? '. . .';
               <i class="fa-solid fa-star text-secondary"></i>
             </section>
             <section class="row justify-content-between align-items-start">
-              <p class="col-4 display-6 fw-bolder">$150.00</p>
+              <p class="col-4 display-6 fw-bolder"><?php echo $price ?></p>
               <div class="col-8 row align-items-center">
                 <a href="./checkout.php" class="d-contents">
                   <div
@@ -240,12 +237,7 @@ $description = $product['descripcion'] ?? '. . .';
             <h3>Dualsense Wireless Control</h3>
             <p class="text-secondary">Playstation 5 - Play Has No Limits</p>
             <p class="fw-light">
-              Discover a deeper, more immersive gaming experience* that
-              brings the action to life in the palms of your hands. The
-              Dualsense wireless controller offer immersive haptic
-              feedback**, dynamic adaptive triggers** and a built-in
-              microphone, all integrated into an iconic and comfortable
-              design.
+              <?php echo $description ?>
             </p>
             <p class="text-orange fw-bolder">
               USB charging cable not included
@@ -325,7 +317,10 @@ $description = $product['descripcion'] ?? '. . .';
               </p>
             </div>
             <p class="fw-light">
-              398 out of 423 (88%) reviews recommend this product
+              <? $totalReviews = rand(0, 600); ?>
+              <? $percentage = ($recommendedReviews / $totalReviews) * 100; ?>
+
+              <? echo rand(0,  $totalReviews) ?> out of <? echo $totalReviews ?> (<? echo $percentage ?>%) reviews recommend this product
             </p>
           </article>
           <article class="col-12 col-md-3 mt-3">

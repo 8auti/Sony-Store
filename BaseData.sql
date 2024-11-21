@@ -59,8 +59,8 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 
 -- Gabinetes
 ('NZXT H510 Elite', 'Gabinete compacto con diseño moderno y RGB.', 150.00, '09', 'Gabinetes', 'https://mcegamer.com/wp-content/uploads/2019/08/h510-2-1-600x600.png'),
-('Cooler Master MasterBox Q300L', 'Gabinete pequeño con excelente flujo de aire.', 60.00, '09', 'Gabinetes', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbL8pf2ZO30g6Yo0FNuFR3iANRBOiDPpnJWQ&s'),
-('Fractal Design Meshify C', 'Gabinete ATX con panel frontal de malla para una mejor refrigeración.', 100.00, '09', 'Gabinetes', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLANRmz_aEznrgpkDJ9v8bqtPOO4ucSqxa1w&s'),
+('Cooler Master MasterBox Q300L', 'Gabinete pequeño con excelente flujo de aire.', 60.00, '09', 'Gabinetes', 'https://png.pngtree.com/png-vector/20240811/ourmid/pngtree-full-tower-led-cabinet-gaming-atx-industrial-aluminum-metal-alloy-server-png-image_13446693.png'),
+('Fractal Design Meshify C', 'Gabinete ATX con panel frontal de malla para una mejor refrigeración.', 100.00, '09', 'Gabinetes', 'https://logg.api.cygnus.market/static/logg/Global/Gabinete%20Cooler%20Master%20TD300%20Mesh%20Negro%20Mini%20Tower/1866ab90c26f44578707148cad7d0daf.png'),
 
 -- Fuentes de Poder
 ('Corsair RM850x', 'Fuente de poder de 850W, modular y eficiente.', 120.00, '06', 'Fuentes', 'https://cwsmgmt.corsair.com/landing/PSU-Family-Page/images/psu-with-badge-cx750f-rgb.png'),

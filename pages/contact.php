@@ -1,8 +1,5 @@
 <?php
 $mensajePostFormulario="";
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $mensajePostFormulario = 'Formulario completado. Nos pondremos en contacto.';
-}
 
 function test_input($data) {
   $data = trim($data);
@@ -23,7 +20,14 @@ function test_input($data) {
   $mensaje = $_POST['mensaje'] ?? null;
   $mensaje = test_input($mensaje);
 
-  echo $tema,$email,$telefono,$mensaje;
+  $errores = [];
+
+  if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $mensajePostFormulario = 'Formulario completado. Nos pondremos en contacto.';
+    if (empty($tema)) {
+      $errores = 'Usted debe ingresar un Tema';
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -70,6 +74,7 @@ function test_input($data) {
               class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
               type="text"
               name="tema"
+              value="<?php echo $tema ?>"
               placeholder="Seleccionar tema"
               required />
           </div>
@@ -81,6 +86,7 @@ function test_input($data) {
               type="email"
               name="email"
               placeholder="Email"
+              value="<?php echo $email ?>"
               required />
           </div>
 
@@ -91,6 +97,7 @@ function test_input($data) {
               type="number"
               name="telefono"
               placeholder="Telefono"
+              value="<?php echo $telefono ?>"
               required />
           </div>
 
@@ -99,6 +106,7 @@ function test_input($data) {
             <textarea
               class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
               name="mensaje"
+              value="<?php echo $mensaje ?>"
               placeholder="Tu mensaje"
               required></textarea>
           </div>

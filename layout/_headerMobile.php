@@ -8,10 +8,10 @@
         </div>
       </a>
       <div class="col-8 h-100">
-        <a href="../index.php" class="d-contents">
+        <a href="/nexus/index.php" class="d-contents">
           <img
           class="h-100 fit-contain"
-          src="../img/sony-logo.webp"
+          src="/nexus/img/nexus-logo.png"
           alt="Sony Logo White"
           />
         </a>

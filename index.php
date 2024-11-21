@@ -5,7 +5,7 @@
 
   $usuarios = getUsuarios($conexion);
 
-  var_dump($usuarios)
+  // var_dump($usuarios)
 
   //$consulta = $conexion->query('SELECT nombre_producto from productos');
 ?>

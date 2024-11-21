@@ -3,10 +3,10 @@
     class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 d-none d-sm-block bg-grey-200 text-light">
     <div
       class="ps-5 d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 fixed-md">
-      <a href="../index.php">
+      <a href="/nexus/index.php">
         <img
           class="h-40px mb-3 mt-1"
-          src="../img/nexus-logo.png"
+          src="/nexus/img/nexus-logo.png"
           alt="Nexus Logo White" />
       </a>
       <ul

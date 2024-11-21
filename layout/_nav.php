@@ -29,42 +29,42 @@
         class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"
         id="menu">
         <li class="text-secondary">
-          <a href="#" class="align-middle px-0">
-            <i class="fa-regular fa-user"></i><span class="ms-2 d-none d-sm-inline align-bottom">Motherboards</span>
-          </a>
+          <a href="/nexus/pages/products.php?category=motherboards" class="align-middle px-0">
+            <i class="fa-regular fa-user"></i>
+            <span class="ms-2 d-none d-sm-inline align-bottom">Motherboards</span></a>
         </li>
         <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=placas-de-video" class="px-0 align-middle">
             <i class="fa-solid fa-magnifying-glass"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Placas de Video</span></a>
         </li>
         <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=memorias-ram" class="px-0 align-middle">
             <i class="fa-regular fa-heart"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Memorias RAM</span></a>
         </li>
         <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=refrigeración" class="px-0 align-middle">
             <i class="fa-regular fa-heart"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Refrigeración</span></a>
         </li>
         <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=gabinetes" class="px-0 align-middle">
             <i class="fa-regular fa-heart"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Gabinetes</span></a>
         </li>
         <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=fuentes" class="px-0 align-middle">
             <i class="fa-regular fa-heart"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Fuentes</span></a>
         </li>
         <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=monitores" class="px-0 align-middle">
             <i class="fa-regular fa-heart"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Monitores</span></a>
         </li>
         <li class="text-secondary">
-          <a href="#" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=periféricos" class="px-0 align-middle">
             <i class="fa-regular fa-heart"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Periféricos</span></a>
         </li>

@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS tienda_pc;
+
 CREATE DATABASE tienda_pc;
 USE tienda_pc;
 
@@ -31,7 +33,7 @@ INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 
 INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombre_imagen) VALUES
 -- Graficas
-('NVIDIA GeForce RTX 4090','Tarjeta gráfica de alta gama para juegos en 4K.',1600.00,'03','https://dcdn.mitiendanube.com/stores/003/017/462/products/rtx-4090-fe-21-145be42c513ca3f55716809030777284-1024-1024.webp'),
+('NVIDIA GeForce RTX 4090','Tarjeta gráfica de alta gama para juegos en 4K.',1600.00,'03','https://www.computershopping.com.ar/Images/Productos/Descripciones/GV-N408SWF3V2-16GD_heroimg_900w.png'),
 ('AMD Radeon RX 7900 XTX','Potente tarjeta gráfica para juegos y creación en 4K.',1000.00,'03','https://www.biostar.com.tw/picture/Review/525/RX7900XT_45_3_s.png'),
 ('NVIDIA GeForce RTX 3080','Tarjeta gráfica ideal para juegos en 4K y 1440p.',700.00,'03','https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/RTX3080Ti-gaming/images/3080ti-vga-body.png'),
 ('AMD Radeon RX 6800 XT','Tarjeta gráfica eficiente para juegos a 1440p y 4K.',650.00,'03','https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%206800%20XT%20Phantom%20Gaming%20D%2016G%20OC(L4).png'),

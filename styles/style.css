@@ -373,6 +373,12 @@ a:hover {
   display: none;
 }
 
+.AboutUs{
+  width: 250px;
+  height: 250px;
+}
+
+
 @media (max-width: 575px) {
   .mobile-header {
     display: flex !important;

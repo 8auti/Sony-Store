@@ -23,38 +23,37 @@
     <?php require('../layout/_headerMobile.php')?>
     
     <main class="container mb-5">
-      <h1 class="text-center mt-5 mb-3">Support Center</h1>
-      <h2 class="text-center mb-5">How can we help you?</h2>
+      <h1 class="text-center mt-5 mb-3">Centro de Soporte</h1>
+      <h2 class="text-center mb-5">Como podemos ayudarte?</h2>
 
       <section class="row justify-content-center align-items-start">
         <article class="col-12 col-md-6 text-center">
-          <h3 class="text-start">Contact us</h3>
+          <h3 class="text-start">Contactanos</h3>
           <p class="text-start w-75">
-            Complete the form to report a bug or inquire about anything you
-            could not find in the FAQ.
+            Completa el formulario para reportar un error o consultar sobre algo que no hayas encontrado en el FAQ
           </p>
         </article>
         <article class="col-12 col-md-6 text-start">
           <form action="">
             <div class="mt-2">
-              <label for="">Subject:</label>
+              <label for="">Tema:</label>
               <input
                 class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
                 type="text"
-                placeholder="Select Subject"
+                placeholder="Seleccionar tema"
               />
             </div>
             <div class="mt-2">
-              <label for="">Message:</label>
+              <label for="">Mensaje:</label>
               <textarea
                 class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
-                placeholder="Your Message"
+                placeholder="Tu mensaje"
               ></textarea>
             </div>
             <input
               class="bg-grey-300 border-0 rounded-3 p-1 px-3 mt-2"
               type="submit"
-              value="Send message"
+              value="Enviar"
             />
           </form>
         </article>
@@ -74,7 +73,7 @@
               class="bg-grey mb-4 p-4 d-flex justify-content-around align-items-center"
             >
               <div class="cursor-pointer">
-                <p>How to buy</p>
+                <p>Como comprar</p>
                 <span>Some more >></span>
               </div>
               <i class="fa-solid fa-3x fa-cart-shopping"></i>
@@ -85,8 +84,8 @@
               class="bg-grey mb-4 p-4 d-flex justify-content-around align-items-center"
             >
               <div class="cursor-pointer">
-                <p>Payments and invoicing</p>
-                <span>Some more >></span>
+                <p>Pagos y Facturacion</p>
+                <span>Ver mas >></span>
               </div>
               <i class="fa-solid fa-3x fa-credit-card"></i>
             </article>
@@ -96,8 +95,8 @@
               class="bg-grey mb-4 p-4 d-flex justify-content-around align-items-center"
             >
               <div class="cursor-pointer">
-                <p>Product delivery</p>
-                <span>Some more >></span>
+                <p>Delivery de Producto</p>
+                <span>Ver mas >></span>
               </div>
               <i class="fa-solid fa-3x fa-truck"></i>
             </article>
@@ -107,8 +106,8 @@
               class="bg-grey mb-4 p-4 d-flex justify-content-around align-items-center"
             >
               <div class="cursor-pointer">
-                <p>Exchanges or returns</p>
-                <span>Some more >></span>
+                <p>Cambios o Devoluciones</p>
+                <span>Ver mas >></span>
               </div>
               <i class="fa-solid fa-3x fa-box-open"></i>
             </article>
@@ -118,8 +117,8 @@
               class="bg-grey mb-4 p-4 d-flex justify-content-around align-items-center"
             >
               <div class="cursor-pointer">
-                <p>Warranty and support</p>
-                <span>Some more >></span>
+                <p>Garantia y soporte</p>
+                <span>Ver mas >></span>
               </div>
               <i class="fa-solid fa-3x fa-hand-holding"></i>
             </article>
@@ -129,8 +128,8 @@
               class="bg-grey mb-4 p-4 d-flex justify-content-around align-items-center"
             >
               <div class="cursor-pointer">
-                <p>Privacy</p>
-                <span>Some more >></span>
+                <p>Privacidad</p>
+                <span>Ver mas >></span>
               </div>
               <i class="fa-solid fa-3x fa-shield-halved"></i>
             </article>
@@ -140,8 +139,8 @@
               class="bg-grey mb-4 p-4 d-flex justify-content-around align-items-center"
             >
               <div class="cursor-pointer">
-                <p>Need more help?</p>
-                <span>Some more >></span>
+                <p>Necesitas mas ayuda?</p>
+                <span>Ver mas >></span>
               </div>
               <i class="fa-regular fa-3x fa-comments"></i>
             </article>

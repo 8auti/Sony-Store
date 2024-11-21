@@ -1,9 +1,9 @@
 <?php
 
-  require_once('./consultas/conexion.php');
-  require_once('./consultas/consultas_componentes.php');
+require_once('./consultas/conexion.php');
+require_once('./consultas/consultas_componentes.php');
 
-  $usuarios = getProducts($conexion);
+$usuarios = getProducts($conexion);
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@
   <script
     src="https://kit.fontawesome.com/592dce0dd2.js"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="./styles/style.css"/>
+  <link rel="stylesheet" href="./styles/style.css" />
 </head>
 
 <body>
@@ -48,7 +48,7 @@
           </div>
           <div class="carousel-item h-40vh">
             <img
-              src="./img/sony-banner.jpg"
+              src="./img/sony-banner.png"
               class="d-block w-100 h-100 fit-cover object-left"
               alt="Nexus Store Banner 2" />
           </div>
@@ -68,7 +68,7 @@
             Popular
           </li>
           <li class="cursor-pointer badge bg-pill px-4 rounded-pill p-2">
-            Most Sold
+            Mas Vendidos
           </li>
         </ul>
       </section>
@@ -77,26 +77,26 @@
 
       <!-- Best 4 Gaming Section -->
       <section>
-        <h2 class="my-4">Best for Gaming</h2>
+        <h2 class="my-4">Recomendado para Gaming</h2>
         <section class="d-none d-lg-flex row">
           <article class="pe-2 col-6 dual-card border-gaming-card rounded">
             <div
               class="dual-card d-flex flex-column justify-content-between rounded gaming-card-1">
               <div>
-                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Gaming</span>
-                <span class="ms-3 d-block fw-bolder text-secondary">Accessories</span>
+                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Controles</span>
+                <span class="ms-3 d-block fw-bolder text-secondary">Gamer</span>
               </div>
-              <p class="ms-3 fw-bolder">PS5 DualSense™ Wireless Control</p>
+              <p class="ms-3 fw-bolder">PS5 DualSense™ Control Inalambrico</p>
             </div>
           </article>
           <article class="ps-2 col-6">
             <div
               class="dual-card border-gaming-card d-flex flex-column justify-content-between rounded gaming-card-2 bg-grey-200">
               <div>
-                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Gaming</span>
-                <span class="ms-3 d-block fw-bolder text-secondary">Headsets</span>
+                <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Auriculares</span>
+                <span class="ms-3 d-block fw-bolder text-secondary">Gamer</span>
               </div>
-              <p class="ms-3 fw-bolder">INZONE H7</p>
+              <p class="ms-3 fw-bolder">HyperX Cloud Stinger</p>
             </div>
           </article>
         </section>
@@ -124,11 +124,11 @@
               <div
                 class="dual-card d-flex flex-column justify-content-between rounded gaming-card-1">
                 <div>
-                  <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Playstation</span>
-                  <span class="ms-3 d-block fw-bolder text-secondary">Accessories</span>
+                  <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Controles</span>
+                  <span class="ms-3 d-block fw-bolder text-secondary">Gamer</span>
                 </div>
                 <p class="ms-3 fw-bolder">
-                  PS5 DualSense™ Wireless Control
+                  PS5 DualSense™ Control Inalambrico
                 </p>
               </div>
             </div>
@@ -136,10 +136,10 @@
               <div
                 class="dual-card border-gaming-card d-flex flex-column justify-content-between rounded gaming-card-2 bg-grey-200">
                 <div>
-                  <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Gaming</span>
-                  <span class="ms-3 d-block fw-bolder text-secondary">Headsets</span>
+                  <span class="ms-3 mt-3 d-block fw-bolder text-secondary">Auriculares</span>
+                  <span class="ms-3 d-block fw-bolder text-secondary">Gamer</span>
                 </div>
-                <p class="ms-3 fw-bolder">INZONE H7</p>
+                <p class="ms-3 fw-bolder">HyperX Cloud Stinger</p>
               </div>
             </div>
           </div>
@@ -165,26 +165,6 @@
           </button>
         </div>
       </section>
-      <!-- Categories -->
-      <section
-        class="d-flex flex-wrap align-items-flex-end gap-3 my-4 flex-center-mobile">
-        <h2 class="m-0 p-0 me-5">Juegos</h2>
-        <ul class="d-flex gap-3 m-0 p-0">
-          <li
-            class="cursor-pointer badge bg-pill-selected px-4 rounded-pill p-2">
-            Top
-          </li>
-          <li class="cursor-pointer badge bg-pill px-4 rounded-pill p-2">
-            Popular
-          </li>
-          <li class="cursor-pointer badge bg-pill px-4 rounded-pill p-2">
-            Mas vendidos
-          </li>
-        </ul>
-      </section>
-      <!-- Games -->
-      <?php require('layout/_gamesContainer.php') ?>
-
     </main>
     </div>
   </aside>

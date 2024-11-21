@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,10 +30,10 @@
             <!-- Header -->
             <?php require('../layout/_header.php') ?>
 
-            <!-- Categories -->
+            <!-- Categorias -->
             <section
                 class="d-flex flex-wrap align-items-flex-end gap-3 my-4 flex-center-mobile">
-                <h2 class="m-0 p-0 me-5">Categories</h2>
+                <h2 class="m-0 p-0 me-5">Categorias</h2>
                 <ul class="d-flex gap-3 m-0 p-0">
                     <li
                         class="cursor-pointer badge bg-pill-selected px-4 rounded-pill p-2">
@@ -42,10 +43,10 @@
                         Popular
                     </li>
                     <li class="cursor-pointer badge bg-pill px-4 rounded-pill p-2">
-                        Most Sold
+                        Mas Vendidos
                     </li>
                 </ul>
-        </section>
+            </section>
         </main>
     </aside>
 

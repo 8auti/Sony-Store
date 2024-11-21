@@ -30,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   <main class="container mb-5">
     <h1 class="text-center mt-5 mb-3">Centro de Soporte</h1>
     <h2 class="text-center mb-5">Como podemos ayudarte?</h2>
+    <h2 class="text-center mb-5 text-light bg-success"> <?php echo $mensajePostFormulario ?> </h2>
 
     <section class="row justify-content-center align-items-start">
       <article class="col-12 col-md-6 text-center">
@@ -40,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       </article>
 
       <article class="col-12 col-md-6 text-start">
-        <form action="">
+        <form action="contact.php" method="post">
 
           <div class="mt-2">
             <label for="">Tema:</label>

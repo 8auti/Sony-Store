@@ -18,5 +18,13 @@ function getProductsByCategory(PDO $conexion, $categoryName)
     $products = $consulta->fetchAll(PDO::FETCH_ASSOC);
     return $products;
 }
-?>
+function getProductById(PDO $conexion, $productId)
+{
+    $consulta = $conexion->prepare('SELECT nombre_producto, descripcion, precio, id_categoria, nombre_categoria, url_imagen FROM productos WHERE id_producto = :id_producto');
+    $consulta->bindParam(':id_producto', $productId, PDO::PARAM_INT);
+    $consulta->execute();
+    $product = $consulta->fetch(PDO::FETCH_ASSOC);
+    return $product;
+}
+
 ?>

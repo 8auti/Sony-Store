@@ -5,3 +5,4 @@ function getProducts(PDO $conexion)
     $products = $consulta->fetchAll(PDO::FETCH_ASSOC);
     return $products;
 }
+?>

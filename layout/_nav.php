@@ -40,12 +40,12 @@
             <span class="ms-2 d-none d-sm-inline align-bottom">Motherboards</span></a>
         </li>
         <li class="text-secondary">
-          <a href="/nexus/pages/products.php?category=tarjetas-gráficas" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=tarjetas%20gráficas" class="px-0 align-middle">
             <i class="fa-solid fa-tachograph-digital"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Placas de Video</span></a>
         </li>
         <li class="text-secondary">
-          <a href="/nexus/pages/products.php?category=memorias-ram" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=memorias%20ram" class="px-0 align-middle">
             <i class="fa-solid fa-memory"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Memorias RAM</span></a>
         </li>

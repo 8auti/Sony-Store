@@ -49,7 +49,7 @@ $products = array_slice($products,rand(1,count($products)-$productosEnGaleria),$
           </div>
           <div class="carousel-item h-40vh">
             <img
-              src="./img/sony-banner.png"
+              src="https://statics.qloud.com.ar/noxie-store-08-2022/274_15-09-2022-02-09-20-nvidia-banner.jpg"
               class="d-block w-100 h-100 fit-cover object-left"
               alt="Nexus Store Banner 2" />
           </div>

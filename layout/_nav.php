@@ -3,22 +3,22 @@
     class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 d-none d-sm-block bg-grey-200 text-light">
     <div
       class="ps-5 d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 fixed-md">
-      <a href="../index.php">
+      <a href="/nexus/index.php">
         <img
           class="h-40px mb-3 mt-1"
-          src="../img/nexus-logo.png"
+          src="/nexus/img/nexus-logo.png"
           alt="Nexus Logo White" />
       </a>
       <ul
         class="nav nav-pills flex-column mb-4 align-items-center align-items-sm-start"
         id="menu">
         <li class="text-secondary">
-          <a href="./pages/checkout.php" class="px-0 align-middle">
+          <a href="/nexus/pages/checkout.php" class="px-0 align-middle">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Carrito</span></a>
         </li>
         <li class="text-secondary">
-          <a href="./pages/contact.php" class="px-0 align-middle">
+          <a href="/nexus/pages/contact.php" class="px-0 align-middle">
             <i class="fa-regular fa-envelope"></i>
             <span class="ms-1 d-sm-inline align-bottom">Contacto</span>
           </a>

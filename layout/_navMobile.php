@@ -9,10 +9,10 @@
   </a>
   <div
     class="d-flex flex-column align-items-center justify-content-start pt-5 px-3 pt-2 text-white min-vh-100 fixed-md">
-    <a href="../index.php">
+    <a href="/nexus/index.php">
       <img
         class="h-40px mb-3 mt-1"
-        src="../img/sony-logo.webp"
+        src="/nexus/img/nexus-logo.png"
         alt="Sony Logo White" />
     </a>
     <ul class="nav nav-pills flex-column mb-4 align-items-start" id="menu">
@@ -34,13 +34,13 @@
         </a>
       </li>
       <li class="text-secondary">
-        <a href="./pages/checkout.html" class="px-0 align-middle">
+        <a href="/nexus/pages/checkout.php" class="px-0 align-middle">
           <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
           <span class="ms-1 d-sm-inline align-bottom">Cart</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="./pages/contact.html" class="px-0 align-middle">
+        <a href="/nexus/pages/contact.php" class="px-0 align-middle">
           <i class="fa-regular fa-envelope"></i>
           <span class="ms-1 d-sm-inline align-bottom">Contact</span>
         </a>

@@ -3,7 +3,7 @@
   require_once('./consultas/conexion.php');
   require_once('./consultas/consultas_componentes.php');
 
-  $usuarios = getUsuarios($conexion);
+  $usuarios = getProducts($conexion);
 ?>
 
 <!DOCTYPE html>

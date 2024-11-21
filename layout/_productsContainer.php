@@ -1,6 +1,4 @@
 <?php
-$products = getProducts($conexion);
-
 if (!isset($products) || !is_array($products)) {
     echo "No products data available.";
     return;

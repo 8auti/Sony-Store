@@ -6,7 +6,6 @@ require_once('../consultas/consultas_componentes.php');
 if (isset($_GET['category'])) {
     $categoryName = $_GET['category'];
     $products = getProductsByCategory($conexion, $categoryName);
-    echo var_dump($products);
 }
 
 ?>

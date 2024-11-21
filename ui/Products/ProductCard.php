@@ -14,7 +14,7 @@ $category = $product['nombre_categoria'];
 
 <article class="col-6 col-md-4 col-lg-3 text-center product-card my-3 p-1">
     <div class="p-1 bg-grey-100 h-100">
-        <a href="./pages/product-detail.php">
+        <a href="/nexus/pages/product-detail.php">
             <figure class="product-card">
                 <img
                     class="w-100 aspect-square fit-contain"

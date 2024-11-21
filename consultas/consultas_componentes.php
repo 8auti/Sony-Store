@@ -18,3 +18,4 @@ function getProductsByCategory(PDO $conexion, $categoryName)
     $products = $consulta->fetchAll(PDO::FETCH_ASSOC);
     return $products;
 }
+?>

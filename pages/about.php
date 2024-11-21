@@ -30,45 +30,9 @@
           <!-- Header -->
           <?php require('../layout/_header.php')?>
 
-          <!-- Cards -->
-          <section
-            id="cards"
-            class="d-lg-none row justify-content-center align-items-end gap-4 my-5 px-3"
-          >
-            <article
-              class="col-7 rounded-3 dual-card bg-grey-300 row justify-content-center align-items-center"
-            >
-              <div class="col-6 mt-4">
-                <img
-                  class="w-100 filter-contrast-0"
-                  src="https://static.thenounproject.com/png/3986338-200.png"
-                  alt="Credit card"
-                />
-              </div>
-              <div class="col-6 mt-4">
-                <span class="d-block">Month / Year</span>
-                <span class="d-block">07 / 2028</span>
-              </div>
-              <p class="text-uppercase fw-bolder mt-4">Tony Montana</p>
-              <p class="mt-5">* * * * 0463</p>
-              <p class="p-3 col-12 align-self-end text-end">VISA</p>
-            </article>
-            <article
-              class="col-5 rounded-3 aspect-card-half bg-grey h-50 d-flex justify-content-center align-items-center flex-column"
-            >
-              <a href="#add-credit-card">
-                <div
-                  class="bg-grey-300 aspect-square rounded-circle text-center align-middle display-6 fw-bolder p-0 m-0 h-40px"
-                >
-                  +
-                </div>
-              </a>
-              <p class="mt-3 fw-bolder">Add new Credit Card</p>
-            </article>
-          </section>
-
           <section>
               <article>
+              <img src="../img/Studio.png" class="img-fluid" alt="...">
                 <div>
                   <h2>¿Quiénes somos?</h2>
                   <p>
@@ -92,12 +56,18 @@
                       <strong>Envíos rápidos y seguros:</strong> Entendemos que lo que más deseas es disfrutar de tus productos cuanto antes, por lo que te garantizamos envíos rápidos y seguros para que no tengas que esperar mucho para comenzar a jugar.
                     </li>
                   </ul>
+                <h3>
+                  Nuestra Mision  
+                </h3>
+                <p>
+                Nuestra misión es brindar a cada gamer una experiencia de compra excepcional, ofreciendo productos de la más alta calidad a precios competitivos, y asegurando que cada compra sea un paso más hacia un rendimiento de juego superior.
+                </p>
                 </div>
               </article>
           </section>
 
 
-          
+
           <!-- Related Products -->
           <section class="row">
             <h2 class="text-center mb-4 mt-5">Related Products</h2>

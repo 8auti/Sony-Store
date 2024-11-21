@@ -40,13 +40,16 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('ASUS ROG Crosshair X670E Hero', 'Motherboard premium para procesadores AMD Ryzen serie 7000.', 600.00, '01', 'Motherboards', 'https://dlcdnwebimgs.asus.com/gain/F17834FA-586C-40FA-A2AD-24D07A3431A0/h300/w300'),
 ('MSI MAG B550 TOMAHAWK WIFI', 'Motherboard versátil para Ryzen con Wi-Fi y PCIe 4.0.', 150.00, '01', 'Motherboards', 'https://asset.msi.com/resize/image/global/product/product_16492305296ff2084c3e2e35c03546e01e5e2bf0c9.png62405b38c58fe0f07fcef2367d8a9ba1/1024.png'),
 ('Gigabyte Z690 AORUS ELITE DDR4', 'Motherboard potente para procesadores Intel Alder Lake.', 250.00, '01', 'Motherboards', 'https://static.gigabyte.com/StaticFile/Image/Global/aa552f0fa095306d8c46f84350ec3bfc/Product/29915/png/500'),
+('ASRock B550 Phantom Gaming 4', 'Motherboard para procesadores AMD Ryzen con soporte PCIe 4.0.', 120.00, '01', 'Motherboards', 'https://pg.asrock.com/mb/photo/B550%20Phantom%20Gaming%204(L1).png'),
+('Gigabyte B450 AORUS M', 'Motherboard económica para procesadores AMD Ryzen.', 90.00, '01', 'Motherboards', 'https://static.gigabyte.com/StaticFile/Image/Global/e995b3c26d32fe644b1d5766b6d37d9c/Product/24135'),
 
 -- Tarjetas Gráficas
 ('NVIDIA GeForce RTX 4090', 'Tarjeta gráfica de alta gama para juegos en 4K.', 1600.00, '03', 'Tarjetas Gráficas', 'https://www.computershopping.com.ar/Images/Productos/Descripciones/GV-N408SWF3V2-16GD_heroimg_900w.png'),
 ('AMD Radeon RX 7900 XTX', 'Potente tarjeta gráfica para juegos y creación en 4K.', 1000.00, '03', 'Tarjetas Gráficas', 'https://www.biostar.com.tw/picture/Review/525/RX7900XT_45_3_s.png'),
 ('NVIDIA GeForce RTX 3080', 'Tarjeta gráfica ideal para juegos en 4K y 1440p.', 700.00, '03', 'Tarjetas Gráficas', 'https://storage-asset.msi.com/global/picture/image/feature/vga/NVIDIA/RTX3080Ti-gaming/images/3080ti-vga-body.png'),
 ('AMD Radeon RX 6800 XT', 'Tarjeta gráfica eficiente para juegos a 1440p y 4K.', 650.00, '03', 'Tarjetas Gráficas', 'https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%206800%20XT%20Phantom%20Gaming%20D%2016G%20OC(L4).png'),
-
+('NVIDIA GeForce RTX 3070', 'Tarjeta gráfica de gama media ideal para juegos en 1440p y 4K.', 500.00, '03', 'Tarjetas Gráficas', 'https://www.nvidia.com/content/dam/en-zz/Solutions/geforce/ampere/rtx-3070/geforce-rtx-3070-shop-630-d.png'),
+('AMD Radeon RX 6700 XT', 'Tarjeta gráfica para juegos en 1440p con excelente relación calidad-precio.', 480.00, '03', 'Tarjetas Gráficas', 'https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%206700%20XT%20Phantom%20Gaming%20D%2012GB%20OC(L1).png'),
 -- Memorias RAM
 ('Corsair Vengeance RGB Pro 16GB DDR4', 'Memoria RAM con iluminación RGB dinámica.', 80.00, '04', 'Memorias RAM', 'https://assets.corsair.com/image/upload/f_auto,q_auto/v1/akamai/pdp/vengeance-rgb-pro/tuff/Vengeance_RGB_PRO_TUF_01_2UP.png'),
 ('Kingston Fury Beast 16GB DDR5', 'RAM DDR5 para alto rendimiento y velocidad.', 110.00, '04', 'Memorias RAM', 'https://wiztech.com.ar/assets/images/products/ram/hyperx_fury_beast_64gb_5600_a.png'),

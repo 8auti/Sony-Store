@@ -4,9 +4,12 @@ if (!isset($product) || !is_array($product)) {
     return;
 }
 
+require_once('./consultas/consultas_componentes.php');
+
 $title = $product['nombre_producto'] ?? 'Unknown Product';
-$imageUrl = $product['nombre_imagen']?? 'https://via.placeholder.com/150';
-$category = $product['nombre_categoria'] ?? 'Unknown Category';
+$imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
+$category = $product['nombre_categoria'];
+
 ?>
 
 <article class="col-6 col-md-4 col-lg-3 text-center product-card my-3 p-1">

@@ -2,8 +2,7 @@
 
 require_once('./consultas/conexion.php');
 require_once('./consultas/consultas_componentes.php');
-
-$usuarios = getProducts($conexion);
+$products = getProducts($conexion);
 ?>
 
 <!DOCTYPE html>

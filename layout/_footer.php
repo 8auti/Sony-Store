@@ -25,7 +25,7 @@
                     <div class="p-3 bg-grey-100">
                         <img
                             class="d-inline-block h-20px"
-                            src="../img/arg-flag.svg"
+                            src="/nexus/img/arg-flag.svg"
                             alt="Argentina Flag" />
                         <span class="d-inline-block">Argentina</span>
                     </div>

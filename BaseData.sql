@@ -52,7 +52,7 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('AMD Radeon RX 6700 XT', 'Tarjeta gráfica para juegos en 1440p con excelente relación calidad-precio.', 480.00, '03', 'Tarjetas Gráficas', 'https://pg.asrock.com/Graphics-Card/photo/Radeon%20RX%206700%20XT%20Phantom%20Gaming%20D%2012GB%20OC(L1).png'),
 -- Memorias RAM
 ('Corsair Vengeance RGB Pro 16GB DDR4', 'Memoria RAM con iluminación RGB dinámica.', 80.00, '04', 'Memorias RAM', 'https://assets.corsair.com/image/upload/f_auto,q_auto/v1/akamai/pdp/vengeance-rgb-pro/tuff/Vengeance_RGB_PRO_TUF_01_2UP.png'),
-('Kingston Fury Beast 16GB DDR5', 'RAM DDR5 para alto rendimiento y velocidad.', 110.00, '04', 'Memorias RAM', 'https://wiztech.com.ar/assets/images/products/ram/hyperx_fury_beast_64gb_5600_a.png'),
+('Kingston Fury Beast 16GB DDR5', 'RAM DDR5 para alto rendimiento y velocidad.', 110.00, '04', 'Memorias RAM', 'https://www.scphardstore.com/wp-content/uploads/Memoria-RAM-DDR5-KINGSTON-32GB-6400-MHZ-FURY-BEAST-BLACK-RGB.png'),
 ('G.Skill Trident Z RGB 32GB DDR4', 'Memoria RAM RGB para gaming avanzado.', 160.00, '04', 'Memorias RAM', 'https://www.hardsoft.hr/slike/velike/gskill-trident-z-rgb-32gb-kit-2x16gb-ddr4-3200mhz-cl16-135v-23745-gskme-32gb_ddr4_32_2.webp'),
 
 -- Coolers
@@ -62,7 +62,7 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 
 -- Gabinetes
 ('NZXT H510 Elite', 'Gabinete compacto con diseño moderno y RGB.', 150.00, '09', 'Gabinetes', 'https://mcegamer.com/wp-content/uploads/2019/08/h510-2-1-600x600.png'),
-('Cooler Master MasterBox Q300L', 'Gabinete pequeño con excelente flujo de aire.', 60.00, '09', 'Gabinetes', 'https://png.pngtree.com/png-vector/20240811/ourmid/pngtree-full-tower-led-cabinet-gaming-atx-industrial-aluminum-metal-alloy-server-png-image_13446693.png'),
+('Cooler Master MasterBox Q300L', 'Gabinete pequeño con excelente flujo de aire.', 60.00, '09', 'Gabinetes', 'https://a.storyblok.com/f/281110/922x589/56093c0cd4/q300l-sec9-1.png'),
 ('Fractal Design Meshify C', 'Gabinete ATX con panel frontal de malla para una mejor refrigeración.', 100.00, '09', 'Gabinetes', 'https://logg.api.cygnus.market/static/logg/Global/Gabinete%20Cooler%20Master%20TD300%20Mesh%20Negro%20Mini%20Tower/1866ab90c26f44578707148cad7d0daf.png'),
 
 -- Fuentes de Poder

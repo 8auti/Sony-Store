@@ -215,7 +215,7 @@ if ($category) {
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
-                    <div class="h-100 bg-grey rounded-pill w-75"></div>
+                    <div class="h-100 bg-grey rounded-pill" style="width:<?php echo rand(0,100) ?>%" ></div>
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@ if ($category) {
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
-                    <div class="h-100 bg-grey rounded-pill w-50"></div>
+                    <div class="h-100 bg-grey rounded-pill" style="width:<?php echo rand(0,100) ?>%" ></div>
                   </div>
                 </div>
               </div>
@@ -235,7 +235,7 @@ if ($category) {
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
-                    <div class="h-100 bg-grey rounded-pill w-25"></div>
+                    <div class="h-100 bg-grey rounded-pill" style="width:<?php echo rand(0,100) ?>%" ></div>
                   </div>
                 </div>
               </div>
@@ -245,7 +245,7 @@ if ($category) {
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
-                    <div class="h-100 bg-grey rounded-pill w-10"></div>
+                    <div class="h-100 bg-grey rounded-pill" style="width:<?php echo rand(0,100) ?>%" ></div>
                   </div>
                 </div>
               </div>

@@ -46,48 +46,54 @@
         </a>
       </li>
     </ul>
-    <span class="fs-5 d-sm-inline mb-3 text-uppercase fw-bolder">Category</span>
+    <span class="fs-5 d-sm-inline mb-3 text-uppercase fw-bolder">Categorias</span>
     <ul class="nav nav-pills flex-column mb-0 align-items-start" id="menu">
       <li class="text-secondary">
-        <a href="#" class="align-middle px-0">
-          <i class="fa-solid fa-tv" aria-hidden="true"></i>
-          <span class="ms-1 d-sm-inline align-bottom">Televisions</span>
+        <a href="/nexus/pages/products.php?category=motherboards" class="align-middle px-0">
+          <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+          <span class="ms-1 d-sm-inline align-bottom">Motherboards</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="#" class="px-0 align-middle">
-          <i class="fa-solid fa-headphones" aria-hidden="true"></i>
-          <span class="ms-2 d-sm-inline align-bottom">Headphones</span>
+        <a href="/nexus/pages/products.php?category=placas-de-video" class="px-0 align-middle">
+          <i class="fa-solid fa-tachograph-digital" aria-hidden="true"></i>
+          <span class="ms-2 d-sm-inline align-bottom">Placas de Video</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="#" class="px-0 align-middle">
-          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
-          <span class="ms-1 d-sm-inline align-bottom">Consoles</span>
+        <a href="/nexus/pages/products.php?category=memorias-ram" class="px-0 align-middle">
+          <i class="fa-solid fa-memory" aria-hidden="true"></i>
+          <span class="ms-2 d-sm-inline align-bottom">Memorias RAM</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="#" class="px-0 align-middle">
-          <i class="fa-solid fa-camera" aria-hidden="true"></i>
-          <span class="ms-2 d-sm-inline align-bottom">Cameras</span>
+        <a href="/nexus/pages/products.php?category=refrigeracion" class="px-0 align-middle">
+          <i class="fa-solid fa-fan" aria-hidden="true"></i>
+          <span class="ms-2 d-sm-inline align-bottom">Refrigeración</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="#" class="px-0 align-middle">
-          <i class="fa-solid fa-radio" aria-hidden="true"></i>
-          <span class="ms-2 d-sm-inline align-bottom">Speakers</span>
+        <a href="/nexus/pages/products.php?category=gabinetes" class="px-0 align-middle">
+          <i class="fa-solid fa-computer" aria-hidden="true"></i>
+          <span class="ms-2 d-sm-inline align-bottom">Gabinetes</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="#" class="px-0 align-middle">
-          <i class="fa-solid fa-ear-listen" aria-hidden="true"></i>
-          <span class="ms-2 d-sm-inline align-bottom">Home Theatre</span>
+        <a href="/nexus/pages/products.php?category=fuentes" class="px-0 align-middle">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <span class="ms-2 d-sm-inline align-bottom">Fuentes</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="#" class="px-0 align-middle">
-          <i class="fa-solid fa-car" aria-hidden="true"></i>
-          <span class="ms-2 d-sm-inline align-bottom">Car Audio</span>
+        <a href="/nexus/pages/products.php?category=monitores" class="px-0 align-middle">
+          <i class="fa-solid fa-desktop" aria-hidden="true"></i>
+          <span class="ms-2 d-sm-inline align-bottom">Monitores</span>
+        </a>
+      </li>
+      <li class="text-secondary">
+        <a href="/nexus/pages/products.php?category=perifericos" class="px-0 align-middle">
+          <i class="fa-solid fa-computer-mouse" aria-hidden="true"></i>
+          <span class="ms-2 d-sm-inline align-bottom">Perifericos</span>
         </a>
       </li>
     </ul>

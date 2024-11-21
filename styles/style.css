@@ -373,12 +373,19 @@ a:hover {
   display: none;
 }
 
-.AboutUs{
+.img-thumbnail{
   width: 250px;
   height: 250px;
 }
 
-
+.diferencia{
+  display: flex;
+  gap: 20px;
+}
+.column {
+  flex: 1;
+  padding: 20px;
+}
 @media (max-width: 575px) {
   .mobile-header {
     display: flex !important;

@@ -40,29 +40,37 @@
                   <p>
                     Sabemos que el mundo de los videojuegos es mucho más que una simple afición: es una forma de vida, una comunidad global y, sobre todo, una pasión que merece ser respaldada por el mejor equipamiento. Por eso, seleccionamos cuidadosamente cada producto que ofrecemos, garantizando solo lo mejor en términos de rendimiento, durabilidad y diseño.
                   </p>
+
                   <h3>Lo que nos diferencia</h3>
-                  <ul>
-                    <li>
-                      <strong>Calidad Premium:</strong> Trabajamos con las marcas más reconocidas del mercado, ofreciéndote productos de gama alta para llevar tu experiencia gaming al siguiente nivel.
-                    </li>
-                    <li>
-                      <strong>Variedad:</strong> Ya sea que busques una nueva PC gamer, un teclado mecánico, auriculares de alta fidelidad, o cualquier otro accesorio, en Nexus tenemos todo lo que necesitas para equiparte como un verdadero profesional.
-                    </li>
-                    <li>
-                      <strong>Atención al cliente personalizada:</strong> Sabemos que cada gamer tiene necesidades únicas, por eso nos esforzamos por brindarte un servicio de atención al cliente excepcional, ayudándote a elegir el producto perfecto para ti.
-                    </li>
-                    <li>
-                      <strong>Envíos rápidos y seguros:</strong> Entendemos que lo que más deseas es disfrutar de tus productos cuanto antes, por lo que te garantizamos envíos rápidos y seguros para que no tengas que esperar mucho para comenzar a jugar.
-                    </li>
-                  </ul>
-                <h3>
-                  Nuestra Mision  
-                </h3>
-                <p>
-                Nuestra misión es brindar a cada gamer una experiencia de compra excepcional, ofreciendo productos de la más alta calidad a precios competitivos, y asegurando que cada compra sea un paso más hacia un rendimiento de juego superior.
-                </p>
+                  <article class = "diferencia">
+                    <figcaption class = "column">
+                      <img src="../img/Studio.png" class="img-fluid" alt="...">
+                    </figcaption>
+                      <ol class = "column">
+                        <li>
+                          <strong>Calidad Premium:</strong> Trabajamos con las marcas más reconocidas del mercado, ofreciéndote productos de gama alta para llevar tu experiencia gaming al siguiente nivel.
+                        </li>
+                        <li>
+                          <strong>Variedad:</strong> Ya sea que busques una nueva PC gamer, un teclado mecánico, auriculares de alta fidelidad, o cualquier otro accesorio, en Nexus tenemos todo lo que necesitas para equiparte como un verdadero profesional.
+                        </li>
+                        <li>
+                          <strong>Atención al cliente personalizada:</strong> Sabemos que cada gamer tiene necesidades únicas, por eso nos esforzamos por brindarte un servicio de atención al cliente excepcional, ayudándote a elegir el producto perfecto para ti.
+                        </li>
+                        <li>
+                          <strong>Envíos rápidos y seguros:</strong> Entendemos que lo que más deseas es disfrutar de tus productos cuanto antes, por lo que te garantizamos envíos rápidos y seguros para que no tengas que esperar mucho para comenzar a jugar.
+                        </li>
+                        <li>
+                          <Strong>Ofertas exclusivas: </Strong>Aprovecha nuestras promociones y descuentos especiales diseñados para que puedas obtener productos de alta calidad al mejor precio del mercado. ¡La mejor tecnología ahora está al alcance de todos!
+                        </li>
+                      </ol>
+                  </article>
+                  <h3>
+                    Nuestra Mision  
+                  </h3>
+                    <p>
+                    Nuestra misión es brindar a cada gamer una experiencia de compra excepcional, ofreciendo productos de la más alta calidad a precios competitivos, y asegurando que cada compra sea un paso más hacia un rendimiento de juego superior.
+                    </p>
                 </div>
-                <img class = "AboutUs" src="../img/Studio.png" class="img-thumbnail" alt="...">
               </article>
           </section>
     <!-- Footer -->

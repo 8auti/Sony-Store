@@ -23,6 +23,12 @@
             <span class="ms-1 d-sm-inline align-bottom">Contacto</span>
           </a>
         </li>
+        <li class="text-secondary">
+          <a href="/nexus/pages/about.php" class="px-0 align-middle">
+            <i class="fa-regular fa-face-smile"></i>
+            <span class="ms-1 d-sm-inline align-bottom">Sobre Nexus</span>
+          </a>
+        </li>
       </ul>
       <span class="fs-5 d-none d-sm-inline mb-3 text-uppercase fw-bolder">Categorias</span>
       <ul
@@ -30,42 +36,42 @@
         id="menu">
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=motherboards" class="align-middle px-0">
-            <i class="fa-regular fa-user"></i>
+            <i class="fa-solid fa-microchip"></i>
             <span class="ms-2 d-none d-sm-inline align-bottom">Motherboards</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=placas-de-video" class="px-0 align-middle">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-tachograph-digital"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Placas de Video</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=memorias-ram" class="px-0 align-middle">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-memory"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Memorias RAM</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=refrigeración" class="px-0 align-middle">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-fan"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Refrigeración</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=gabinetes" class="px-0 align-middle">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-computer"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Gabinetes</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=fuentes" class="px-0 align-middle">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-bolt"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Fuentes</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=monitores" class="px-0 align-middle">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-desktop"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Monitores</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=periféricos" class="px-0 align-middle">
-            <i class="fa-regular fa-heart"></i>
+            <i class="fa-solid fa-computer-mouse"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Periféricos</span></a>
         </li>
       </ul>

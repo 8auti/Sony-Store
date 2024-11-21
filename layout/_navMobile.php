@@ -18,31 +18,37 @@
     <ul class="nav nav-pills flex-column mb-4 align-items-start" id="menu">
       <li class="text-secondary">
         <a href="#" class="align-middle px-0">
-          <i class="fa-regular fa-user" aria-hidden="true"></i><span class="ms-2 d-sm-inline align-bottom">Profile</span>
+          <i class="fa-regular fa-user" aria-hidden="true"></i><span class="ms-2 d-sm-inline align-bottom">Perfil</span>
         </a>
       </li>
       <li class="text-secondary">
         <a href="#" class="px-0 align-middle">
           <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-          <span class="ms-1 d-sm-inline align-bottom">Search</span>
+          <span class="ms-1 d-sm-inline align-bottom">Buscar</span>
         </a>
       </li>
       <li class="text-secondary">
         <a href="#" class="px-0 align-middle">
           <i class="fa-regular fa-heart" aria-hidden="true"></i>
-          <span class="ms-1 d-sm-inline align-bottom">Favorite</span>
+          <span class="ms-1 d-sm-inline align-bottom">Favoritos</span>
         </a>
       </li>
       <li class="text-secondary">
         <a href="/nexus/pages/checkout.php" class="px-0 align-middle">
           <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
-          <span class="ms-1 d-sm-inline align-bottom">Cart</span>
+          <span class="ms-1 d-sm-inline align-bottom">Carrito</span>
         </a>
       </li>
       <li class="text-secondary">
         <a href="/nexus/pages/contact.php" class="px-0 align-middle">
           <i class="fa-regular fa-envelope"></i>
-          <span class="ms-1 d-sm-inline align-bottom">Contact</span>
+          <span class="ms-1 d-sm-inline align-bottom">Contacto</span>
+        </a>
+      </li>
+      <li class="text-secondary">
+        <a href="/nexus/pages/about.php" class="px-0 align-middle">
+          <i class="fa-solid fa-face-smile"></i>
+          <span class="ms-1 d-sm-inline align-bottom">Sobre Nexus</span>
         </a>
       </li>
     </ul>

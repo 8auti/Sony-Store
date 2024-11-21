@@ -23,6 +23,12 @@
             <span class="ms-1 d-sm-inline align-bottom">Contacto</span>
           </a>
         </li>
+        <li class="text-secondary">
+          <a href="/nexus/pages/about.php" class="px-0 align-middle">
+            <i class="fa-regular fa-face-smile"></i>
+            <span class="ms-1 d-sm-inline align-bottom">Sobre Nexus</span>
+          </a>
+        </li>
       </ul>
       <span class="fs-5 d-none d-sm-inline mb-3 text-uppercase fw-bolder">Categorias</span>
       <ul

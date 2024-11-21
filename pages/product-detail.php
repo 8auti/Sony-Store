@@ -180,7 +180,7 @@
                 <section class="row justify-content-between align-items-start">
                   <p class="col-4 display-6 fw-bolder">$150.00</p>
                   <div class="col-8 row align-items-center">
-                    <a href="./checkout.html" class="d-contents">
+                    <a href="./checkout.php" class="d-contents">
                       <div
                         class="col-8 bg-pill rounded-pill p-1 px-3 text-center"
                       >
@@ -376,7 +376,7 @@
             <h2 class="text-center mb-4 mt-5">Related Products</h2>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"
@@ -395,7 +395,7 @@
             </article>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"
@@ -412,7 +412,7 @@
             </article>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"
@@ -429,7 +429,7 @@
             </article>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"
@@ -448,7 +448,7 @@
             </article>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"
@@ -467,7 +467,7 @@
             </article>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"
@@ -484,7 +484,7 @@
             </article>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"
@@ -499,7 +499,7 @@
             </article>
             <article class="col-6 col-md-4 col-lg-3 text-center p-1">
               <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.html">
+                <a href="./product-detail.php">
                   <figure class="product-card">
                     <img
                       class="w-100 aspect-square fit-contain"

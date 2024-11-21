@@ -13,12 +13,12 @@
         class="nav nav-pills flex-column mb-4 align-items-center align-items-sm-start"
         id="menu">
         <li class="text-secondary">
-          <a href="./pages/checkout.php" class="px-0 align-middle">
+          <a href="/nexus/pages/checkout.php" class="px-0 align-middle">
             <i class="fa-solid fa-cart-shopping"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Carrito</span></a>
         </li>
         <li class="text-secondary">
-          <a href="./pages/contact.php" class="px-0 align-middle">
+          <a href="/nexus/pages/contact.php" class="px-0 align-middle">
             <i class="fa-regular fa-envelope"></i>
             <span class="ms-1 d-sm-inline align-bottom">Contacto</span>
           </a>

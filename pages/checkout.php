@@ -443,14 +443,14 @@
                     class="cursor-pointer col-6 col-lg-3 text-secondary my-3 p-0 pe-2"
                   >
                     <article class="pe-2 bg-grey-300 py-4 rounded-3">
-                      <a href="./product-detail.html">Back to Shopping</a>
+                      <a href="./product-detail.php">Back to Shopping</a>
                     </article>
                   </div>
                   <div
                     class="cursor-pointer col-6 col-lg-3 text-secondary my-3 p-0 ps-2"
                   >
                     <article class="ps-2 bg-grey-300 py-4 rounded-3">
-                      <a href="../index.html">Back to Home</a>
+                      <a href="../index.php">Back to Home</a>
                     </article>
                   </div>
                   <article

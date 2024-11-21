@@ -75,9 +75,9 @@ $usuarios = getProducts($conexion);
       <!-- Products -->
       <?php require('layout/_productsContainer.php') ?>
 
-      <!-- Best 4 Gaming Section -->
+      <!-- Mas vistos -->
       <section>
-        <h2 class="my-4">Recomendado para Gaming</h2>
+        <h2 class="my-4">Mas vistos</h2>
         <section class="d-none d-lg-flex row">
           <article class="pe-2 col-6 dual-card border-gaming-card rounded">
             <div

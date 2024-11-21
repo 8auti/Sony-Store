@@ -34,13 +34,13 @@
         </a>
       </li>
       <li class="text-secondary">
-        <a href="./pages/checkout.php" class="px-0 align-middle">
+        <a href="/nexus/pages/checkout.php" class="px-0 align-middle">
           <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
           <span class="ms-1 d-sm-inline align-bottom">Cart</span>
         </a>
       </li>
       <li class="text-secondary">
-        <a href="./pages/contact.php" class="px-0 align-middle">
+        <a href="/nexus/pages/contact.php" class="px-0 align-middle">
           <i class="fa-regular fa-envelope"></i>
           <span class="ms-1 d-sm-inline align-bottom">Contact</span>
         </a>

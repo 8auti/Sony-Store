@@ -19,3 +19,4 @@ function getProductsByCategory(PDO $conexion, $categoryName)
     return $products;
 }
 ?>
+?>

@@ -57,7 +57,7 @@ $products = getProducts($conexion);
       <!-- Categorias -->
       <section
         class="d-flex flex-wrap align-items-flex-end gap-3 my-4 flex-center-mobile">
-        <h2 class="m-0 p-0 me-5">Categorias</h2>
+        <h2 class="m-0 p-0 me-5">Productos</h2>
         <ul class="d-flex gap-3 m-0 p-0">
           <li
             class="cursor-pointer badge bg-pill-selected px-4 rounded-pill p-2">

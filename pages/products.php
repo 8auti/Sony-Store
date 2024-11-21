@@ -24,7 +24,7 @@ $products = array_slice($products, ($pagina-1)*$elementosPorPagina, $elementosPo
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Store - Products</title>
+    <title>Nexus Store - Productos</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         rel="stylesheet"

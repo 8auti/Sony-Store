@@ -1,9 +1,20 @@
+<?php
+
+require_once('../consultas/conexion.php');
+require_once('../consultas/consultas_componentes.php');
+
+$products = getProducts($conexion) ?? [];
+$productosEnGaleria = 8;
+
+$products = array_slice($products,rand(1,count($products)-$productosEnGaleria),$productosEnGaleria); // Array, Offset, Cantidad de productos a cargar
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Store - Checkout</title>
+    <title>Nexus Store - Carrito</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -45,7 +56,7 @@
                 />
               </div>
               <div class="col-6 mt-4">
-                <span class="d-block">Month / Year</span>
+                <span class="d-block">Mes / Año</span>
                 <span class="d-block">07 / 2028</span>
               </div>
               <p class="text-uppercase fw-bolder mt-4">Tony Montana</p>
@@ -62,7 +73,7 @@
                   +
                 </div>
               </a>
-              <p class="mt-3 fw-bolder">Add new Credit Card</p>
+              <p class="mt-3 fw-bolder">Añadir nueva Tarjeta de Credito</p>
             </article>
           </section>
 
@@ -71,9 +82,9 @@
             <div class="modal-content bg-grey">
               <a href="#cards" class="close">&times;</a>
               <div class="bg-grey p-3 rounded-3">
-                <h3>Card Detail</h3>
+                <h3>Detalles de Tarjeta</h3>
                 <p class="text-uppercase text-secondary fw-bolder">
-                  select card tye
+                  Seleccionar tipo de tarjeta
                 </p>
                 <form action="#cards">
                   <div class="d-flex gap-2 flex-wrap">
@@ -104,7 +115,7 @@
                   </div>
                   <div class="my-4">
                     <label class="d-block mb-2" for="cardNumber"
-                      >Card Number</label
+                      >Numero de tarjeta</label
                     >
                     <input
                       required
@@ -116,7 +127,7 @@
                   </div>
                   <div class="my-4">
                     <label class="d-block mb-2" for="nameLastname"
-                      >Name Lastname</label
+                      >Ultimo Nombre</label
                     >
                     <input
                       required
@@ -139,7 +150,7 @@
                   <div class="row my-4">
                     <div class="col-6">
                       <label class="m-0 p-0 w-100 mb-2" for="expiryDate"
-                        >Expiry Date</label
+                        >Fecha de Expiracion</label
                       >
                       <input
                         required
@@ -172,29 +183,45 @@
             </div>
           </div>
 
+
+          <?php 
+            $productosEnCarrito = rand(1,4);
+            $productosAleatorios = array_slice($products,rand(1,count($products)-$productosEnCarrito),$productosEnCarrito); // Array, Offset, Cantidad de productos a cargar
+          ?>
+
           <div class="container-fluid px-1">
             <div class="row justify-content-center">
               <section class="col-12 col-lg-8">
+              <?php $total = 0 ?>
+              <?php foreach ($productosAleatorios as $productoCarrito) : 
+                $title = $productoCarrito['nombre_producto'] ?? 'Unknown Product';
+                $imageUrl = $productoCarrito['url_imagen'] ?? 'https://via.placeholder.com/150';
+                $price = $productoCarrito['precio'] ?? '. . .';
+                $total += $price;
+                ?>
                 <article
                   class="row align-items-center justify-content-center bg-grey-100 mb-3 rounded-3"
                 >
+                  
                   <div class="col-6 col-lg-5 d-flex align-items-center">
                     <figure class="row m-0">
                       <img class="col-7 aspect-square fit-contain"
-                      src="../img/sony-tv.jfif" alt="4K Ultra HD Smart TV with
-                      Google TV 65"" />
+                      src="<?php echo $imageUrl ?>"
+                      alt="<?php echo $title ?>" />
                     </figure>
                     <p class="col-5 d-none d-lg-block m-0">
-                      4K Ultra HD Smart TV with Google TV 65"
+                      <?php echo $title ?>
                     </p>
                   </div>
+                  
+
                   <div
                     class="col-6 d-lg-none d-flex flex-column justify-content-start align-items-start gap-2"
                   >
                     <p class="m-0">
-                      WH-CH720N Wireless Noise Cancelling Headphones
+                      <?php echo $title ?>
                     </p>
-                    <div class="text-secondary fw-bolder">No Color</div>
+                    <div class="text-secondary fw-bolder">Sin Color</div>
                     <div
                       class="row flex-row-reverse justify-content-center align-items-baseline w-100"
                     >
@@ -204,16 +231,17 @@
                         >
                           +
                         </button>
-                        <span class="mx-2">2</span>
+                        <span class="mx-2"><?php echo rand(1,3)?></span>
                         <button
                           class="rounded-circle aspect-square border-0 h-30px"
                         >
                           -
                         </button>
                       </div>
-                      <div class="col-6 fw-bolder">$350.00</div>
+                      <div class="col-6 fw-bolder"><?php echo $price ?></div>
                     </div>
                   </div>
+
                   <div
                     class="d-none d-lg-block col-2 col-lg-2 text-secondary fw-bolder"
                   >
@@ -228,7 +256,7 @@
                       >
                         +
                       </button>
-                      <span class="mx-2">2</span>
+                      <span class="mx-2"><?php echo rand(1,3)?></span>
                       <button
                         class="rounded-circle aspect-square border-0 h-30px"
                       >
@@ -237,236 +265,39 @@
                     </div>
                   </div>
                   <div class="d-none d-lg-block col-2 col-lg-2 fw-bolder">
-                    $350.00
+                    <?php echo $price?>
                   </div>
                 </article>
-                <article
-                  class="row align-items-center justify-content-center bg-grey-100 mb-3 rounded-3"
-                >
-                  <div class="col-6 col-lg-5 d-flex align-items-center">
-                    <figure class="row m-0">
-                      <img
-                        class="col-7 aspect-square fit-contain"
-                        src="../img/sony-headphones.webp"
-                        alt="WH-CH720N Wireless Noise Cancelling Headphones"
-                      />
-                    </figure>
-                    <p class="col-5 d-none d-lg-block m-0">
-                      WH-CH720N Wireless Noise Cancelling Headphones
-                    </p>
-                  </div>
-                  <div
-                    class="col-6 d-lg-none d-flex flex-column justify-content-start align-items-start gap-2"
-                  >
-                    <p class="m-0">
-                      WH-CH720N Wireless Noise Cancelling Headphones
-                    </p>
-                    <div class="text-secondary fw-bolder">Black</div>
-                    <div
-                      class="row flex-row-reverse justify-content-center align-items-baseline w-100"
-                    >
-                      <div class="col-6 d-flex align-items-center">
-                        <button
-                          class="rounded-circle aspect-square border-0 h-30px"
-                        >
-                          +
-                        </button>
-                        <span class="mx-2">2</span>
-                        <button
-                          class="rounded-circle aspect-square border-0 h-30px"
-                        >
-                          -
-                        </button>
-                      </div>
-                      <div class="col-6 fw-bolder">$64.00</div>
-                    </div>
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-2 fw-bolder">
-                    Black
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-3">
-                    <div
-                      class="d-flex justify-content-center align-items-baseline"
-                    >
-                      <button
-                        class="rounded-circle aspect-square border-0 h-30px"
-                      >
-                        +
-                      </button>
-                      <span class="mx-2">2</span>
-                      <button
-                        class="rounded-circle aspect-square border-0 h-30px"
-                      >
-                        -
-                      </button>
-                    </div>
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-2 fw-bolder">
-                    $64.00
-                  </div>
-                </article>
-                <article
-                  class="row align-items-center justify-content-center bg-grey-100 mb-3 rounded-3"
-                >
-                  <div class="col-6 col-lg-5 d-flex align-items-center">
-                    <figure class="row m-0">
-                      <img
-                        class="col-7 aspect-square fit-contain"
-                        src="../img/sony-camera.webp"
-                        alt="Full Frame Mirrorless Digital Camera ILCE-7M3 A7I (Body
-                        only)"
-                      />
-                    </figure>
-                    <p class="col-5 d-none d-lg-block m-0">
-                      Full Frame Mirrorless Digital Camera ILCE-7M3 A7I (Body
-                      only)
-                    </p>
-                  </div>
-                  <div
-                    class="col-6 d-lg-none d-flex flex-column justify-content-start align-items-start gap-2"
-                  >
-                    <p class="m-0">
-                      Full Frame Mirrorless Digital Camera ILCE-7M3 A7I (Body
-                      only)
-                    </p>
-                    <div class="text-secondary fw-bolder">No Color</div>
-                    <div
-                      class="row flex-row-reverse justify-content-center align-items-baseline w-100"
-                    >
-                      <div class="col-6 d-flex align-items-center">
-                        <button
-                          class="rounded-circle aspect-square border-0 h-30px"
-                        >
-                          +
-                        </button>
-                        <span class="mx-2">2</span>
-                        <button
-                          class="rounded-circle aspect-square border-0 h-30px"
-                        >
-                          -
-                        </button>
-                      </div>
-                      <div class="col-6 fw-bolder">$3100.00</div>
-                    </div>
-                  </div>
-                  <div
-                    class="d-none d-lg-block col-2 col-lg-2 text-secondary fw-bolder"
-                  >
-                    No Color
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-3">
-                    <div
-                      class="d-flex justify-content-center align-items-baseline"
-                    >
-                      <button
-                        class="rounded-circle aspect-square border-0 h-30px"
-                      >
-                        +
-                      </button>
-                      <span class="mx-2">2</span>
-                      <button
-                        class="rounded-circle aspect-square border-0 h-30px"
-                      >
-                        -
-                      </button>
-                    </div>
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-2 fw-bolder">
-                    $3100.00
-                  </div>
-                </article>
-                <article
-                  class="row align-items-center justify-content-center bg-grey-100 mb-3 rounded-3"
-                >
-                  <div class="col-6 col-lg-5 d-flex align-items-center">
-                    <figure class="row m-0">
-                      <img
-                        class="col-7 aspect-square fit-contain"
-                        src="../img/sony-ps5.webp"
-                        alt="Standard Console PlayStation®5"
-                      />
-                    </figure>
-                    <p class="col-5 d-none d-lg-block">
-                      Standard Console PlayStation®5
-                    </p>
-                  </div>
-                  <div
-                    class="col-6 d-lg-none d-flex flex-column justify-content-start align-items-start gap-2"
-                  >
-                    <p class="m-0">Standard Console PlayStation®5</p>
-                    <div class="text-secondary fw-bolder">White</div>
-                    <div
-                      class="row flex-row-reverse justify-content-center align-items-baseline w-100"
-                    >
-                      <div class="col-6 d-flex align-items-center">
-                        <button
-                          class="rounded-circle aspect-square border-0 h-30px"
-                        >
-                          +
-                        </button>
-                        <span class="mx-2">2</span>
-                        <button
-                          class="rounded-circle aspect-square border-0 h-30px"
-                        >
-                          -
-                        </button>
-                      </div>
-                      <div class="col-6 fw-bolder">$600.00</div>
-                    </div>
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-2 fw-bolder">
-                    White
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-3">
-                    <div
-                      class="d-flex justify-content-center align-items-baseline"
-                    >
-                      <button
-                        class="rounded-circle aspect-square border-0 h-30px"
-                      >
-                        +
-                      </button>
-                      <span class="mx-2">2</span>
-                      <button
-                        class="rounded-circle aspect-square border-0 h-30px"
-                      >
-                        -
-                      </button>
-                    </div>
-                  </div>
-                  <div class="d-none d-lg-block col-2 col-lg-2 fw-bolder">
-                    $600.00
-                  </div>
-                </article>
+              <?php endforeach ?>
                 <section class="row text-center justify-content-between mt-4">
                   <div
                     class="cursor-pointer col-6 col-lg-3 text-secondary my-3 p-0 pe-2"
                   >
                     <article class="pe-2 bg-grey-300 py-4 rounded-3">
-                      <a href="./product-detail.php">Back to Shopping</a>
+                      <a href="./product-detail.php">Volver a comprar</a>
                     </article>
                   </div>
                   <div
                     class="cursor-pointer col-6 col-lg-3 text-secondary my-3 p-0 ps-2"
                   >
                     <article class="ps-2 bg-grey-300 py-4 rounded-3">
-                      <a href="../index.php">Back to Home</a>
+                      <a href="../index.php">Volver a Home</a>
                     </article>
                   </div>
                   <article
                     class="col-12 col-lg-3 bg-grey-300 py-4 rounded-3 text-secondary my-3"
                   >
                     Subtotal:
-                    <span class="text-light fw-bolder ps-2">$8228.00</span>
+                    <span class="text-light fw-bolder ps-2">$<?php echo $total ?></span>
                   </article>
                 </section>
               </section>
 
               <section class="d-none d-lg-block col-lg-4">
                 <div class="bg-grey p-3 rounded-3">
-                  <h3>Card Detail</h3>
+                  <h3>Detalles de Tarjeta</h3>
                   <p class="text-uppercase text-secondary fw-bolder">
-                    select card tye
+                    seleccionar tipo de tarjeta
                   </p>
                   <form action="">
                     <div class="d-flex gap-2 flex-wrap">
@@ -509,7 +340,7 @@
                     </div>
                     <div class="my-4">
                       <label class="d-block mb-2" for="nameLastname"
-                        >Name Lastname</label
+                        >Ultimo nombre</label
                       >
                       <input
                         required
@@ -532,7 +363,7 @@
                     <div class="row my-4">
                       <div class="col-6">
                         <label class="m-0 p-0 w-100 mb-2" for="expiryDate"
-                          >Expiry Date</label
+                          >Fecha de Expiracion</label
                         >
                         <input
                           required
@@ -565,289 +396,27 @@
               </section>
             </div>
           </div>
-          <!-- Products -->
+          <!-- Productos -->
           <section class="row">
-            <h2 class="text-center mt-5">Users Also Bought</h2>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-speaker-xp500.jpg"
-                      alt="XP500 Portable Wireless Speaker"
-                    />
-                    <figcaption>XP500 Portable Wireless Speaker</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  WIRELESS SPEAKERS
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-tv-2.jfif"
-                      alt="4K Ultra HD Smart TV with Google TV 65"
-                    />
-                    <figcaption>
-                      4K Ultra HD Smart TV with Google TV 65"
-                    </figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  TELEVISIONS
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-lens.webp"
-                      alt="FE PZ 16-35 mm F4 G Lens"
-                    />
-                    <figcaption>FE PZ 16-35 mm F4 G Lens</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  CAMERAS ACCESORIES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-speaker.jfif"
-                      alt="EXTRA BASS™ XB13 portable wireless speaker"
-                    />
-                    <figcaption>
-                      EXTRA BASS™ XB13 portable wireless speaker
-                    </figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  PORTABLE SPEAKERS
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100"
-                      src="../img/sony-headphones.webp"
-                      alt="WH-CH720N Wireless Noise Cancelling Headphones"
-                    />
-                    <figcaption>
-                      WH-CH720N Wireless Noise Cancelling Headphones
-                    </figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  HEADPHONES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-psn.png"
-                      alt="PS Gift Card $25"
-                    />
-                    <figcaption>PS Gift Card $25</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">PSN CARDS</p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-speaker-3.jpg"
-                      alt="Sony Bluetooth speaker MHC-V13/M"
-                    />
-                    <figcaption>Sony Bluetooth speaker MHC-V13/M</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  WIRELESS SPEAKERS
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-joystick-ps5.webp"
-                      alt="PS5 DualSense™ Wireless Control"
-                    />
-                    <figcaption>PS5 DualSense™ Wireless Control</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  Playstation Accessories
-                </p>
-              </div>
-            </article>
+            <h2 class="text-center mt-5">Los usuarios tambien compraron</h2>
+            <?php require('../layout/_productsContainer.php')?>
           </section>
+
+          <?php
+            $categorias=[
+              'Motherboards','Tarjetas Gráficas','Memorias RAM','Monitores','Coolers','Gabinetes','Fuentes','Perifericos'
+            ];
+            $categoriaRandom = $categorias[rand(0,7)];
+            $products=getProductsByCategory($conexion,$categoriaRandom);
+            $products = array_slice($products,0,$productosEnGaleria);
+          ?>
+
+          
+
           <!-- Related Products -->
           <section class="row">
-            <h2 class="text-center mb-4 mt-5">Related Products</h2>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-vertical-grip.webp"
-                      alt="Vertical Grip VG-C5"
-                    />
-                    <figcaption>Vertical Grip VG-C5</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  CAMERAS ACCESORIES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-pistol-mic.webp"
-                      alt="Pistol microphone ECM-G1"
-                    />
-                    <figcaption>Pistol microphone ECM-G1</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  CAMERAS ACCESORIES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-lens.webp"
-                      alt="FE PZ 16-35 mm F4 G Lens"
-                    />
-                    <figcaption>FE PZ 16-35 mm F4 G Lens</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  CAMERAS ACCESORIES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-ps4-camera.webp"
-                      alt="PlayStation VR CAMERA V2"
-                    />
-                    <figcaption>PlayStation VR CAMERA V2</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  Playstation Accessories
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-headphones-silver.webp"
-                      alt="WH-1000XM4 Wireless Noise Cancelling Headphones"
-                    />
-                    <figcaption>
-                      WH-1000XM4 Wireless Noise Cancelling Headphones
-                    </figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  HEADPHONES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-psn.png"
-                      alt="PS Gift Card $25"
-                    />
-                    <figcaption>PS Gift Card $25</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">PSN CARDS</p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-headphones-inzone-h9.jpg"
-                      alt="INZONE H9 Wireless Noise Canceling"
-                    />
-                    <figcaption>INZONE H9 Wireless Noise Canceling</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  HEADPHONES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-ps4-vr.webp"
-                      alt="PlayStation VR"
-                    />
-                    <figcaption>PlayStation VR</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  Playstation Accessories
-                </p>
-              </div>
-            </article>
+            <h2 class="text-center mb-4 mt-5">Productos relacionados</h2>
+            <?php require('../layout/_productsContainer.php')?>
           </section>
         </main>
       </div>

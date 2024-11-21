@@ -32,7 +32,7 @@ if ($category) {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexus Store - Product Detail</title>
+  <title>Nexus Store - Producto</title>
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -267,13 +267,13 @@ if ($category) {
             <?php 
               $reviewsTotales = rand(0, 600);
               $reviewsBuenas = rand(0,  $reviewsTotales);
-              $tasaBuenas = $reviewsBuenas / $reviewsTotales;
+              $tasaBuenas = ($reviewsBuenas / $reviewsTotales)*5;
               $tasaBuenas = round($tasaBuenas,2);
 
               $porcentaje = ($reviewsBuenas / $reviewsTotales) * 100;
               $porcentaje = round($porcentaje,2);
             ?>
-            <span class="d-inline-block display-6 fw-bolder align-top"><?php echo "{$tasaBuenas}/1" ?></span>
+            <span class="d-inline-block display-6 fw-bolder align-top"><?php echo "{$tasaBuenas}/5" ?></span>
             <div class="d-inline-block ms-2">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>

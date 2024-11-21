@@ -4,7 +4,7 @@ if (!isset($product) || !is_array($product)) {
     return;
 }
 
-require_once __DIR__ . '/../../consultas/consultas_componentes.php';
+require_once __DIR__ . '/../consultas/consultas_componentes.php';
 
 $title = $product['nombre_producto'] ?? 'Unknown Product';
 $imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';

@@ -316,11 +316,7 @@ $description = $product['descripcion'] ?? '. . .';
             </div>
             <p class="fw-light">
               <?php $totalReviews = rand(0, 600); ?>
-<<<<<<< HEAD
               <?php $percentage = ($totalReviews/2 / $totalReviews) * 100; ?>
-=======
-              <?php $percentage = ($recommendedReviews / $totalReviews) * 100; ?>
->>>>>>> ebe209e80c1ff1560bff6a5115432a78071a9210
 
               <?php echo rand(0,  $totalReviews) ?> out of <?php echo $totalReviews ?> (<?php echo $percentage ?>%) reviews recommend this product
             </p>

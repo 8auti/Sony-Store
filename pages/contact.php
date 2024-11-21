@@ -68,12 +68,14 @@ function test_input($data) {
     <h1 class="text-center mt-5 mb-3">Centro de Soporte</h1>
     <h2 class="text-center mb-5">Como podemos ayudarte?</h2>
 
+    <!-- Mensajes de error -->
     <ul>
       <?php foreach($errores as $error) : ?>
         <li class="text-light bg-danger"><?php echo $error ?></li>
       <?php endforeach ?>
     </ul>
-
+    
+    <!-- Mensaje de formulario completado -->
     <h2 class="text-center mb-5 text-light bg-success"> <?php echo $mensajePostFormulario ?> </h2>
 
     <section class="row justify-content-center align-items-start">

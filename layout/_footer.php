@@ -3,19 +3,19 @@
     <section class="row justify-content-center align-items-start w-100">
         <article class="col-6 col-lg-2 text-start">
             <ul>
-                <li>Find a Distributor</li>
+                <li>Encontrar un distribuidor</li>
                 <li class="">
                     <form action="#" method="get" class="row my-2 px-2">
                         <input
                             class="col-7 border-0"
-                            placeholder="📍 Search..."
+                            placeholder="📍 Busqueda..."
                             type="text"
                             id="searchInput"
                             name="searchQuery" />
                         <input
                             class="col-5 bg-grey-100 border-0 text-center"
                             type="submit"
-                            value="Search"
+                            value="Buscar"
                             id="searchSubmit"
                             name="searchSubmit" />
                     </form>
@@ -34,34 +34,33 @@
         </article>
         <article class="col-6 col-lg-2 text-start">
             <ul>
-                <li>Online Shopping</li>
-                <li class="text-secondary">Help Center</li>
-                <li class="text-secondary">Returns and Exchanges</li>
-                <li class="text-secondary">Consumer Protection</li>
-                <li class="text-secondary">Bank Promotions</li>
-                <li class="text-secondary">Suport and Warranty</li>
-                <li class="text-secondary">Online Store</li>
+                <li>Venta Online</li>
+                <li class="text-secondary">Centro de Soporte</li>
+                <li class="text-secondary">Retornos y Devoluciones</li>
+                <li class="text-secondary">Proteccion al Consumidor</li>
+                <li class="text-secondary">Promociones Bancarias</li>
+                <li class="text-secondary">Soporte y Garantias</li>
+                <li class="text-secondary">Tienda Online</li>
             </ul>
         </article>
         <article class="col-6 col-lg-2 text-start">
             <ul>
-                <li>Nexus Community</li>
-                <li class="text-secondary">Nexus Blog</li>
-                <li class="text-secondary">My Product Help</li>
+                <li>Comunidad Nexus</li>
+                <li class="text-secondary">Blog Nexus</li>
+                <li class="text-secondary">Ayuda con mi producto</li>
             </ul>
         </article>
         <article class="col-6 col-lg-2 text-start">
             <ul>
-                <li>About Nexus</li>
-                <li class="text-secondary">Corporate Information</li>
-                <li class="text-secondary">Press Center</li>
-                <li class="text-secondary">Nexus and the Environment</li>
-                <li class="text-secondary">Terms & Conditions</li>
+                <li>Sobre Nexus</li>
+                <li class="text-secondary">Informacion Corporativa</li>
+                <li class="text-secondary">Centro de Prensa</li>
+                <li class="text-secondary">Terminos y Condiciones</li>
             </ul>
         </article>
         <article class="col-12 col-lg-2 text-start">
             <ul>
-                <li class="mb-2">Payment Methods</li>
+                <li class="mb-2">Metodos de Pago</li>
                 <li
                     class="px-3 py-2 mb-2 bg-grey-100 fw-bolder d-inline-block cursor-pointer">
                     Visa

@@ -1,8 +1,10 @@
 <?php
-
 require_once('./consultas/conexion.php');
 require_once('./consultas/consultas_componentes.php');
-$products = getProducts($conexion);
+
+$products = getProducts($conexion) ?? [];
+$productosEnGaleria = 8;
+$products = array_slice($products,rand(1,count($products)-$productosEnGaleria),$productosEnGaleria); // Array, Offset, Cantidad de productos a cargar
 ?>
 
 <!DOCTYPE html>

@@ -17,7 +17,7 @@ CREATE TABLE productos (
     stock INT DEFAULT 0,
     id_categoria INT,
     nombre_categoria text,
-    url VARCHAR(255)
+    url_imagen VARCHAR(255)
 );
 
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
@@ -33,7 +33,7 @@ INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 ('10','Fuentes'),
 ('11','Perifericos');
 
-INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombre_categoria, url) VALUES
+INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombre_categoria, url_imagen) VALUES
 -- Graficas
 ('NVIDIA GeForce RTX 4090','Tarjeta gráfica de alta gama para juegos en 4K.',1600.00,'03','Tarjetas Gráficas','https://www.computershopping.com.ar/Images/Productos/Descripciones/GV-N408SWF3V2-16GD_heroimg_900w.png'),
 ('AMD Radeon RX 7900 XTX','Potente tarjeta gráfica para juegos y creación en 4K.',1000.00,'03','Tarjetas Gráficas','https://www.biostar.com.tw/picture/Review/525/RX7900XT_45_3_s.png'),

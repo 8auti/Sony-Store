@@ -1,0 +1,6 @@
+Nombre Grupo: cOuNtER sTRIKe
+
+Integrantes:
+ - Escolar Nicolas (Data Engineer)
+ - Sr Losilla Silva Bautista (Subordinado)
+ - Hirzfeld Esteban (Capitán)

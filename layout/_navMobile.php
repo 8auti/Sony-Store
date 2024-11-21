@@ -73,7 +73,7 @@
         </a>
       </li>
       <li class="text-secondary">
-        <a href="/nexus/pages/products.php?category=refrigeracion" class="px-0 align-middle">
+        <a href="/nexus/pages/products.php?category=coolers" class="px-0 align-middle">
           <i class="fa-solid fa-fan" aria-hidden="true"></i>
           <span class="ms-2 d-sm-inline align-bottom">Refrigeración</span>
         </a>

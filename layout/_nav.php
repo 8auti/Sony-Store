@@ -30,7 +30,7 @@
         id="menu">
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=motherboards" class="align-middle px-0">
-            <i class="fa-regular fa-microchip"></i>
+            <i class="fa-solid fa-microchip"></i>
             <span class="ms-2 d-none d-sm-inline align-bottom">Motherboards</span></a>
         </li>
         <li class="text-secondary">
@@ -40,32 +40,32 @@
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=memorias-ram" class="px-0 align-middle">
-            <i class="fa-regular fa-memory"></i>
+            <i class="fa-solid fa-memory"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Memorias RAM</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=refrigeración" class="px-0 align-middle">
-            <i class="fa-regular fa-fan"></i>
+            <i class="fa-solid fa-fan"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Refrigeración</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=gabinetes" class="px-0 align-middle">
-            <i class="fa-regular fa-computer"></i>
+            <i class="fa-solid fa-computer"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Gabinetes</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=fuentes" class="px-0 align-middle">
-            <i class="fa-regular fa-bolt"></i>
+            <i class="fa-solid fa-bolt"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Fuentes</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=monitores" class="px-0 align-middle">
-            <i class="fa-regular fa-desktop"></i>
+            <i class="fa-solid fa-desktop"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Monitores</span></a>
         </li>
         <li class="text-secondary">
           <a href="/nexus/pages/products.php?category=periféricos" class="px-0 align-middle">
-            <i class="fa-regular fa-computer-mouse"></i>
+            <i class="fa-solid fa-computer-mouse"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Periféricos</span></a>
         </li>
       </ul>

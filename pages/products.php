@@ -1,3 +1,15 @@
+<?php
+
+require_once('../consultas/conexion.php');
+require_once('../consultas/consultas_componentes.php');
+
+if (isset($_GET['category'])) {
+    $categoryName = $_GET['category'];
+    $products = getProductsByCategory($conexion, $categoryName);
+    echo var_dump($products);
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,6 +59,8 @@
                     </li>
                 </ul>
             </section>
+            <!-- Products -->
+            <?php require('../layout/_productsContainer.php') ?>
         </main>
     </aside>
 

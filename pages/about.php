@@ -30,7 +30,7 @@
           <!-- Header -->
           <?php require('../layout/_header.php')?>
 
-          <section>
+          <section class="container-fluid">
               <article>
                 <div>
                   <h2>¿Quiénes somos?</h2>
@@ -73,6 +73,8 @@
                 </div>
               </article>
           </section>
+          </main>
+          </aside>
     <!-- Footer -->
     <?php require('../layout/_footer.php')?>
     

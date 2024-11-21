@@ -1,9 +1,16 @@
+<?php
+$mensajePostFormulario="";
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  $mensajePostFormulario = 'Formulario completado. Nos pondremos en contacto.';
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Store - Contact</title>
+    <title>Nexus Store - Contacto</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,6 +33,8 @@
       <h1 class="text-center mt-5 mb-3">Centro de Soporte</h1>
       <h2 class="text-center mb-5">Como podemos ayudarte?</h2>
 
+      <h3 class="text-center text-light bg-success mb-5"><?php echo $mensajePostFormulario ?></h3>
+
       <section class="row justify-content-center align-items-start">
         <article class="col-12 col-md-6 text-center">
           <h3 class="text-start">Contactanos</h3>
@@ -33,9 +42,9 @@
             Completa el formulario para reportar un error o consultar sobre algo que no hayas encontrado en el FAQ
           </p>
         </article>
-        
+
         <article class="col-12 col-md-6 text-start">
-          <form action="">
+          <form action="contact.php" method="post">
 
             <div class="mt-2">
               <label for="">Tema:</label>
@@ -45,15 +54,6 @@
                 placeholder="Seleccionar tema"
                 required
               />
-            </div>
-
-            <div class="mt-2">
-              <label for="">Mensaje:</label>
-              <textarea
-                class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
-                placeholder="Tu mensaje"
-                required
-              ></textarea>
             </div>
 
             <div class="mt-2">
@@ -74,6 +74,15 @@
                 placeholder="Telefono"
                 required
               />
+            </div>
+
+            <div class="mt-2">
+              <label for="">Mensaje:</label>
+              <textarea
+                class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
+                placeholder="Tu mensaje"
+                required
+              ></textarea>
             </div>
 
             <input

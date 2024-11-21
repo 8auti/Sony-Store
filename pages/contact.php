@@ -3,6 +3,27 @@ $mensajePostFormulario="";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $mensajePostFormulario = 'Formulario completado. Nos pondremos en contacto.';
 }
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+  $tema = $_POST['tema'] ?? null;
+  $tema = test_input($tema);
+
+  $email = $_POST['email'] ?? null;
+  $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+  $telefono = $_POST['telefono'] ?? null;
+  $telefono = filter_var($telefono, FILTER_VALIDATE_INT);
+
+  $mensaje = $_POST['mensaje'] ?? null;
+  $mensaje = test_input($mensaje);
+
+  echo $tema,$email,$telefono,$mensaje;
 ?>
 
 <!DOCTYPE html>
@@ -48,16 +69,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input
               class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
               type="text"
+              name="tema"
               placeholder="Seleccionar tema"
               required />
-          </div>
-
-          <div class="mt-2">
-            <label for="">Mensaje:</label>
-            <textarea
-              class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
-              placeholder="Tu mensaje"
-              required></textarea>
           </div>
 
           <div class="mt-2">
@@ -65,6 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input
               class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
               type="email"
+              name="email"
               placeholder="Email"
               required />
           </div>
@@ -74,8 +89,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <input
               class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
               type="number"
+              name="telefono"
               placeholder="Telefono"
               required />
+          </div>
+
+          <div class="mt-2">
+            <label for="">Mensaje:</label>
+            <textarea
+              class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
+              name="mensaje"
+              placeholder="Tu mensaje"
+              required></textarea>
           </div>
 
           <input

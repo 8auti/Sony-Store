@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS tienda_pc;
+
 CREATE DATABASE tienda_pc;
 USE tienda_pc;
 

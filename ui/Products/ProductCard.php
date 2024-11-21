@@ -4,9 +4,9 @@ if (!isset($product) || !is_array($product)) {
     return;
 }
 
-$title = $product['title'] ?? 'Unknown Product';
-$imageUrl = $product['images'][0] ?? 'https://via.placeholder.com/150';
-$category = $product['category'] ?? 'Unknown Category';
+$title = $product['nombre_producto'] ?? 'Unknown Product';
+$imageUrl = $product['nombre_imagen']?? 'https://via.placeholder.com/150';
+$category = $product['nombre_categoria'] ?? 'Unknown Category';
 ?>
 
 <article class="col-6 col-md-4 col-lg-3 text-center product-card my-3 p-1">

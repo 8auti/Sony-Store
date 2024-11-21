@@ -32,7 +32,6 @@
 
           <section>
               <article>
-              <img src="../img/Studio.png" class="img-fluid" alt="...">
                 <div>
                   <h2>¿Quiénes somos?</h2>
                   <p>
@@ -63,155 +62,9 @@
                 Nuestra misión es brindar a cada gamer una experiencia de compra excepcional, ofreciendo productos de la más alta calidad a precios competitivos, y asegurando que cada compra sea un paso más hacia un rendimiento de juego superior.
                 </p>
                 </div>
+                <img src="../img/Studio.png" class="img-thumbnail" alt="...">
               </article>
           </section>
-
-
-
-          <!-- Related Products -->
-          <section class="row">
-            <h2 class="text-center mb-4 mt-5">Related Products</h2>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-vertical-grip.webp"
-                      alt="Vertical Grip VG-C5"
-                    />
-                    <figcaption>Vertical Grip VG-C5</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  CAMERAS ACCESORIES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-pistol-mic.webp"
-                      alt="Pistol microphone ECM-G1"
-                    />
-                    <figcaption>Pistol microphone ECM-G1</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  CAMERAS ACCESORIES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-lens.webp"
-                      alt="FE PZ 16-35 mm F4 G Lens"
-                    />
-                    <figcaption>FE PZ 16-35 mm F4 G Lens</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  CAMERAS ACCESORIES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-ps4-camera.webp"
-                      alt="PlayStation VR CAMERA V2"
-                    />
-                    <figcaption>PlayStation VR CAMERA V2</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  Playstation Accessories
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-headphones-silver.webp"
-                      alt="WH-1000XM4 Wireless Noise Cancelling Headphones"
-                    />
-                    <figcaption>
-                      WH-1000XM4 Wireless Noise Cancelling Headphones
-                    </figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  HEADPHONES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-psn.png"
-                      alt="PS Gift Card $25"
-                    />
-                    <figcaption>PS Gift Card $25</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">PSN CARDS</p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-headphones-inzone-h9.jpg"
-                      alt="INZONE H9 Wireless Noise Canceling"
-                    />
-                    <figcaption>INZONE H9 Wireless Noise Canceling</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  HEADPHONES
-                </p>
-              </div>
-            </article>
-            <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-              <div class="p-1 bg-grey-100 h-100">
-                <a href="./product-detail.php">
-                  <figure class="product-card">
-                    <img
-                      class="w-100 aspect-square fit-contain"
-                      src="../img/sony-ps4-vr.webp"
-                      alt="PlayStation VR"
-                    />
-                    <figcaption>PlayStation VR</figcaption>
-                  </figure>
-                </a>
-                <p class="text-secondary fw-bolder text-uppercase">
-                  Playstation Accessories
-                </p>
-              </div>
-            </article>
-          </section>
-        </main>
-      </div>
-    </aside>
-
     <!-- Footer -->
     <?php require('../layout/_footer.php')?>
     

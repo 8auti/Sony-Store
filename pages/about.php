@@ -62,7 +62,7 @@
                 Nuestra misión es brindar a cada gamer una experiencia de compra excepcional, ofreciendo productos de la más alta calidad a precios competitivos, y asegurando que cada compra sea un paso más hacia un rendimiento de juego superior.
                 </p>
                 </div>
-                <img src="../img/Studio.png" class="img-thumbnail" alt="...">
+                <img class = "AboutUs" src="../img/Studio.png" class="img-thumbnail" alt="...">
               </article>
           </section>
     <!-- Footer -->

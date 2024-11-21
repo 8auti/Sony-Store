@@ -7,8 +7,6 @@ if (isset($_GET['id'])) {
   $product = getProductById($conexion, $productId);
 }
 
-echo var_dump($product);
-
 $title = $product['nombre_producto'] ?? 'Unknown Product';
 $imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
 $category = $product['nombre_categoria'] ?? 'Unknown Category';
@@ -317,10 +315,10 @@ $description = $product['descripcion'] ?? '. . .';
               </p>
             </div>
             <p class="fw-light">
-              <? $totalReviews = rand(0, 600); ?>
-              <? $percentage = ($recommendedReviews / $totalReviews) * 100; ?>
+              <?php $totalReviews = rand(0, 600); ?>
+              <?php $percentage = ($totalReviews/2 / $totalReviews) * 100; ?>
 
-              <? echo rand(0,  $totalReviews) ?> out of <? echo $totalReviews ?> (<? echo $percentage ?>%) reviews recommend this product
+              <?php echo rand(0,  $totalReviews) ?> out of <?php echo $totalReviews ?> (<?php echo $percentage ?>%) reviews recommend this product
             </p>
           </article>
           <article class="col-12 col-md-3 mt-3">

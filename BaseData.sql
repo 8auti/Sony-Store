@@ -63,9 +63,9 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('Fractal Design Meshify C', 'Gabinete ATX con panel frontal de malla para una mejor refrigeración.', 100.00, '09', 'Gabinetes', 'https://www.fractal-design.com/wp-content/uploads/2021/02/Meshify-C-front-web.png'),
 
 -- Fuentes de Poder
-('Corsair RM850x', 'Fuente de poder de 850W, modular y eficiente.', 120.00, '06', 'Fuentes de Poder', 'https://cwsmgmt.corsair.com/landing/PSU-Family-Page/images/psu-with-badge-cx750f-rgb.png'),
-('EVGA SuperNOVA 1000 G5', 'Fuente de poder de 1000W, 80+ Gold.', 180.00, '06', 'Fuentes de Poder', 'https://images.evga.com/products/gallery/png/535-5G-1000-K1_LG_1.png'),
-('Seasonic FOCUS GX-750', 'Fuente de poder de 750W, modular y certificación 80+ Gold.', 110.00, '06', 'Fuentes de Poder', 'https://nzxt.com/assets/cms/34299/1673299642-c1200-gold-psu-hero-black.png?auto=format&fit=crop&h=1000&w=1000'),
+('Corsair RM850x', 'Fuente de poder de 850W, modular y eficiente.', 120.00, '06', 'Fuentes', 'https://cwsmgmt.corsair.com/landing/PSU-Family-Page/images/psu-with-badge-cx750f-rgb.png'),
+('EVGA SuperNOVA 1000 G5', 'Fuente de poder de 1000W, 80+ Gold.', 180.00, '06', 'Fuentes', 'https://images.evga.com/products/gallery/png/535-5G-1000-K1_LG_1.png'),
+('Seasonic FOCUS GX-750', 'Fuente de poder de 750W, modular y certificación 80+ Gold.', 110.00, '06', 'Fuentes', 'https://nzxt.com/assets/cms/34299/1673299642-c1200-gold-psu-hero-black.png?auto=format&fit=crop&h=1000&w=1000'),
 
 -- Monitores
 ('LG UltraGear 27GN950-B 4K','Monitor 4K IPS con tasa de refresco de 144Hz y G-Sync.',800.00,'06','Monitores','https://i0.wp.com/www.aslanstoreuy.com/wp-content/uploads/2023/06/Monitor-Gamer-LG-UltraGear-27-1ms-240Hz-Aslan-Store-1.png?fit=900%2C900&ssl=1'),

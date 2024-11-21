@@ -67,8 +67,10 @@ $products = array_slice($products, ($pagina-1)*$elementosPorPagina, $elementosPo
                     </li>
                 </ul>
             </section>
-            <!-- Products -->
+
+            <!-- Productos -->
             <?php require('../layout/_productsContainer.php') ?>
+
             <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center"">
                 <li class="page-item"><a class="page-link" href="#">Atras</a></li>

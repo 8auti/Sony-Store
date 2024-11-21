@@ -13,6 +13,18 @@ $category = $product['nombre_categoria'] ?? 'Unknown Category';
 $price = $product['precio'] ?? '. . .';
 $description = $product['descripcion'] ?? '. . .';
 
+if ($category) {
+  $products = getProductsByCategory($conexion, $category);
+  $limiteProductos = 8;
+
+  // Eliminar el producto que estamos viendo de la tabla productos, asi no aparece en productos relacionados.
+  $findKey = array_search($product, $products);
+  unset($products[$findKey]);
+
+  // Poner un limite a cuantos productos se van a cargar
+  array_slice($products,0,$limiteProductos);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +58,7 @@ $description = $product['descripcion'] ?? '. . .';
       <!-- Header -->
       <?php require('../layout/_header.php') ?>
       <section class="container-fluid">
-        <section class="row justify-content-center align-items-stretch">
+        <section class="row justify-content-start align-items-stretch">
           <article class="d-none d-lg-block col-lg-3 detail-card">
             <figure>
               <img
@@ -173,7 +185,7 @@ $description = $product['descripcion'] ?? '. . .';
                 <a href="./checkout.php" class="d-contents">
                   <div
                     class="col-8 bg-pill rounded-pill p-1 px-3 text-center">
-                    Order Now
+                    Pedir ahora
                   </div>
                 </a>
                 <div class="col-4">
@@ -184,65 +196,14 @@ $description = $product['descripcion'] ?? '. . .';
               </div>
             </section>
           </article>
-          <article class="row col-12 col-lg-3 p-0 m-0">
-            <div class="mb-2 col-4 col-lg-12 m-0 p-1">
-              <figure
-                class="bg-grey-100 aspect-square m-0 d-flex flex-column justify-content-center align-items-center rounded h-150px w-100 product-color">
-                <img
-                  class="w-100 fit-contain h-75"
-                  src="../img/sony-joystick-red.png"
-                  alt="PS5 Joystick Color Red" />
-                <figcaption class="text-center">Color: RED</figcaption>
-              </figure>
-            </div>
-            <div class="mb-2 col-4 col-lg-12 m-0 p-1">
-              <figure
-                class="bg-grey-100 aspect-square m-0 d-flex flex-column justify-content-center align-items-center rounded h-150px w-100 product-color">
-                <img
-                  class="w-100 fit-contain h-75"
-                  src="../img/sony-joystick-black.png"
-                  alt="PS5 Joystick Color Black" />
-                <figcaption class="text-center">Color: BLACK</figcaption>
-              </figure>
-            </div>
-            <div class="mb-2 col-4 col-lg-12 m-0 p-1">
-              <figure
-                class="bg-grey-100 aspect-square m-0 d-flex flex-column justify-content-center align-items-center rounded h-150px w-100 product-color">
-                <img
-                  class="w-100 fit-contain h-75"
-                  src="../img/sony-joystick-purple.png"
-                  alt="PS5 Joystick Color Purple" />
-                <figcaption class="text-center">Color: PURPLE</figcaption>
-              </figure>
-            </div>
-          </article>
         </section>
       </section>
+
       <section>
-        <h2 class="mb-4 mt-5">Product Description</h2>
-        <section class="row">
-          <article class="col-12 col-md-6">
-            <iframe
-              class="w-100 aspect-video"
-              src="https://www.youtube.com/embed/RkC0l4iekYo?si=O9u0g5yQ7rpeTd1U"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen></iframe>
-          </article>
-          <article class="col-12 col-md-6">
-            <h3>Dualsense Wireless Control</h3>
-            <p class="text-secondary">Playstation 5 - Play Has No Limits</p>
-            <p class="fw-light">
-              <?php echo $description ?>
-            </p>
-            <p class="text-orange fw-bolder">
-              USB charging cable not included
-            </p>
-          </article>
-        </section>
+        <h2 class="mb-4 mt-5">Descripcion de Producto</h2>
+        <h4><?php echo $description ?></h4>
       </section>
+
       <section>
         <h2 class="mb-4 mt-5">Reviews</h2>
         <section class="row">
@@ -250,7 +211,7 @@ $description = $product['descripcion'] ?? '. . .';
             <div class="container mt-5">
               <div class="row mb-2">
                 <div class="col-md-2">
-                  <span class="review-label color-light">5 Stars</span>
+                  <span class="review-label color-light">5 Estrellas</span>
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
@@ -260,7 +221,7 @@ $description = $product['descripcion'] ?? '. . .';
               </div>
               <div class="row mb-2">
                 <div class="col-md-2">
-                  <span class="review-label color-light">4 Stars</span>
+                  <span class="review-label color-light">4 Estrellas</span>
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
@@ -270,7 +231,7 @@ $description = $product['descripcion'] ?? '. . .';
               </div>
               <div class="row mb-2">
                 <div class="col-md-2">
-                  <span class="review-label color-light">3 Stars</span>
+                  <span class="review-label color-light">3 Estrellas</span>
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
@@ -280,7 +241,7 @@ $description = $product['descripcion'] ?? '. . .';
               </div>
               <div class="row mb-2">
                 <div class="col-md-2">
-                  <span class="review-label color-light">2 Stars</span>
+                  <span class="review-label color-light">2 Estrellas</span>
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
@@ -290,7 +251,7 @@ $description = $product['descripcion'] ?? '. . .';
               </div>
               <div class="row mb-2">
                 <div class="col-md-2">
-                  <span class="review-label color-light">1 Star</span>
+                  <span class="review-label color-light">1 Estrellas</span>
                 </div>
                 <div class="col-md-10">
                   <div class="review-bar rounded-pill bg-light">
@@ -302,8 +263,17 @@ $description = $product['descripcion'] ?? '. . .';
           </article>
           <article
             class="col-12 col-md-3 mt-3 bg-grey-100 p-3 rounded px-4">
-            <p class="fw-bolder">General Reviews</p>
-            <span class="d-inline-block display-6 fw-bolder align-top">4.5</span>
+            <p class="fw-bolder">Reseñas Generales</p>
+            <?php 
+              $reviewsTotales = rand(0, 600);
+              $reviewsBuenas = rand(0,  $reviewsTotales);
+              $tasaBuenas = $reviewsBuenas / $reviewsTotales;
+              $tasaBuenas = round($tasaBuenas,2);
+
+              $porcentaje = ($reviewsBuenas / $reviewsTotales) * 100;
+              $porcentaje = round($porcentaje,2);
+            ?>
+            <span class="d-inline-block display-6 fw-bolder align-top"><?php echo "{$tasaBuenas}/1" ?></span>
             <div class="d-inline-block ms-2">
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
@@ -311,18 +281,19 @@ $description = $product['descripcion'] ?? '. . .';
               <i class="fa-solid fa-star"></i>
               <i class="fa-solid fa-star"></i>
               <p class="fw-light text-small align-bottom text-secondary">
-                432 Reviews
+                <?php echo $reviewsTotales ?> Reseñas
               </p>
             </div>
             <p class="fw-light">
-              <?php $totalReviews = rand(0, 600); ?>
-              <?php $percentage = ($totalReviews/2 / $totalReviews) * 100; ?>
+              <?php 
+              
+              ?>
 
-              <?php echo rand(0,  $totalReviews) ?> out of <?php echo $totalReviews ?> (<?php echo $percentage ?>%) reviews recommend this product
+              <?php echo $reviewsBuenas ?> de <?php echo $reviewsTotales ?> (<?php echo $porcentaje ?>%) Reseñas recomendaron este producto
             </p>
           </article>
           <article class="col-12 col-md-3 mt-3">
-            <p class="fw-bolder">Review a product</p>
+            <p class="fw-bolder">Hacer una Reseña al producto</p>
             <div class="d-flex gap-2">
               <span class="cursor-pointer bg-light p-2 rounded text-center"><i class="text-dark fa-xl fa-regular fa-star"></i></span>
               <span class="cursor-pointer bg-light p-2 rounded text-center"><i class="text-dark fa-xl fa-regular fa-star"></i></span>
@@ -331,151 +302,16 @@ $description = $product['descripcion'] ?? '. . .';
               <span class="cursor-pointer bg-light p-2 rounded text-center"><i class="text-dark fa-xl fa-regular fa-star"></i></span>
             </div>
             <p class="fw-light mt-2">
-              To add a review, a valid email address is required for
-              verification purposes.
+              Para añadir una reseña, una direccion de email verificada es necesaria por razones de verificacion.
             </p>
           </article>
         </section>
       </section>
       <!-- Products -->
       <section class="row">
-        <h2 class="text-center mb-4 mt-5">Related Products</h2>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-headphones-inzone-h7.jpg"
-                  alt="INZONE H7 Wireless Noise Cancelling Headphones" />
-                <figcaption>
-                  INZONE H7 Wireless Noise Cancelling Headphones
-                </figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">
-              HEADPHONES
-            </p>
-          </div>
-        </article>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-ps5-vr-2.webp"
-                  alt="PlayStation® VR2" />
-                <figcaption>PlayStation® VR2</figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">
-              Playstation Accessories
-            </p>
-          </div>
-        </article>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-ps-move.webp"
-                  alt="PlayStation Move | motion controls" />
-                <figcaption>PlayStation Move | motion controls</figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">
-              Playstation Accessories
-            </p>
-          </div>
-        </article>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-joystick-silver.png"
-                  alt="Wireless DUALSHOCK®4 Silver Controller" />
-                <figcaption>
-                  Wireless DUALSHOCK®4 Silver Controller
-                </figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">
-              Playstation Accessories
-            </p>
-          </div>
-        </article>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-ps5-camera.webp"
-                  alt="Sony Playstation 5 Camera Original HD 1080p 1080p PS5" />
-                <figcaption>
-                  Sony Playstation 5 Camera Original HD 1080p 1080p PS5
-                </figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">
-              Playstation Accessories
-            </p>
-          </div>
-        </article>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-joystick-edge.webp"
-                  alt="PS5 Dualsense EDGE ZCP1 Case" />
-                <figcaption>PS5 Dualsense EDGE ZCP1 Case</figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">
-              Playstation Accessories
-            </p>
-          </div>
-        </article>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-ps5.webp"
-                  alt="Standard Console PlayStation®5" />
-                <figcaption>Standard Console PlayStation®5</figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">CONSOLES</p>
-          </div>
-        </article>
-        <article class="col-6 col-md-4 col-lg-3 text-center p-1">
-          <div class="p-1 bg-grey-100 h-100">
-            <a href="./product-detail.php">
-              <figure class="product-card">
-                <img
-                  class="w-100 aspect-square fit-contain"
-                  src="../img/sony-home-theatre.png"
-                  alt="5.1-channel home theater with wireless rear speakers |
-                      HT-S40R" />
-                <figcaption>
-                  5.1-channel home theater with wireless rear speakers |
-                  HT-S40R
-                </figcaption>
-              </figure>
-            </a>
-            <p class="text-secondary fw-bolder text-uppercase">
-              HOME THEATRE
-            </p>
-          </div>
-        </article>
+        <h2 class="text-center mb-4 mt-5">Productos Relacionados</h2>
+
+        <?php require('../layout/_productsContainer.php') ?>
       </section>
     </main>
     </div>

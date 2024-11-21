@@ -50,7 +50,7 @@
             <span class="ms-1 d-none d-sm-inline align-bottom">Memorias RAM</span></a>
         </li>
         <li class="text-secondary">
-          <a href="/nexus/pages/products.php?category=refrigeración" class="px-0 align-middle">
+          <a href="/nexus/pages/products.php?category=refrigeracion" class="px-0 align-middle">
             <i class="fa-solid fa-fan"></i>
             <span class="ms-1 d-none d-sm-inline align-bottom">Refrigeración</span></a>
         </li>

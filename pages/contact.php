@@ -23,9 +23,21 @@ function test_input($data) {
   $errores = [];
 
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $mensajePostFormulario = 'Formulario completado. Nos pondremos en contacto.';
     if (empty($tema)) {
-      $errores = 'Usted debe ingresar un Tema';
+      $errores[] = 'Usted debe ingresar un Tema';
+    }
+    if (empty($email)) {
+      $errores[] = 'Usted debe ingresar un Email';
+    }
+    if (empty($telefono)) {
+      $errores[] = 'Usted debe ingresar un Telefono';
+    }
+    if (empty($mensaje)) {
+      $errores[] = 'Usted debe ingresar un Mensaje';
+    }
+
+    if (empty($errores)) {
+      $mensajePostFormulario = 'Formulario completado. Nos pondremos en contacto.';
     }
   }
 ?>
@@ -55,6 +67,13 @@ function test_input($data) {
   <main class="container mb-5">
     <h1 class="text-center mt-5 mb-3">Centro de Soporte</h1>
     <h2 class="text-center mb-5">Como podemos ayudarte?</h2>
+
+    <ul>
+      <?php foreach($errores as $error) : ?>
+        <li class="text-light bg-danger"><?php echo $error ?></li>
+      <?php endforeach ?>
+    </ul>
+
     <h2 class="text-center mb-5 text-light bg-success"> <?php echo $mensajePostFormulario ?> </h2>
 
     <section class="row justify-content-center align-items-start">
@@ -106,7 +125,6 @@ function test_input($data) {
             <textarea
               class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
               name="mensaje"
-              value="<?php echo $mensaje ?>"
               placeholder="Tu mensaje"
               required></textarea>
           </div>

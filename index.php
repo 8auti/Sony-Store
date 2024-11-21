@@ -1,13 +1,13 @@
 <?php
 
-  try{
-    $conexion = new PDO('mysql:host=localhost;dbname=tienda_pc', 'root', '');
-  }catch(PDOException $e){
-    header("Location: pages/error.html");
-    exit;
-  }
+  require_once('./consultas/conexion.php');
+  require_once('./consultas/consultas_componentes.php');
 
-  $consulta = $conexion->query('SELECT nombre_producto from productos');
+  $usuarios = getUsuarios($conexion);
+
+  var_dump($usuarios)
+
+  //$consulta = $conexion->query('SELECT nombre_producto from productos');
 ?>
 
 <!DOCTYPE html>

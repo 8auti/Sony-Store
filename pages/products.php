@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">z
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,10 +45,8 @@
                         Most Sold
                     </li>
                 </ul>
-            </section>
-
+        </section>
         </main>
-        </div>
     </aside>
 
     <?php require('../layout/_footer.php') ?>

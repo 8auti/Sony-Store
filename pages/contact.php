@@ -33,23 +33,49 @@
             Completa el formulario para reportar un error o consultar sobre algo que no hayas encontrado en el FAQ
           </p>
         </article>
+        
         <article class="col-12 col-md-6 text-start">
           <form action="">
+
             <div class="mt-2">
               <label for="">Tema:</label>
               <input
                 class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
                 type="text"
                 placeholder="Seleccionar tema"
+                required
               />
             </div>
+
             <div class="mt-2">
               <label for="">Mensaje:</label>
               <textarea
                 class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100 h-150px"
                 placeholder="Tu mensaje"
+                required
               ></textarea>
             </div>
+
+            <div class="mt-2">
+              <label for="">Email:</label>
+              <input
+                class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
+                type="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div class="mt-2">
+              <label for="">Telefono:</label>
+              <input
+                class="rounded-3 border-0 mt-1 bg-grey py-1 ps-2 w-100"
+                type="number"
+                placeholder="Telefono"
+                required
+              />
+            </div>
+
             <input
               class="bg-grey-300 border-0 rounded-3 p-1 px-3 mt-2"
               type="submit"

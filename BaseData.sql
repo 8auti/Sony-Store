@@ -50,18 +50,4 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('Razer Huntsman Elite','Teclado mecánico con switches opto-mecánicos y retroiluminación RGB.',200.00,'11','https://assets3.razerzone.com/41R27mmpkpi7bp6usvS6UJpMKao=/1920x1280/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png'),
 ('SteelSeries Arctis 7','Auriculares inalámbricos para gaming con sonido envolvente 7.1.',150.00,'11','https://media.steelseriescdn.com/thumbs/catalog/items/61467/b2a580f20a3e41e2969d8680d8ec09ff.png.500x400_q100_crop-fit_optimize.png'),
 ('Logitech G203','Raton gaming ultraligero con sensor HERO de 15K.',120.00,'11','https://acdn.mitiendanube.com/stores/877/534/products/image-removebg-preview-711-ccbe7f811cde877b4f16902199593365-1024-1024.png');
-
-
-
-
-SELECT 
-    nombre_categoria
-FROM
-    categorias;
-
-
-SELECT 
-    nombre_producto
-FROM
-    productos;
-
+    

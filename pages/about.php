@@ -67,7 +67,15 @@
             </article>
           </section>
 
-          <div></div>
+          <section>
+            <article>
+              <div>
+                <p>
+                  Nosotros 
+                </p>
+              </div>
+            </article>
+          </section>
 
 
 

@@ -4,10 +4,6 @@
   require_once('./consultas/consultas_componentes.php');
 
   $usuarios = getUsuarios($conexion);
-
-  var_dump($usuarios)
-
-  //$consulta = $conexion->query('SELECT nombre_producto from productos');
 ?>
 
 <!DOCTYPE html>
@@ -46,21 +42,15 @@
         <div class="carousel-inner">
           <div class="carousel-item h-40vh active">
             <img
-              src="./img/sony-banner-1.jpg"
+              src="./img/banner-logitech.png"
               class="d-block w-100 h-100 fit-cover object-left"
-              alt="Sony Store Banner 1" />
+              alt="Nexus Store Banner 1" />
           </div>
           <div class="carousel-item h-40vh">
             <img
-              src="./img/Sony-Video-Banner-2.png"
+              src="./img/sony-banner.jpg"
               class="d-block w-100 h-100 fit-cover object-left"
-              alt="Sony Store Banner 2" />
-          </div>
-          <div class="carousel-item h-40vh">
-            <img
-              src="./img/Sony-Video-Banner-2.png"
-              class="d-block w-100 h-100 fit-cover object-center"
-              alt="Sony Store Banner 3" />
+              alt="Nexus Store Banner 2" />
           </div>
         </div>
       </section>

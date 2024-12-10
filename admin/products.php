@@ -96,7 +96,7 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                             
                             <td class="text-center">
                                 <a class="btn btn-light btn-sm" href="/nexus/admin/edit/product.php?id=<?php echo $product["id_producto"] ?>">
-                                    <i class="fas fa-edit"></i>
+                                    <i class="fas fa-edit text-dark"></i>
                                 </a>
                                 <button class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
@@ -111,8 +111,8 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                 <nav>
                     <ul class="pagination justify-content-center">
                         <?php for ($i = 1; $i <= $paginas; $i++): ?>
-                        <li class="page-item <?php echo ($i == $pagina) ? 'active' : ''; ?>">
-                            <a class="page-link" href="?page=<?php echo $i; ?>">
+                        <li class="page-item  <?php echo ($i == $pagina) ? 'active' : ''; ?>">
+                            <a class="page-link bg-dark" href="?page=<?php echo $i; ?>">
                                 <?php echo $i; ?>
                             </a>
                         </li>

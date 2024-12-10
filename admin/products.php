@@ -95,9 +95,9 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                             <td><?php echo htmlspecialchars($product['nombre_categoria']); ?></td>
                             
                             <td class="text-center">
-                                <button class="btn btn-light btn-sm">
+                                <a class="btn btn-light btn-sm" href="/nexus/admin/edit/product.php?id=<?php echo $product["id_producto"] ?>">
                                     <i class="fas fa-edit"></i>
-                                </button>
+                                </a>
                                 <button class="btn btn-danger btn-sm">
                                     <i class="fas fa-trash"></i>
                                 </button>

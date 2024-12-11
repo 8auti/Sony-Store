@@ -43,7 +43,7 @@
         ');
 
         if (isset($data['nombre'])) {
-            $consulta->bindParam(':nombre', trim($data['nombre']));
+            $consulta->bindParam(':nombre', $data['nombre']);
         }
 
         if (isset($data['descripcion'])) {

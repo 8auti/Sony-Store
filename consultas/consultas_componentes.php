@@ -42,13 +42,30 @@
             AND stock = :stock
         ');
 
-        $consulta->bindParam(':nombre', trim($data['nombre']));
-        $consulta->bindParam(':descripcion', $data['descripcion']);
-        $consulta->bindParam(':precio', $data['precio']);
-        $consulta->bindParam(':id_categoria', $data['id_categoria']);
-//      $consulta->bindParam(':nombre_categoria', $data['id_categoria']); // se podria hacer automaticamente con el id categoria
-        $consulta->bindParam(':url_imagen', $data['url_imagen']);
-        $consulta->bindParam(':stock', $data['stock']);
+        if (isset($data['nombre'])) {
+            $consulta->bindParam(':nombre', $data['nombre']);
+        }
+
+        if (isset($data['descripcion'])) {
+            $consulta->bindParam(':descripcion', $data['descripcion']);
+        }
+
+        if (isset($data['precio'])) {
+            $consulta->bindParam(':precio', $data['precio']);
+        }
+
+        if (isset($data['id_categoria'])) {
+            $consulta->bindParam(':id_categoria', $data['id_categoria']);
+        //  $consulta->bindParam(':nombre_categoria', $data['id_categoria']); // se podria hacer automaticamente con el id categoria
+        }
+
+        if (isset($data['url_imagen'])) {
+            $consulta->bindParam(':url_imagen', $data['url_imagen']);
+        }
+
+        if (isset($data['stock'])) {
+            $consulta->bindParam(':stock', $data['stock']);
+        }
 
         $consulta->execute();
     }

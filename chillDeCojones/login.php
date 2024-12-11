@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user) {
         $_SESSION['user'] = $user;
         header('Location: /nexus/index.php');
+        exit;
     } else {
         $error = 'Los datos son incorrectos.';
     }

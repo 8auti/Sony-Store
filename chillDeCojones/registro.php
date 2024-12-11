@@ -48,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ]);
 
         header("Location: /nexus/pages/login.php");
+        exit;
     }
 }
 ?>

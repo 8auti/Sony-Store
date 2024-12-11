@@ -83,7 +83,7 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                         <?php echo $user['rol_usuario'] === 'admin' ? '<i class="fas fa-check" style="color: green;"></i>' : '<i class="fas fa-times" style="color: red;"></i>'; ?>
                       </td>
                       <td class="text-center">
-                        <a href="/admin/user/<?php echo $user['id_usuario']; ?>/edit">
+                        <a href="/nexus/admin/edit/user.php?id=<?php echo $user['id_usuario']; ?>/edit">
                           <button class="btn btn-light btn-sm">
                             <i class="fas fa-edit"></i>
                           </button>

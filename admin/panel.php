@@ -7,6 +7,7 @@ require_once('../consultas/consultas_usuarios.php');
 $user = $_SESSION['user'] ?? null;
 if ($user['rol_usuario'] !== 'admin') {
   header("Location: /nexus/index.php");
+  exit;
 }
 
 ?>

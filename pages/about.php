@@ -1,3 +1,6 @@
+<?php
+  require_once('../consultas/conexion.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">

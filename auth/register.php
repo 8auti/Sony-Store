@@ -117,6 +117,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     required
                                     placeholder="Enter password" />
                             </div>
+                            <div class="form-group my-3">
+                                <label for="password">Volver a introducir Contraseña</label>
+                                <input
+                                    type="password"
+                                    id="password2"
+                                    name="password2"
+                                    class="form-control"
+                                    required
+                                    placeholder="Enter password" />
+                            </div>
                             
                             <button type="submit" class="btn btn-primary my-3">Registrarse</button>
 

@@ -46,14 +46,20 @@
 
         if (isset($data['nombre'])) {
             $consulta->bindParam(':nombre', $data['nombre']);
+        } else {
+            $consulta->bindParam(':nombre', 'Placeholder');
         }
 
         if (isset($data['descripcion'])) {
             $consulta->bindParam(':descripcion', $data['descripcion']);
+        } else {
+            $consulta->bindParam(':descripcion', 'Placeholder');
         }
 
         if (isset($data['precio'])) {
             $consulta->bindParam(':precio', $data['precio']);
+        } else {
+            $consulta->bindParam(':precio', 100.0);
         }
 
         if (isset($data['id_categoria'])) {
@@ -63,10 +69,14 @@
 
         if (isset($data['url_imagen'])) {
             $consulta->bindParam(':url_imagen', $data['url_imagen']);
+        } else {
+            $consulta->bindParam(':url_imagen', 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg');
         }
 
         if (isset($data['stock'])) {
             $consulta->bindParam(':stock', $data['stock']);
+        } else {
+            $consulta->bindParam(':stock', 1);
         }
 
         $consulta->execute();

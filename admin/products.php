@@ -1,18 +1,17 @@
 <?php
 
 require_once('../consultas/conexion.php');
+require_once('../consultas/consultas_componentes.php');
 require_once('../consultas/consultas_usuarios.php');
 
-$rol = $_POST['rol'] ?? null;
-// Si no es un administrador, enviar usuario a index
-if ($rol != 'admin') {
+$user = $_SESSION['user'] ?? null;
+if ($user['rol_usuario'] !== 'admin') {
     header("Location: /nexus/index.php");
 }
 
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-
-$products = getProducts($conexion); 
+$products = getProducts($conexion);
 
 $length = count($products);
 $elementosPorPagina = 8;
@@ -54,22 +53,22 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
             <!-- Header -->
             <?php require('../layout/_header.php'); ?>
 
-            <div class="container mt-5">
+            <div class="container mt-5 p-0 p-sm-3">
                 <div class="row align-items-center justify-content-between">
                     <div class="col-md-5">
-                        <h1>Products</h1>
+                        <h1>Productos</h1>
                     </div>
                     <div class="col-md-5 text-md-end">
                         <div class="row g-2">
                             <div class="col-md-6">
-                                <input 
-                                    type="text" 
-                                    placeholder="Search Products..." 
+                                <input
+                                    type="text"
+                                    placeholder="Buscar Productos..."
                                     class="form-control">
                             </div>
                             <div class="col-md-6">
                                 <button class="btn btn-primary w-100">
-                                    <i class="fas fa-plus"></i> Create Product
+                                    <i class="fas fa-plus"></i> Crear Producto
                                 </button>
                             </div>
                         </div>
@@ -81,57 +80,63 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th class="text-center">IMAGE</th>
-                            <th>NAME</th>
-                            <th>PRICE</th>
-                            <th>CATEGORY</th>
-                            <th class="text-center">ACTIONS</th>
+                            <th class="text-center">IMAGEN</th>
+                            <th>NOMBRE</th>
+                            <th>PRECIO</th>
+                            <th class="d-none d-sm-table-cell">CATEGORIA</th> <!-- Hide on mobile -->
+                            <th class="text-center">ACCIONES</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php foreach ($products as $product): ?>
-                        <tr>
-                            <td><?php echo htmlspecialchars($product['id_producto']); ?></td>
-                            <td class="text-center">
-                                <img src="<?php echo htmlspecialchars($product['url_imagen']); ?>" alt="<?php echo htmlspecialchars($product['name']); ?>" width="50">
-                            </td>
-                            <td><a href="#"><?php echo htmlspecialchars($product['nombre_producto']); ?></a></td>
-                            <td><?php echo htmlspecialchars($product['precio']); ?></td>
-                            <td><?php echo htmlspecialchars($product['nombre_categoria']); ?></td>
-                            
-                            <td class="text-center">
-                                <a class="btn btn-light btn-sm" href="/nexus/admin/edit/product.php?id=<?php echo $product["id_producto"] ?>">
-                                    <i class="fas fa-edit text-dark"></i>
-                                </a>
-                                <button class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td><?php echo htmlspecialchars($product['id_producto']); ?></td>
+                                <td class="text-center">
+                                    <img src="<?php echo htmlspecialchars($product['url_imagen']); ?>" alt="<?php echo htmlspecialchars($product['nombre_producto']); ?>" width="50">
+                                </td>
+                                <td><a href="#"><?php echo htmlspecialchars($product['nombre_producto']); ?></a></td>
+                                <td><?php echo htmlspecialchars($product['precio']); ?></td>
+                                <td class="d-none d-sm-table-cell">
+                                    <a href="/nexus/pages/products.php?category=<?php echo urlencode($product['nombre_categoria']); ?>">
+                                        <?php echo htmlspecialchars($product['nombre_categoria']); ?>
+                                    </a>
+                                </td>
+                                <td class="text-center">
+                                    <a class="btn btn-light btn-sm" href="/nexus/admin/edit/product.php?id=<?php echo $product["id_producto"]; ?>">
+                                        <i class="fas fa-edit text-dark"></i>
+                                    </a>
+                                    <button class="btn btn-danger btn-sm">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
+
 
                 <!-- Pagination -->
                 <nav>
                     <ul class="pagination justify-content-center">
                         <?php for ($i = 1; $i <= $paginas; $i++): ?>
-                        <li class="page-item  <?php echo ($i == $pagina) ? 'active' : ''; ?>">
-                            <a class="page-link bg-dark" href="?page=<?php echo $i; ?>">
-                                <?php echo $i; ?>
-                            </a>
-                        </li>
+                            <li class="page-item  <?php echo ($i == $pagina) ? 'active' : ''; ?>">
+                                <a class="page-link bg-dark" href="?page=<?php echo $i; ?>">
+                                    <?php echo $i; ?>
+                                </a>
+                            </li>
                         <?php endfor; ?>
                     </ul>
                 </nav>
-
             </div>
+        </main>
+    </aside>
 
-            <?php require('../layout/_footer.php'); ?>
+    <?php require('../layout/_footer.php'); ?>
 
-<script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-    crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -28,6 +28,18 @@ CREATE TABLE productos (
     url_imagen VARCHAR(255)
 );
 
+INSERT INTO usuarios(id_usuario, nombre_usuario, contraseña_usuario, email_usuario, rol_usuario) VALUES
+(1, 'pedro sanchez', 'contraseña123', 'pedro.sanchez@email.com', 'admin'),
+(2, 'marta lopez', 'contraseña456', 'marta.lopez@email.com', 'user'),
+(3, 'alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
+(4, 'ana garcia', 'pass123', 'ana.garcia@email.com', 'user'),
+(5, 'ricardo perez', '1234abcd', 'ricardo.perez@email.com', 'admin'),
+(6, 'sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user'),
+(7, 'victor ruiz', 'pass9876', 'victor.ruiz@email.com', 'admin'),
+(8, 'laura moreno', 'qwerty234', 'laura.moreno@email.com', 'user'),
+(9, 'jose castro', 'contraseña2024', 'jose.castro@email.com', 'user'),
+(10, 'felipe diaz', 'mypassword101', 'felipe.diaz@email.com', 'admin');
+
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 ('01','Motherboards'),
 ('02','Procesadores'),
@@ -87,5 +99,9 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 ('Razer Huntsman Elite','Teclado mecánico con switches opto-mecánicos y retroiluminación RGB.',200.00,'11','Perifericos','https://assets3.razerzone.com/41R27mmpkpi7bp6usvS6UJpMKao=/1920x1280/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png'),
 ('SteelSeries Arctis 7','Auriculares inalámbricos para gaming con sonido envolvente 7.1.',150.00,'11','Perifericos','https://media.steelseriescdn.com/thumbs/catalog/items/61467/b2a580f20a3e41e2969d8680d8ec09ff.png.500x400_q100_crop-fit_optimize.png'),
 ('Logitech G203','Raton gaming ultraligero con sensor HERO de 15K.',120.00,'11','Perifericos','https://acdn.mitiendanube.com/stores/877/534/products/image-removebg-preview-711-ccbe7f811cde877b4f16902199593365-1024-1024.png');
+
+
+
+
 
 select nombre_producto from productos; 

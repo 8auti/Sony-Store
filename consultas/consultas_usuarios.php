@@ -45,7 +45,7 @@
         return $user;
     }
 
-    function changeEmail(PDO $conexion, $email){
+    function setEmail(PDO $conexion, $email){
         $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
@@ -57,7 +57,20 @@
         $consulta->execute();
     }
 
-    function changePassword(PDO $conexion, $password){
+    function setRol(PDO $conexion, $rol){
+        $consulta = $conexion->prepare('
+            SELECT rol_usuario
+            FROM usuarios
+            WHERE rol_usuario = :rol
+        ');
+
+        if ($rol == 'admin' | $rol == 'user') {
+            $consulta->bindValue(':rol', $rol);
+            $consulta->execute();
+        }
+    }
+
+    function setPassword(PDO $conexion, $password){
         $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios

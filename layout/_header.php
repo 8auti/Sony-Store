@@ -10,7 +10,7 @@
     </form>
     <div class="d-none d-sm-flex justify-content-around align-items-center gap-3">
 
-        <?php if ($user): ?>
+        <?php if (isset($user)): ?>
             <span class="text-capitalize"> <?php echo htmlspecialchars($user['nombre_usuario'] ?? 'Usuario'); ?> </span>
             <img
                 class="rounded-circle h-100"

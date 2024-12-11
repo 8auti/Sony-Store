@@ -19,12 +19,12 @@ function getUsers(PDO $conexion, $rol)
     $users = [];
 
     if ($rol) {
-        $consulta = $conexion->prepare('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios WHERE rol_usuario = :rol_usuario');
+        $consulta = $conexion->prepare('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario, imagen_perfil FROM usuarios WHERE rol_usuario = :rol_usuario');
         $consulta->bindValue(':rol_usuario', $rol);
         $consulta->execute();
         $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
     } else {
-        $consulta = $conexion->query('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios');
+        $consulta = $conexion->query('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario, imagen_perfil FROM usuarios');
         $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 
@@ -108,7 +108,7 @@ function setPassword(PDO $conexion, $password)
 function login(PDO $conexion, $email, $password)
 {
     $consulta = $conexion->prepare('
-            SELECT id_usuario, nombre_usuario, rol_usuario, imagen_usuario
+            SELECT id_usuario, nombre_usuario, rol_usuario, imagen_perfil
             FROM usuarios
             WHERE email_usuario = :email
             AND password_usuario = :password

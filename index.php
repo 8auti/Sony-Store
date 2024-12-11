@@ -1,7 +1,4 @@
 <?php
-
-session_start();
-
 // Encontrar usuario logueado
 $user = $_SESSION['user'] ?? null;
 

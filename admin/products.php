@@ -7,6 +7,7 @@ require_once('../consultas/consultas_usuarios.php');
 $user = $_SESSION['user'] ?? null;
 if ($user['rol_usuario'] !== 'admin') {
     header("Location: /nexus/index.php");
+    exit;
 }
 
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -27,7 +28,7 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Store - Productos</title>
+    <title>Nexus Store - Admin Productos</title>
     <link
         href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
         rel="stylesheet"

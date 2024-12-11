@@ -65,32 +65,54 @@ function getUserById(PDO $conexion, $id)
     return $user;
 }
 
-function setEmail(PDO $conexion, $email)
+function setName(PDO $conexion, $userId, $name)
 {
     $consulta = $conexion->prepare('
-            SELECT id_usuario, nombre_usuario, rol_usuario
-            FROM usuarios
-            WHERE email_usuario = :email
-        ');
+        UPDATE usuarios
+        SET nombre_usuario = :name
+        WHERE id_usuario = :id
+    ');
 
-    $consulta->bindValue(':password', $email);
+    $consulta->bindValue(':name', $name);
+    $consulta->bindValue(':id', $userId);
 
-    $consulta->execute();
+    return $consulta->execute();
 }
 
-function setRol(PDO $conexion, $rol)
+
+function setEmail(PDO $conexion, $userId, $email)
 {
     $consulta = $conexion->prepare('
-            SELECT rol_usuario
-            FROM usuarios
-            WHERE rol_usuario = :rol
+        UPDATE usuarios
+        SET email_usuario = :email
+        WHERE id_usuario = :id
+    ');
+
+    $consulta->bindValue(':email', $email);
+    $consulta->bindValue(':id', $userId);
+
+    return $consulta->execute();
+}
+
+
+function setRol(PDO $conexion, $userId, $rol)
+{
+    if ($rol == 'admin' || $rol == 'user') {
+        $consulta = $conexion->prepare('
+            UPDATE usuarios
+            SET rol_usuario = :rol
+            WHERE id_usuario = :id
         ');
 
-    if ($rol == 'admin' | $rol == 'user') {
         $consulta->bindValue(':rol', $rol);
-        $consulta->execute();
+        $consulta->bindValue(':id', $userId);
+
+        return $consulta->execute();
     }
+
+    return false; 
 }
+
 
 function setPassword(PDO $conexion, $password)
 {

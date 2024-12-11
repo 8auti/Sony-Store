@@ -14,6 +14,21 @@ $nombre_usuario = $user["nombre_usuario"] ?? "Unknown Name";
 $email_usuario = $user["email_usuario"] ?? "Unknown Email";
 $rol_usuario = $user["rol_usuario"] ?? "Unknown Rol";
 
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $name = $_POST['name'] ?? '';
+  $email = $_POST['email'] ?? '';
+  $rol = isset($_POST['isadmin']) ? 'admin' : 'user';
+
+
+  if (setName($conexion, $userId, $name) && setEmail($conexion, $userId, $email) && setRol($conexion, $userId, $rol)) {
+
+    header("Location: /nexus/admin/users.php");
+    exit;
+  } else {
+
+    $error = "Error updating user information.";
+  }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -90,6 +105,13 @@ $rol_usuario = $user["rol_usuario"] ?? "Unknown Rol";
 
               <button type="submit" class="btn btn-primary">Update</button>
             </form>
+
+            <?php
+
+            if (isset($error)) {
+              echo "<p class='text-danger'>$error</p>";
+            }
+            ?>
           </div>
         </div>
       </div>

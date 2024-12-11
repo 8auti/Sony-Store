@@ -1,5 +1,5 @@
 <?php
-    $user = $_SESSION['user'] ?? null;
+$user = $_SESSION['user'] ?? null;
 ?>
 
 <header class="d-flex justify-content-between h-60px mb-3 pt-3">
@@ -19,14 +19,14 @@
                 class="rounded-circle h-100"
                 src="https://res.cloudinary.com/dtnk8oggj/image/upload/v1721083530/boom-recorder/placeholders/v3der7jjr4ljprscr9dj.png"
                 alt="Perfil de usuario" />
-            
+
             <?php if ($user['rol_usuario'] === 'admin'): ?>
-                <div class="text-secondary bg-light p-2 rounded my-2 text-dark">
-                    <a href="/nexus/admin/panel.php" class="px-0 align-middle">
+                <a href="/nexus/admin/panel.php" class="px-0 align-middle">
+                    <div class="text-secondary bg-light p-2 rounded my-2 text-dark">
                         <i class="fa-solid fa-shield-halved"></i>
                         <span class="ms-1 d-sm-inline align-bottom">Admin Panel</span>
-                    </a>
-                </div>
+                    </div>
+                </a>
             <?php endif; ?>
         <?php else: ?>
             <a href="/nexus/auth/login.php" class="btn bg-grey-300" onMouseOver="this.style.color='white'">Iniciar Sesion</a>

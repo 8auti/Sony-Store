@@ -66,7 +66,7 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                     <th>EMAIL</th>
                     <th class="text-center">ADMIN</th>
                     <th class="text-center">EDITAR</th>
-                    <th class="text-center">DELETE</th>
+                    <th class="text-center">ELIMINAR</th> 
                   </tr>
                 </thead>
                 <tbody>

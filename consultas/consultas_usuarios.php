@@ -1,90 +1,112 @@
 <?php
-    function addUser(PDO $conexion, array $data){
-        $consulta = $conexion->prepare('
+function addUser(PDO $conexion, array $data)
+{
+    $consulta = $conexion->prepare('
         INSERT INTO usuarios (id_usuario, nombre_usuario, password_usuario, email_usuario, rol_usuario)
         VALUES (:id, :nombre, :email, :password, "user")
         ');
-        
-        $consulta->bindValue(':id_usuario', $data['id_usuario']);
-        $consulta->bindValue(':nombre', $data['nombre']);
-        $consulta->bindValue(':email', $data['email']);
-        $consulta->bindValue(':password', $data['password']);
 
+    $consulta->bindValue(':id_usuario', $data['id_usuario']);
+    $consulta->bindValue(':nombre', $data['nombre']);
+    $consulta->bindValue(':email', $data['email']);
+    $consulta->bindValue(':password', $data['password']);
+
+    $consulta->execute();
+}
+
+function getUsers(PDO $conexion, $rol)
+{
+    $users = [];
+
+    if ($rol) {
+        $consulta = $conexion->prepare('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios WHERE rol_usuario = :rol_usuario');
+        $consulta->bindValue(':rol_usuario', $rol);
         $consulta->execute();
+        $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $consulta = $conexion->query('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios');
+        $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    function getUsers(PDO $conexion, $rol) {
-        $users = [];
-    
-        if ($rol) {
-            $consulta = $conexion->prepare('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios WHERE rol_usuario = :rol_usuario');
-            $consulta->bindValue(':rol_usuario', $rol);
-            $consulta->execute();
-            $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
-        } else {
-            $consulta = $conexion->query('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios');
-            $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
-        }
-    
-        return $users;
-    }
+    return $users;
+}
 
-    function getUserByEmail(PDO $conexion, $email) {
-        $consulta = $conexion->prepare('
+function getUserByEmail(PDO $conexion, $email)
+{
+    $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
             WHERE email_usuario = :email_usuario
         ');
-    
-        $consulta->bindValue(':email_usuario', $email);
-    
-        $consulta->execute();
-    
-        $user = $consulta->fetch(PDO::FETCH_ASSOC);
-    
-        return $user;
-    }
 
-    function changeEmail(PDO $conexion, $email){
-        $consulta = $conexion->prepare('
+    $consulta->bindValue(':email_usuario', $email);
+
+    $consulta->execute();
+
+    $user = $consulta->fetch(PDO::FETCH_ASSOC);
+
+    return $user;
+}
+
+function getUserById(PDO $conexion, $id)
+{
+    $consulta = $conexion->prepare('
+            SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario
+            FROM usuarios
+            WHERE id_usuario = :id_usuario
+        ');
+
+    $consulta->bindValue(':id_usuario', $id);
+
+    $consulta->execute();
+
+    $user = $consulta->fetch(PDO::FETCH_ASSOC);
+
+    return $user;
+}
+
+
+function changeEmail(PDO $conexion, $email)
+{
+    $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
             WHERE email_usuario = :email
         ');
 
-        $consulta->bindValue(':password', $email);
+    $consulta->bindValue(':password', $email);
 
-        $consulta->execute();
-    }
+    $consulta->execute();
+}
 
-    function changePassword(PDO $conexion, $password){
-        $consulta = $conexion->prepare('
+function changePassword(PDO $conexion, $password)
+{
+    $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
             WHERE password_usuario = :password
         ');
 
-        $consulta->bindValue(':password', $password);
+    $consulta->bindValue(':password', $password);
 
-        $consulta->execute();
-    }
+    $consulta->execute();
+}
 
-    function login(PDO $conexion, $email, $password) {
-        $consulta = $conexion->prepare('
+function login(PDO $conexion, $email, $password)
+{
+    $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
             WHERE email_usuario = :email
             AND password_usuario = :password
         ');
-    
-        $consulta->bindValue(':email', $email);
-        $consulta->bindValue(':password', $password);
-    
-        $consulta->execute();
-    
-        $user = $consulta->fetch(PDO::FETCH_ASSOC);
-    
-        return $user;
-    }
-    
-?>
+
+    $consulta->bindValue(':email', $email);
+    $consulta->bindValue(':password', $password);
+
+    $consulta->execute();
+
+    $user = $consulta->fetch(PDO::FETCH_ASSOC);
+
+    return $user;
+}

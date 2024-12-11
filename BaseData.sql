@@ -7,7 +7,7 @@ USE tienda_pc;
 CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY, 
     nombre_usuario VARCHAR(250) NOT NULL,
-    contraseña_usuario VARCHAR(250) NOT NULL,
+    password_usuario VARCHAR(250) NOT NULL,
     email_usuario VARCHAR(250) NOT NULL,
     rol_usuario VARCHAR(100) NOT NULL
 );
@@ -28,7 +28,7 @@ CREATE TABLE productos (
     url_imagen VARCHAR(255)
 );
 
-INSERT INTO usuarios(id_usuario, nombre_usuario, contraseña_usuario, email_usuario, rol_usuario) VALUES
+INSERT INTO usuarios(id_usuario, nombre_usuario, password_usuario, email_usuario, rol_usuario) VALUES
 (1, 'pedro sanchez', 'contraseña123', 'pedro.sanchez@email.com', 'admin'),
 (2, 'alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
 (3, 'analia martin', 'pass123', 'ana.martin@email.com', 'user'),

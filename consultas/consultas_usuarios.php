@@ -1,14 +1,14 @@
 <?php
     function addUser(PDO $conexion, array $data){
         $consulta = $conexion->prepare('
-        INSERT INTO usuarios (id_usuario, nombre_usuario, contraseña_usuario, email_usuario, rol_usuario)
-        VALUES (:id, :nombre, :email, :contraseña, "user")
+        INSERT INTO usuarios (id_usuario, nombre_usuario, password_usuario, email_usuario, rol_usuario)
+        VALUES (:id, :nombre, :email, :password, "user")
         ');
         
         $consulta->bindValue(':id', $data['id']);
         $consulta->bindValue(':nombre', $data['nombre']);
         $consulta->bindValue(':email', $data['email']);
-        $consulta->bindValue(':contraseña', $data['contraseña']);
+        $consulta->bindValue(':password', $data['password']);
 
         $consulta->execute();
     }
@@ -45,16 +45,16 @@
         return $user;
     }
 
-    function login(PDO $conexion, $email, $contraseña) {
+    function login(PDO $conexion, $email, $password) {
         $consulta = $conexion->prepare('
-            SELECT id, nombre, rol
+            SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
-            WHERE email = :email
-            AND contraseña = :contraseña
+            WHERE email_usuario = :email
+            AND password_usuario = :password
         ');
     
         $consulta->bindValue(':email', $email);
-        $consulta->bindValue(':contraseña', $contraseña);
+        $consulta->bindValue(':password', $password);
     
         $consulta->execute();
     
@@ -62,4 +62,5 @@
     
         return $user;
     }
+    
 ?>

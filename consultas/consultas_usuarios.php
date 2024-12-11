@@ -45,6 +45,30 @@
         return $user;
     }
 
+    function changeEmail(PDO $conexion, $email){
+        $consulta = $conexion->prepare('
+            SELECT id_usuario, nombre_usuario, rol_usuario
+            FROM usuarios
+            WHERE email_usuario = :email
+        ');
+
+        $consulta->bindValue(':password', $email);
+
+        $consulta->execute();
+    }
+
+    function changePassword(PDO $conexion, $password){
+        $consulta = $conexion->prepare('
+            SELECT id_usuario, nombre_usuario, rol_usuario
+            FROM usuarios
+            WHERE password_usuario = :password
+        ');
+
+        $consulta->bindValue(':password', $password);
+
+        $consulta->execute();
+    }
+
     function login(PDO $conexion, $email, $password) {
         $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario

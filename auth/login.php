@@ -6,7 +6,6 @@ $error = null;
 $email = false;
 $password = false;
 
-
 if (isset($_SESSION['user'])) {
   header('Location: /nexus/index.php');
   exit;

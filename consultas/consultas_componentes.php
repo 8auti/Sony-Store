@@ -29,4 +29,28 @@
         return $product;
     }
 
+    function setProduct(PDO $conexion, $data)
+    {
+        $consulta = $conexion->prepare('
+            SELECT nombre_producto, descripcion, precio, id_categoria, url_imagen, stock
+            FROM productos
+            WHERE nombre_producto = :nombre
+            AND descripcion = :descripcion
+            AND precio = :precio
+            AND id_categoria = :id_categoria
+            AND url_imagen = :url_imagen
+            AND stock = :stock
+        ');
+
+        $consulta->bindParam(':nombre', trim($data['nombre']));
+        $consulta->bindParam(':descripcion', $data['descripcion']);
+        $consulta->bindParam(':precio', $data['precio']);
+        $consulta->bindParam(':id_categoria', $data['id_categoria']);
+//      $consulta->bindParam(':nombre_categoria', $data['id_categoria']); // se podria hacer automaticamente con el id categoria
+        $consulta->bindParam(':url_imagen', $data['url_imagen']);
+        $consulta->bindParam(':stock', $data['stock']);
+
+        $consulta->execute();
+    }
+
 ?>

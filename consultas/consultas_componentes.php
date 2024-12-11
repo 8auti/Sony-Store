@@ -1,4 +1,12 @@
 <?php
+
+    function getCategorias(PDO $conexion){
+        $consulta = $conexion->query('SELECT id_categoria, nombre_categoria FROM categorias');
+        $categorias = $consulta->fetchAll(PDO::FETCH_ASSOC);
+
+        return $categorias;
+    }
+
     function getProducts(PDO $conexion)
     {
         $consulta = $conexion->query('SELECT id_producto, nombre_producto, descripcion, precio, id_categoria, nombre_categoria, url_imagen FROM productos');
@@ -29,6 +37,41 @@
         return $product;
     }
 
+    function addProduct(PDO $conexion, $data)
+    {
+        $consulta = $conexion->prepare('
+            INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombre_categoria, url_imagen, stock)
+            VALUES (:nombre, :descripcion, :precio, :id_categoria, :nombre_categoria, :url_imagen, :stock)
+        ');
+
+        if (isset($data['nombre'])) {
+            $consulta->bindParam(':nombre', $data['nombre']);
+        }
+
+        if (isset($data['descripcion'])) {
+            $consulta->bindParam(':descripcion', $data['descripcion']);
+        }
+
+        if (isset($data['precio'])) {
+            $consulta->bindParam(':precio', $data['precio']);
+        }
+
+        if (isset($data['id_categoria'])) {
+            $consulta->bindParam(':id_categoria', $data['id_categoria']);
+            $consulta->bindParam(':nombre_categoria', getCategorias($conexion)[$data['id_categoria']]['nombre_categoria']);
+        }
+
+        if (isset($data['url_imagen'])) {
+            $consulta->bindParam(':url_imagen', $data['url_imagen']);
+        }
+
+        if (isset($data['stock'])) {
+            $consulta->bindParam(':stock', $data['stock']);
+        }
+
+        $consulta->execute();
+    }
+
     function setProduct(PDO $conexion, $data)
     {
         $consulta = $conexion->prepare('
@@ -56,7 +99,7 @@
 
         if (isset($data['id_categoria'])) {
             $consulta->bindParam(':id_categoria', $data['id_categoria']);
-        //  $consulta->bindParam(':nombre_categoria', $data['id_categoria']); // se podria hacer automaticamente con el id categoria
+            $consulta->bindParam(':nombre_categoria', getCategorias($conexion)[$data['id_categoria']]['nombre_categoria']);
         }
 
         if (isset($data['url_imagen'])) {

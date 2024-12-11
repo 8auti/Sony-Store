@@ -62,11 +62,11 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>NOMBRE</th>
-                    <th>EMAIL</th>
+                    <th class="text-center">NOMBRE</th>
+                    <th class="d-none d-md-table-cell">EMAIL</th>
                     <th class="text-center">ADMIN</th>
                     <th class="text-center">EDITAR</th>
-                    <th class="text-center">ELIMINAR</th> 
+                    <th class="text-center">ELIMINAR</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -74,7 +74,11 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                     <tr>
                       <td><?php echo htmlspecialchars($user['id_usuario']); ?></td>
                       <td><?php echo htmlspecialchars($user['nombre_usuario']); ?></td>
-                      <td><a href="mailto:<?php echo htmlspecialchars($user['email_usuario']); ?>"><?php echo htmlspecialchars($user['email_usuario']); ?></a></td>
+                      <td class="d-none d-md-table-cell">
+                        <a href="mailto:<?php echo htmlspecialchars($user['email_usuario']); ?>">
+                          <?php echo htmlspecialchars($user['email_usuario']); ?>
+                        </a>
+                      </td>
                       <td class="text-center">
                         <?php echo $user['rol_usuario'] === 'admin' ? '<i class="fas fa-check" style="color: green;"></i>' : '<i class="fas fa-times" style="color: red;"></i>'; ?>
                       </td>
@@ -94,6 +98,7 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                   <?php endforeach; ?>
                 </tbody>
               </table>
+
             <?php else: ?>
               <p>No users found.</p>
             <?php endif; ?>

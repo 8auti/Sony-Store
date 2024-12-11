@@ -65,6 +65,9 @@ ul {
 .min-h-100vh {
   min-height: 100vh;
 }
+.min-h-80vh {
+  min-height: 80vh;
+}
 .h-10px {
   height: 10px;
 }

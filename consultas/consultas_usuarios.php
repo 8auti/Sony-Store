@@ -5,7 +5,7 @@
         VALUES (:id, :nombre, :email, :password, "user")
         ');
         
-        $consulta->bindValue(':id', $data['id']);
+        $consulta->bindValue(':id_usuario', $data['id_usuario']);
         $consulta->bindValue(':nombre', $data['nombre']);
         $consulta->bindValue(':email', $data['email']);
         $consulta->bindValue(':password', $data['password']);
@@ -17,12 +17,12 @@
         $users = [];
     
         if ($rol) {
-            $consulta = $conexion->prepare('SELECT id, nombre, email, rol FROM usuarios WHERE rol = :rol');
-            $consulta->bindValue(':rol', $rol);
+            $consulta = $conexion->prepare('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios WHERE rol_usuario = :rol_usuario');
+            $consulta->bindValue(':rol_usuario', $rol);
             $consulta->execute();
             $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
         } else {
-            $consulta = $conexion->query('SELECT id, nombre, email, rol FROM usuarios');
+            $consulta = $conexion->query('SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario FROM usuarios');
             $users = $consulta->fetchAll(PDO::FETCH_ASSOC);
         }
     
@@ -31,12 +31,12 @@
 
     function getUserByEmail(PDO $conexion, $email) {
         $consulta = $conexion->prepare('
-            SELECT id, nombre, rol
+            SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
-            WHERE email = :email
+            WHERE email_usuario = :email_usuario
         ');
     
-        $consulta->bindValue(':email', $email);
+        $consulta->bindValue(':email_usuario', $email);
     
         $consulta->execute();
     

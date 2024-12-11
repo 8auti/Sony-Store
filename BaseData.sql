@@ -32,7 +32,7 @@ INSERT INTO usuarios(id_usuario, nombre_usuario, contraseña_usuario, email_usua
 (1, 'pedro sanchez', 'contraseña123', 'pedro.sanchez@email.com', 'admin'),
 (2, 'alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
 (3, 'analia martin', 'pass123', 'ana.martin@email.com', 'user'),
-(4, 'sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user'),
+(4, 'sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user');
 
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 ('01','Motherboards'),

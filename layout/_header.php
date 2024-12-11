@@ -11,7 +11,8 @@
             id="searchInput"
             name="searchQuery" />
     </form>
-    <div class="d-flex justify-content-around align-items-center gap-3">
+    <div class="d-none d-sm-flex justify-content-around align-items-center gap-3">
+
         <?php if ($user): ?>
             <span class="text-capitalize"> <?php echo htmlspecialchars($user['nombre_usuario'] ?? 'Usuario'); ?> </span>
             <img
@@ -21,7 +22,7 @@
             
             <?php if ($user['rol_usuario'] === 'admin'): ?>
                 <div class="text-secondary bg-light p-2 rounded my-2 text-dark">
-                    <a href="#" class="px-0 align-middle">
+                    <a href="/nexus/admin/panel.php" class="px-0 align-middle">
                         <i class="fa-solid fa-shield-halved"></i>
                         <span class="ms-1 d-sm-inline align-bottom">Admin Panel</span>
                     </a>

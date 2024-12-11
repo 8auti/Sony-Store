@@ -1,8 +1,13 @@
 <?php
 
 require_once('../consultas/conexion.php');
-require_once('../consultas/consultas_componentes.php');
+require_once('../consultas/consultas_usuarios.php');
 
+$rol = $_POST['rol'] ?? null;
+// Si no es un administrador, enviar usuario a index
+if ($rol != 'admin') {
+    header("Location: /nexus/index.php");
+}
 
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 

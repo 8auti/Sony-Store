@@ -30,15 +30,9 @@ CREATE TABLE productos (
 
 INSERT INTO usuarios(id_usuario, nombre_usuario, contraseña_usuario, email_usuario, rol_usuario) VALUES
 (1, 'pedro sanchez', 'contraseña123', 'pedro.sanchez@email.com', 'admin'),
-(2, 'marta lopez', 'contraseña456', 'marta.lopez@email.com', 'user'),
-(3, 'alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
-(4, 'ana garcia', 'pass123', 'ana.garcia@email.com', 'user'),
-(5, 'ricardo perez', '1234abcd', 'ricardo.perez@email.com', 'admin'),
-(6, 'sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user'),
-(7, 'victor ruiz', 'pass9876', 'victor.ruiz@email.com', 'admin'),
-(8, 'laura moreno', 'qwerty234', 'laura.moreno@email.com', 'user'),
-(9, 'jose castro', 'contraseña2024', 'jose.castro@email.com', 'user'),
-(10, 'felipe diaz', 'mypassword101', 'felipe.diaz@email.com', 'admin');
+(2, 'alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
+(3, 'analia martin', 'pass123', 'ana.martin@email.com', 'user'),
+(4, 'sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user'),
 
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 ('01','Motherboards'),

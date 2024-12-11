@@ -50,7 +50,7 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
         <!-- Nav -->
         <?php require('../layout/_nav.php'); ?>
 
-        <main class="col z-4">
+        <main class="col z-4 min-h-80vh">
             <!-- Header -->
             <?php require('../layout/_header.php'); ?>
 

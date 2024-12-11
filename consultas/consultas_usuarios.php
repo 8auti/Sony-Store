@@ -65,8 +65,9 @@ function getUserById(PDO $conexion, $id)
     return $user;
 }
 
-    function setEmail(PDO $conexion, $email){
-        $consulta = $conexion->prepare('
+function setEmail(PDO $conexion, $email)
+{
+    $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
             WHERE email_usuario = :email
@@ -77,21 +78,23 @@ function getUserById(PDO $conexion, $id)
     $consulta->execute();
 }
 
-    function setRol(PDO $conexion, $rol){
-        $consulta = $conexion->prepare('
+function setRol(PDO $conexion, $rol)
+{
+    $consulta = $conexion->prepare('
             SELECT rol_usuario
             FROM usuarios
             WHERE rol_usuario = :rol
         ');
 
-        if ($rol == 'admin' | $rol == 'user') {
-            $consulta->bindValue(':rol', $rol);
-            $consulta->execute();
-        }
+    if ($rol == 'admin' | $rol == 'user') {
+        $consulta->bindValue(':rol', $rol);
+        $consulta->execute();
     }
+}
 
-    function setPassword(PDO $conexion, $password){
-        $consulta = $conexion->prepare('
+function setPassword(PDO $conexion, $password)
+{
+    $consulta = $conexion->prepare('
             SELECT id_usuario, nombre_usuario, rol_usuario
             FROM usuarios
             WHERE password_usuario = :password

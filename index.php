@@ -1,9 +1,9 @@
 <?php
+require_once('./consultas/conexion.php');
+require_once('./consultas/consultas_componentes.php');
 // Encontrar usuario logueado
 $user = $_SESSION['user'] ?? null;
 
-require_once('./consultas/conexion.php');
-require_once('./consultas/consultas_componentes.php');
 
 $products = getProducts($conexion) ?? [];
 $productosEnGaleria = 8;

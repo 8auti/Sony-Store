@@ -9,7 +9,8 @@ CREATE TABLE usuarios (
     nombre_usuario VARCHAR(250) NOT NULL,
     password_usuario VARCHAR(250) NOT NULL,
     email_usuario VARCHAR(250) NOT NULL,
-    rol_usuario VARCHAR(100) NOT NULL
+    rol_usuario VARCHAR(100) NOT NULL,
+    imagen_perfil VARCHAR(500) DEFAULT 'https://res.cloudinary.com/dtnk8oggj/image/upload/v1721083530/boom-recorder/placeholders/v3der7jjr4ljprscr9dj.png'
 );
 
 CREATE TABLE categorias (
@@ -33,6 +34,9 @@ INSERT INTO usuarios(id_usuario, nombre_usuario, password_usuario, email_usuario
 (2, 'alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
 (3, 'analia martin', 'pass123', 'ana.martin@email.com', 'user'),
 (4, 'sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user');
+
+INSERT INTO usuarios (nombre_usuario, password_usuario, email_usuario, rol_usuario, imagen_perfil) 
+VALUES ('Momo Admin', 'pass123', 'momo@admin.com', 'admin', 'https://media.0221.com.ar/adjuntos/357/migration/0221/032019/1553553111207.jpg');
 
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 ('01','Motherboards'),

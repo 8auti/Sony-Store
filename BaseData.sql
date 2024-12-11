@@ -4,6 +4,14 @@ CREATE DATABASE tienda_pc;
 
 USE tienda_pc;
 
+CREATE TABLE usuarios (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY, 
+    nombre_usuario VARCHAR(250) NOT NULL,
+    contraseña_usuario VARCHAR(250) NOT NULL,
+    email_usuario VARCHAR(250) NOT NULL,
+    rol_usuario VARCHAR(100) NOT NULL
+);
+
 CREATE TABLE categorias (
     id_categoria INT AUTO_INCREMENT PRIMARY KEY,
     nombre_categoria VARCHAR(250) NOT NULL

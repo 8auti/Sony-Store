@@ -13,7 +13,7 @@
         $consulta->execute();
     }
 
-    function getUsers(PDO $conexion, $rol = null) {
+    function getUsers(PDO $conexion, $rol) {
         $users = [];
     
         if ($rol) {
@@ -29,6 +29,22 @@
         return $users;
     }
 
+    function getUserByEmail(PDO $conexion, $email) {
+        $consulta = $conexion->prepare('
+            SELECT id, nombre, rol
+            FROM usuarios
+            WHERE email = :email
+        ');
+    
+        $consulta->bindValue(':email', $email);
+    
+        $consulta->execute();
+    
+        $user = $consulta->fetch(PDO::FETCH_ASSOC);
+    
+        return $user;
+    }
+
     function login(PDO $conexion, $email, $contraseña) {
         $consulta = $conexion->prepare('
             SELECT id, nombre, rol
@@ -42,8 +58,8 @@
     
         $consulta->execute();
     
-        $usuario = $consulta->fetch(PDO::FETCH_ASSOC);
+        $user = $consulta->fetch(PDO::FETCH_ASSOC);
     
-        return $usuario;
+        return $user;
     }
 ?>

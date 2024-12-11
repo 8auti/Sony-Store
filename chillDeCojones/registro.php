@@ -3,7 +3,7 @@
 require_once('../consultas/conexion.php');
 require_once('../consultas/consultas_usuarios.php');
 
-$usuarios = getUsers($conexion) ?? [];
+$usuarios = getUsers($conexion, null) ?? [];
 
 function test_input($data)
 {
@@ -33,6 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     if (empty($contraseña)) {
         $errores[] = 'Usted debe ingresar una Contraseña';
+    }
+    if (getUserByEmail($conexion, $email)) {
+        $errores[] = 'El Email ingresado ya esta en uso.';
     }
 
     if (empty($errores)) {

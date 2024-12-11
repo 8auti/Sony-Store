@@ -1,4 +1,10 @@
 <?php
+
+session_start();
+
+// Encontrar usuario logueado
+$user = $_SESSION['user'] ?? null;
+
 require_once('./consultas/conexion.php');
 require_once('./consultas/consultas_componentes.php');
 

@@ -95,7 +95,7 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                                 <td class="text-center">
                                     <img src="<?php echo htmlspecialchars($product['url_imagen']); ?>" alt="<?php echo htmlspecialchars($product['nombre_producto']); ?>" width="50">
                                 </td>
-                                <td><a href="#"><?php echo htmlspecialchars($product['nombre_producto']); ?></a></td>
+                                <td><a href="/nexus/pages/product-detail.php?id=<?php echo urlencode($product['id_producto']); ?>"><?php echo htmlspecialchars($product['nombre_producto']); ?></a></td>
                                 <td><?php echo htmlspecialchars($product['precio']); ?></td>
                                 <td class="d-none d-sm-table-cell">
                                     <a href="/nexus/pages/products.php?category=<?php echo urlencode($product['nombre_categoria']); ?>">
@@ -107,9 +107,12 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                                     <a class="btn btn-light btn-sm" href="/nexus/admin/edit/product.php?id=<?php echo $product["id_producto"]; ?>">
                                         <i class="fas fa-edit text-dark"></i>
                                     </a>
-                                    <button class="btn btn-danger btn-sm">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                                    <form action="/nexus/consultas/delete_product.php" method="post" style="display:inline;">
+                                        <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($product['id_producto']); ?>">
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Estás seguro que quieres borrar este producto?');">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

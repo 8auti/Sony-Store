@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <!-- Header -->
       <?php require('../../layout/_header.php') ?>
       <div class="container my-5">
-        <a href="/nexus/admin/products.php" class="btn btn-light my-3">Ir Atrás</a>
+        <a href="/nexus/admin/products.php" class="btn btn-light text-dark my-3">Ir Atrás</a>
         <div class="row justify-content-md-center">
           <div class="col-md-6">
             <h1>Editar Producto</h1>

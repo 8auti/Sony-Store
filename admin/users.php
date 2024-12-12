@@ -95,9 +95,12 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                         </a>
                       </td>
                       <td class="text-center">
-                        <button class="btn btn-danger btn-sm" onclick="deleteUserHandler(<?php echo $user['id_usuario']; ?>)">
-                          <i class="fas fa-trash"></i>
-                        </button>
+                        <form action="/nexus/consultas/delete_user.php" method="post" style="display:inline;">
+                          <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($user['id_usuario']); ?>">
+                          <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Estás seguro que quieres borrar este usuario?');">
+                            <i class="fas fa-trash"></i>
+                          </button>
+                        </form>
                       </td>
                     </tr>
                   <?php endforeach; ?>

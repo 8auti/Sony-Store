@@ -35,8 +35,9 @@ INSERT INTO usuarios(nombre_usuario, password_usuario, email_usuario, rol_usuari
 ('analia martin', 'pass123', 'ana.martin@email.com', 'user'),
 ('sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user');
 
-INSERT INTO usuarios (nombre_usuario, password_usuario, email_usuario, rol_usuario, imagen_perfil) 
-VALUES ('Momo Admin', 'pass123', 'momo@admin.com', 'admin', 'https://media.0221.com.ar/adjuntos/357/migration/0221/032019/1553553111207.jpg');
+INSERT INTO usuarios (nombre_usuario, password_usuario, email_usuario, rol_usuario, imagen_perfil) VALUES
+('Momo Admin', 'pass123', 'momo@admin.com', 'admin', 'https://media.0221.com.ar/adjuntos/357/migration/0221/032019/1553553111207.jpg'),
+('Tony Montana', 'pass123', 'tony@montana.com', 'admin', 'https://media.revistagq.com/photos/5ca5f43e267a32038a7247db/4:3/w_1280,h_960,c_limit/scarface_al_pacino_3781.jpg');
 
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 ('01','Motherboards'),
@@ -102,4 +103,5 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 
 
 
-select nombre_producto from productos; 
+select nombre_producto from productos;
+DELETE FROM productos where id_producto = 1;

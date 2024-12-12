@@ -13,8 +13,10 @@ $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
 $filtrarCategoria = $_GET['filtrarCategoria'] ?? null;
 
-$products = getProducts($conexion);
 $products = getProductsByCategory($conexion, $filtrarCategoria);
+if(!isset($filtrarCategoria) || $filtrarCategoria == "all"){
+    $products = getProducts($conexion);
+}
 
 $length = count($products);
 $elementosPorPagina = 8;
@@ -79,8 +81,8 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
 
                     <div>
                         <form action="" method="get" class="form-inline d-flex gap-3 mt-3">
-                            <select class="form-select form-select-lg form-control mb-3 bg-dark text-light" aria-label=".form-select-lg example" name="filtrarCategoria">
-                                <option selected>Seleccionar Categoria</option>
+                            <select class="form-select form-select-lg form-control mb-3 bg-dark text-light" aria-label=".form-select-lg example" name="filtrarCategoria"  aria-required="true" aria-invalid="false">
+                                <option value="all">Seleccionar Categoria</option>
                                 <option value="Motherboards">Motherboards</option>
                                 <option value="Procesadores">Procesadores</option>
                                 <option value="Tarjetas Gráficas">Tarjetas Gráficas</option>

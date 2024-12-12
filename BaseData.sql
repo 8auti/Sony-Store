@@ -102,4 +102,5 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 
 
 
-select nombre_producto from productos; 
+select nombre_producto from productos;
+DELETE FROM productos where id_producto = 1;

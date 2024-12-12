@@ -7,6 +7,14 @@
         return $categorias;
     }
 
+    function removeProduct(PDO $conexion, $id){
+        $consulta = $conexion->prepare('SELECT id_producto, nombre_producto, descripcion, precio, id_categoria, nombre_categoria, url_imagen FROM productos WHERE id_producto = :id_producto');
+        $consulta->bindParam(':id_producto', $productId, PDO::PARAM_INT);
+        $consulta->execute();
+        $product = $consulta->fetch(PDO::FETCH_ASSOC);
+        return $product;
+    }
+
     function getProducts(PDO $conexion)
     {
         $consulta = $conexion->query('SELECT id_producto, nombre_producto, descripcion, precio, id_categoria, nombre_categoria, url_imagen FROM productos');

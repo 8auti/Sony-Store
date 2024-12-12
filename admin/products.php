@@ -67,9 +67,9 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                                     class="form-control">
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-primary w-100">
+                                <a class="btn btn-primary w-100" href="/nexus/admin/edit/product.php">
                                     <i class="fas fa-plus"></i> Crear Producto
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,10 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                             <tr>
                                 <td><?php echo htmlspecialchars($product['id_producto']); ?></td>
                                 <td class="text-center">
-                                    <img src="<?php echo htmlspecialchars($product['url_imagen']); ?>" alt="<?php echo htmlspecialchars($product['nombre_producto']); ?>" width="50">
+                                    <a href="/nexus/pages/product-detail.php?id=<?php echo urlencode($product['id_producto']); ?>">
+
+                                        <img src="<?php echo htmlspecialchars($product['url_imagen']); ?>" alt="<?php echo htmlspecialchars($product['nombre_producto']); ?>" width="50">
+                                    </a>
                                 </td>
                                 <td><a href="/nexus/pages/product-detail.php?id=<?php echo urlencode($product['id_producto']); ?>"><?php echo htmlspecialchars($product['nombre_producto']); ?></a></td>
                                 <td><?php echo htmlspecialchars($product['precio']); ?></td>

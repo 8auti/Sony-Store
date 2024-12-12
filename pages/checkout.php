@@ -199,7 +199,7 @@ $products = array_slice($products,rand(1,count($products)-$productosEnGaleria),$
               <?php $total = 0 ?>
               <?php foreach ($productosAleatorios as $productoCarrito) : 
                 $title = $productoCarrito['nombre_producto'] ?? 'Unknown Product';
-                $imageUrl = $productoCarrito['url_imagen'] ?? 'https://via.placeholder.com/150';
+                $imageUrl = $productoCarrito['url_imagen'] ?? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg';
                 $price = $productoCarrito['precio'] ?? '. . .';
                 $total += $price;
                 ?>

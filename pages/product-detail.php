@@ -8,7 +8,7 @@ if (isset($_GET['id'])) {
 }
 
 $title = $product['nombre_producto'] ?? 'Unknown Product';
-$imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
+$imageUrl = $product['url_imagen'] ?? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg';
 $category = $product['nombre_categoria'] ?? 'Unknown Category';
 $price = $product['precio'] ?? '. . .';
 $description = $product['descripcion'] ?? '. . .';

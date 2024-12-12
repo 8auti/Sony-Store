@@ -93,42 +93,23 @@
     function setProduct(PDO $conexion, $data)
     {
         $consulta = $conexion->prepare('
-            SELECT nombre_producto, descripcion, precio, id_categoria, url_imagen, stock
-            FROM productos
-            WHERE nombre_producto = :nombre
-            AND descripcion = :descripcion
-            AND precio = :precio
-            AND id_categoria = :id_categoria
-            AND url_imagen = :url_imagen
-            AND stock = :stock
+            UPDATE productos SET 
+                nombre_producto = :nombre_producto,
+                descripcion = :descripcion,
+                precio = :precio,
+                url_imagen = :url_imagen,
+                stock = :stock
+            WHERE id_producto = :id_producto
         ');
-
-        if (isset($data['nombre'])) {
-            $consulta->bindParam(':nombre', $data['nombre']);
-        }
-
-        if (isset($data['descripcion'])) {
-            $consulta->bindParam(':descripcion', $data['descripcion']);
-        }
-
-        if (isset($data['precio'])) {
-            $consulta->bindParam(':precio', $data['precio']);
-        }
-
-        if (isset($data['id_categoria'])) {
-            $consulta->bindParam(':id_categoria', $data['id_categoria']);
-            $consulta->bindParam(':nombre_categoria', getCategorias($conexion)[$data['id_categoria']]['nombre_categoria']);
-        }
-
-        if (isset($data['url_imagen'])) {
-            $consulta->bindParam(':url_imagen', $data['url_imagen']);
-        }
-
-        if (isset($data['stock'])) {
-            $consulta->bindParam(':stock', $data['stock']);
-        }
-
-        $consulta->execute();
+    
+        $consulta->bindParam(':id_producto', $data['id_producto'], PDO::PARAM_INT);
+        $consulta->bindParam(':nombre_producto', $data['name'], PDO::PARAM_STR);
+        $consulta->bindParam(':descripcion', $data['description'], PDO::PARAM_STR);
+        $consulta->bindParam(':precio', $data['price'], PDO::PARAM_STR);
+        $consulta->bindParam(':url_imagen', $data['image'], PDO::PARAM_STR);
+        $consulta->bindParam(':stock', $data['stock'], PDO::PARAM_INT);
+    
+        return $consulta->execute();
     }
 
 ?>

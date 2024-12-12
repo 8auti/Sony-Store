@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errores[] = 'Las contraseñas no coinciden.';
     }
     if (getUserByEmail($conexion, $email) == true) {
-        var_dump(getUserByEmail($conexion, $email));
         $errores[] = 'El Email ingresado ya esta en uso.';
     }
 

@@ -33,7 +33,7 @@ function getUsers(PDO $conexion, $rol)
 function getUserByEmail(PDO $conexion, $email)
 {
     $consulta = $conexion->prepare('
-            SELECT id_usuario, nombre_usuario, rol_usuario
+            SELECT id_usuario, nombre_usuario, rol_usuario, email_usuario
             FROM usuarios
             WHERE email_usuario = :email_usuario
         ');
@@ -129,7 +129,7 @@ function setPassword(PDO $conexion, $password)
 function login(PDO $conexion, $email, $password)
 {
     $consulta = $conexion->prepare('
-            SELECT id_usuario, nombre_usuario, rol_usuario, imagen_perfil
+            SELECT id_usuario, nombre_usuario, email_usuario, rol_usuario, imagen_perfil
             FROM usuarios
             WHERE email_usuario = :email
             AND password_usuario = :password

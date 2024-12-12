@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   if (setName($conexion, $userId, $name) && setEmail($conexion, $userId, $email) && setRol($conexion, $userId, $rol)) {
 
     // El usuario se esta editando a si mismo
-    if ($_SESSION['user'] == $user) {
+    if ($user['id_usuario'] === $editedUser['id_usuario']) {
       $_SESSION['user']['rol_usuario']=$rol;
       $_SESSION['user']['email_usuario']=$email;
       $_SESSION['user']['nombre_usuario']=$name;

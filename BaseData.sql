@@ -23,7 +23,7 @@ CREATE TABLE productos (
     nombre_producto VARCHAR(100) NOT NULL,
     descripcion TEXT,
     precio DECIMAL(10 , 2 ) NOT NULL,
-    stock INT DEFAULT 0,
+    stock INT DEFAULT 1,
     id_categoria INT,
     nombre_categoria text,
     url_imagen VARCHAR(255)

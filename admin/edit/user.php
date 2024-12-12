@@ -2,25 +2,38 @@
 require_once('../../consultas/conexion.php');
 require_once('../../consultas/consultas_usuarios.php');
 
+if ($user['rol_usuario'] !== 'admin') {
+    header("Location: /nexus/index.php");
+    exit;
+}
+
 if (isset($_GET['id'])) {
   $userId = $_GET['id'];
-  $user = getUserById($conexion, $userId);
+  $editedUser = getUserById($conexion, $userId);
 } else {
   header("Location: /nexus/admin/users.php");
   exit;
 }
 
-$nombre_usuario = $user["nombre_usuario"] ?? "Unknown Name";
-$email_usuario = $user["email_usuario"] ?? "Unknown Email";
-$rol_usuario = $user["rol_usuario"] ?? "Unknown Rol";
+$nombre_usuario = $editedUser["nombre_usuario"] ?? "Unknown Name";
+$email_usuario = $editedUser["email_usuario"] ?? "Unknown Email";
+$rol_usuario = $editedUser["rol_usuario"] ?? "Unknown Rol";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $name = $_POST['name'] ?? '';
   $email = $_POST['email'] ?? '';
   $rol = isset($_POST['isadmin']) ? 'admin' : 'user';
-
+  
+  
 
   if (setName($conexion, $userId, $name) && setEmail($conexion, $userId, $email) && setRol($conexion, $userId, $rol)) {
+
+    // El usuario se esta editando a si mismo
+    if ($_SESSION['user'] == $user) {
+      $_SESSION['user']['rol_usuario']=$rol;
+      $_SESSION['user']['email_usuario']=$email;
+      $_SESSION['user']['nombre_usuario']=$name;
+    }
 
     header("Location: /nexus/admin/users.php");
     exit;

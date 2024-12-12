@@ -97,7 +97,7 @@ function setEmail(PDO $conexion, $userId, $email)
 
 function setRol(PDO $conexion, $userId, $rol)
 {
-    if ($rol == 'admin' || $rol == 'user') {
+    if ($rol === 'admin' || $rol === 'user') {
         $consulta = $conexion->prepare('
             UPDATE usuarios
             SET rol_usuario = :rol

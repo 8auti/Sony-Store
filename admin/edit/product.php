@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   } else {
     if (setProduct($conexion, $productData)) {
-      header("Location: /nexus/admin/products.php?filtrarCategoria=null");
+      header("Location: /nexus/admin/products.php");
       exit;
     } else {
       $error = "Error updating product information.";

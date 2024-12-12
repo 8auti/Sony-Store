@@ -3,6 +3,10 @@
 require_once('../consultas/conexion.php');
 require_once('../consultas/consultas_componentes.php');
 
+if (!isset($user)){
+  header("Location: /nexus/auth/login.php");
+}
+
 $products = getProducts($conexion) ?? [];
 $productosEnGaleria = 8;
 

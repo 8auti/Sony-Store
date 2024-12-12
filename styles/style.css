@@ -19,7 +19,7 @@
   transform: translateY(-50px);
   transition: all 0.3s ease;
 }
-.product-color img{
+.product-color img {
   transition: all 0.3s ease;
 }
 .product-color img:hover {
@@ -119,6 +119,14 @@ ul {
 .detail-card {
   background: rgb(28, 28, 29);
   background: linear-gradient(0deg, rgb(49 49 51) 1%, rgb(33 33 35) 100%);
+}
+
+#changePasswordModal {
+  display: none;
+}
+
+#changePasswordModal:target {
+  display: block !important;
 }
 
 .tty--200 {
@@ -392,12 +400,12 @@ a:hover {
   display: none;
 }
 
-.img-thumbnail{
+.img-thumbnail {
   width: 250px;
   height: 250px;
 }
 
-.diferencia{
+.diferencia {
   display: flex;
   gap: 20px;
 }
@@ -411,6 +419,6 @@ a:hover {
   }
 }
 
-.grayscale{
+.grayscale {
   filter: grayscale(100%);
 }

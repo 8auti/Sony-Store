@@ -10,13 +10,24 @@
     <div class="d-none d-sm-flex justify-content-around align-items-center gap-3">
 
         <?php if (isset($user)): ?>
-            <span class="text-capitalize"> <?php echo htmlspecialchars($user['nombre_usuario'] ?? 'Usuario'); ?> </span>
-            <img
+            <a style="display: contents;" href="/nexus/auth/profile.php">
+
+                <span class="text-capitalize"> <?php echo htmlspecialchars($user['nombre_usuario'] ?? 'Usuario'); ?> </span>
+                <img
                 class="rounded-circle h-100"
                 style="aspect-ratio: 1/1; object-fit:cover"
                 src="<?php echo $user['imagen_perfil'] ?? 'https://res.cloudinary.com/dtnk8oggj/image/upload/v1721083530/boom-recorder/placeholders/v3der7jjr4ljprscr9dj.png'; ?>"
                 alt="Perfil de usuario" />
+            </a>
 
+            <?php if ($user['rol_usuario'] === 'user'): ?>
+                <a href="/nexus/auth/profile.php" class="px-0 align-middle">
+                    <div class="text-secondary bg-light p-2 rounded my-2 text-dark">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span class="ms-1 d-sm-inline align-bottom">Editar Perfil</span>
+                    </div>
+                </a>
+            <?php endif; ?>
             <?php if ($user['rol_usuario'] === 'admin'): ?>
                 <a href="/nexus/admin/panel.php" class="px-0 align-middle">
                     <div class="text-secondary bg-light p-2 rounded my-2 text-dark">

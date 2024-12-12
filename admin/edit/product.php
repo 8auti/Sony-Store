@@ -103,15 +103,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </div>
 
               <div class="form-group my-3">
-                <label for="brand">Marca</label>
-                <input type="text" id="brand" name="brand" class="form-control" placeholder="Enter brand">
-              </div>
-
-              <div class="form-group my-3">
                 <label>Stock</label>
                 <div class="row justify-content-md-center align-items-center">
                   <div class="col-md-12">
-                    <input type="number" id="stock" name="stock" class="form-control " placeholder="Stock">
+                    <input type="number" id="stock" name="stock" class="form-control " placeholder="Stock" value="<?php echo htmlspecialchars($stock); ?>">
                   </div>
                 </div>
               </div>

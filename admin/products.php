@@ -83,7 +83,8 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                             <th class="text-center">IMAGEN</th>
                             <th>NOMBRE</th>
                             <th>PRECIO</th>
-                            <th class="d-none d-sm-table-cell">CATEGORIA</th> <!-- Hide on mobile -->
+                            <th class="d-none d-sm-table-cell">CATEGORIA</th>
+                            <th>STOCK</th>
                             <th class="text-center">ACCIONES</th>
                         </tr>
                     </thead>
@@ -101,6 +102,7 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                                         <?php echo htmlspecialchars($product['nombre_categoria']); ?>
                                     </a>
                                 </td>
+                                <td class="text-center"><?php echo htmlspecialchars($product['stock']); ?></td>
                                 <td class="text-center">
                                     <a class="btn btn-light btn-sm" href="/nexus/admin/edit/product.php?id=<?php echo $product["id_producto"]; ?>">
                                         <i class="fas fa-edit text-dark"></i>

@@ -11,8 +11,56 @@ if (!isset($_SESSION['user'])) {
   exit;
 }
 
-?>
+function test_input($data)
+{
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 
+$nombre = $_POST['name'] ?? null;
+$nombre = test_input($nombre);
+
+$email = $_POST['email'] ?? null;
+$email = filter_var($email, FILTER_VALIDATE_EMAIL);
+
+$image_url = $_POST['profile_pic'] ?? null;
+$image_url = filter_var($image_url, FILTER_VALIDATE_URL);
+
+$password = $_POST['password'] ?? null;
+$password = test_input($password);
+
+$password2 = $_POST['confirmPassword'] ?? null;
+$password2 = test_input($password2);
+
+$errores = [];
+
+$mensajeExito = '';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  if (empty($nombre)) {
+    $errores[] = 'Usted debe ingresar un Nombre';
+  }
+  if (empty($email)) {
+    $errores[] = 'Usted debe ingresar un Email';
+  }
+  if (empty($password) || empty($password2)) {
+    $errores[] = 'Usted debe ingresar una Contraseña';
+  }
+  if ($password !== $password2) {
+    $errores[] = 'Las contraseñas no coinciden.';
+  }
+  if (getUserByEmail($conexion, $email) == true) {
+    $errores[] = 'El Email ingresado ya esta en uso.';
+  }
+
+  if (empty($errores)) {
+    $mensajeExito = "Cambios a la cuenta realizados con exito.";
+  }
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,24 +96,33 @@ if (!isset($_SESSION['user'])) {
       <div class="container mt-5">
         <div class="row justify-content-center">
           <div class="col-md-3">
-            <h2>Perfil usuario</h2>
-            <form id="profileForm">
-              <div class="mb-3 text-center">
-                <label for="profile_pic" class="form-label">Foto de perfil</label>
-                <div class="mb-2">
-                  <img id="profilePreview" src="" alt="Profile Preview" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+            <h2 class="text-center mb-5">Perfil de Usuario</h2>
+
+            <h3 class="text-success"> <?php echo $mensajeExito ?> </h3>
+
+            <ul>
+              <?php foreach ($errores as $error) : ?>
+                <li class="text-light bg-danger"><?php echo $error ?></li>
+              <?php endforeach ?>
+            </ul>
+
+            <form id="profileForm" method="post" action="">
+              <div class="mb-3">
+                <div class="mb-4 text-center">
+                  <img id="profilePreview" src="<?php echo $user['imagen_perfil'] ?>" alt="Profile Preview" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
-                <input type="url" class="form-control" id="profile_pic" name="profile_pic" placeholder="Cambiar Imagen URL" onchange="updatePreview()">
+                <label for="profile_pic" class="form-label">Foto de perfil</label>
+                <input type="url" class="form-control" id="profile_pic" name="profile_pic" placeholder="Cambiar Imagen URL" onchange="updatePreview()" value=" <?php echo $user['imagen_perfil'] ?> ">
               </div>
 
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name" name="name" maxlength="20" placeholder="Enter name" required>
+                <input type="text" class="form-control" id="name" name="name" maxlength="20" placeholder="Ingresar nombre" value=" <?php echo $user['nombre_usuario'] ?> ">
               </div>
 
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Cambiar email" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Cambiar email" value=" <?php echo $user['email_usuario'] ?> ">
               </div>
 
               <a href="#changePasswordModal" class="mb-3 cursor-pointer text-primary fst-italic d-block" id="changePassword">Cambiar contraseña?</a>
@@ -77,7 +134,7 @@ if (!isset($_SESSION['user'])) {
                 </div>
 
                 <div class="mb-3">
-                  <label for="confirmPassword" class="form-label">Confirm Contraseña</label>
+                  <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
                   <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña">
                 </div>
                 <a href="#" class="mb-3 cursor-pointer text-danger fst-italic d-block">Cancelar</a>
@@ -85,6 +142,7 @@ if (!isset($_SESSION['user'])) {
 
               <button type="submit" class="btn btn-light mb-3">Actualizar</button>
             </form>
+
           </div>
         </div>
       </div>

@@ -126,6 +126,20 @@ function setPassword(PDO $conexion, $password)
     $consulta->execute();
 }
 
+function setProfileIcon(PDO $conexion, $userId, $imagen_url)
+{
+    $consulta = $conexion->prepare('
+            UPDATE usuarios
+            SET imagen_perfil = :url
+            WHERE id_usuario = :id
+        ');
+
+    $consulta->bindValue(':url', $imagen_url);
+    $consulta->bindValue(':id', $userId);
+
+    $consulta->execute();
+}
+
 function login(PDO $conexion, $email, $password)
 {
     $consulta = $conexion->prepare('

@@ -40,20 +40,41 @@ $mensajeExito = '';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (empty($nombre)) {
-    $errores[] = 'Usted debe ingresar un Nombre';
+    $errores[] = 'Nombre no puede estar vacio';
   }
+
+  if ($nombre !== $user['nombre_usuario'] && isset($nombre)) {
+    $_SESSION['user']['nombre_usuario']=$nombre;
+    $user['nombre_usuario']=$nombre;
+    setName($conexion, $user['id_usuario'], $nombre);
+  }
+
   if (empty($email)) {
-    $errores[] = 'Usted debe ingresar un Email';
+    $errores[] = 'Email no puede estar vacio';
   }
+
+  if ($email !== $user['email_usuario'] && isset($email)) {
+    $_SESSION['user']['email_usuario']=$email;
+    $user['email_usuario']=$email;
+    setEmail($conexion, $user['id_usuario'], $email);
+  }
+
+  if ($image_url !== $user['imagen_perfil'] && isset($image_url)) {
+    $_SESSION['user']['imagen_perfil']=$image_url;
+    $user['imagen_perfil']=$image_url;
+    setProfileIcon($conexion, $user['id_usuario'], $image_url);
+    var_dump($image_url);
+  }
+
   if (empty($password) || empty($password2)) {
     $errores[] = 'Usted debe ingresar una Contraseña';
   }
   if ($password !== $password2) {
     $errores[] = 'Las contraseñas no coinciden.';
   }
-  if (getUserByEmail($conexion, $email) == true) {
-    $errores[] = 'El Email ingresado ya esta en uso.';
-  }
+  //if (getUserByEmail($conexion, $email) == true) {
+  //  $errores[] = 'El Email ingresado ya esta en uso.';
+  //}
 
   if (empty($errores)) {
     $mensajeExito = "Cambios a la cuenta realizados con exito.";
@@ -112,17 +133,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <img id="profilePreview" src="<?php echo $user['imagen_perfil'] ?>" alt="Profile Preview" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
                 </div>
                 <label for="profile_pic" class="form-label">Foto de perfil</label>
-                <input type="url" class="form-control" id="profile_pic" name="profile_pic" placeholder="Cambiar Imagen URL" onchange="updatePreview()" value=" <?php echo $user['imagen_perfil'] ?> ">
+                <input type="url" class="form-control" id="profile_pic" name="profile_pic" placeholder="Cambiar Imagen URL" onchange="updatePreview()" value="<?php echo $user['imagen_perfil'] ?>">
               </div>
 
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="name" name="name" maxlength="20" placeholder="Ingresar nombre" value=" <?php echo $user['nombre_usuario'] ?> ">
+                <input type="text" class="form-control" id="name" name="name" maxlength="20" placeholder="Ingresar nombre" value="<?php echo $user['nombre_usuario']?>">
               </div>
 
               <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Cambiar email" value=" <?php echo $user['email_usuario'] ?> ">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Cambiar email" value="<?php echo $user['email_usuario']?>">
               </div>
 
               <a href="#changePasswordModal" class="mb-3 cursor-pointer text-primary fst-italic d-block" id="changePassword">Cambiar contraseña?</a>

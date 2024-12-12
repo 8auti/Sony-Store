@@ -15,7 +15,7 @@ if (isset($_GET['id'])) {
 $title = $product['nombre_producto'] ?? 'Unknown Product';
 $imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
 $category = $product['nombre_categoria'] ?? 'Unknown Category';
-$price = $product['precio'] ?? '0.00';
+$price = $product['precio'] ?? 0.00;
 $description = $product['descripcion'] ?? 'No description available';
 $stock = $product['stock'] ?? 0;
 

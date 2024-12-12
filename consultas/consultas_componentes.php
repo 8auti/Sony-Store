@@ -86,7 +86,8 @@ function setProduct(PDO $conexion, $data)
         WHERE id_producto = :id_producto
       ');
 
-    $stock = $data['stock'] ?? 0;
+    $stock = $data['stock'] > 0 ?? 0;
+    $precio = $data['precio'] > 0 ?? 0;
     $image = strlen(trim($data['url_imagen'])) <= 0 ? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg' : $data['url_imagen'];
 
     $consulta->bindParam(':id_producto', $data['id_producto'], PDO::PARAM_INT);
@@ -94,7 +95,7 @@ function setProduct(PDO $conexion, $data)
     $consulta->bindParam(':nombre_categoria', getCategorias($conexion)[$data['id_categoria']]['nombre_categoria']);
     $consulta->bindParam(':id_categoria', $data['id_categoria'], PDO::PARAM_INT);
     $consulta->bindParam(':descripcion', $data['descripcion'], PDO::PARAM_STR);
-    $consulta->bindParam(':precio', $data['precio'], PDO::PARAM_STR);
+    $consulta->bindParam(':precio', $precio, PDO::PARAM_STR);
     $consulta->bindParam(':url_imagen', $image, PDO::PARAM_STR);
     $consulta->bindParam(':stock', $stock, PDO::PARAM_INT);
 

@@ -11,11 +11,12 @@ $productId = null;
 $isNewProduct = true;
 $product = array(
   'nombre_producto' => 'Nuevo Producto',
-  'url_imagen' => 'https://via.placeholder.com/150',
+  'url_imagen' => 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg',
   'nombre_categoria' => 'Unknown Category',
   'precio' => '0.00',
   'descripcion' => 'No hay descripcion disponible',
-  'stock' => 0
+  'stock' => 0,
+  'id_categoria' => ''
 );
 
 if (isset($_GET['id'])) {
@@ -23,13 +24,6 @@ if (isset($_GET['id'])) {
   $product = getProductById($conexion, $productId);
   $isNewProduct = false;
 }
-
-$title = $product['nombre_producto'] ?? 'Unknown Product';
-$imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
-$category = $product['nombre_categoria'] ?? 'Unknown Category';
-$price = $product['precio'] ?? 0.00;
-$description = $product['descripcion'] ?? 'No description available';
-$stock = $product['stock'] ?? 0;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $productData = array(
@@ -48,6 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit;
     } else {
       $error = "Error creating new product.";
+      echo "<div class='alert alert-danger'>$error</div>";
     }
   } else {
     if (setProduct($conexion, $productData)) {
@@ -55,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       exit;
     } else {
       $error = "Error updating product information.";
+      echo "<div class='alert alert-danger'>$error</div>";
     }
   }
 }

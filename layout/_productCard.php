@@ -7,7 +7,7 @@ if (!isset($product) || !is_array($product)) {
 require_once __DIR__ . '/../consultas/consultas_componentes.php';
 
 $title = $product['nombre_producto'] ?? 'Unknown Product';
-$imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
+$imageUrl = $product['url_imagen'] ?? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg';
 $category = $product['nombre_categoria'];
 $category = $product['nombre_categoria'];
 $productId = $product['id_producto'];

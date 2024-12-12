@@ -31,7 +31,7 @@ CREATE TABLE productos (
 
 INSERT INTO usuarios(nombre_usuario, password_usuario, email_usuario, rol_usuario) VALUES
 ('pedro sanchez', 'contraseña123', 'pedro.sanchez@email.com', 'admin'),
-('alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
+('bautista carloni', 'contraseña789', 'bautista.carloni@email.com', 'admin'),
 ('analia martin', 'pass123', 'ana.martin@email.com', 'user'),
 ('sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user');
 
@@ -103,4 +103,5 @@ INSERT INTO productos (nombre_producto, descripcion, precio, id_categoria, nombr
 
 
 
-select nombre_producto from productos; 
+select nombre_producto from productos;
+DELETE FROM productos where id_producto = 1;

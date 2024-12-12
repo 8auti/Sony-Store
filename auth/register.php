@@ -19,8 +19,11 @@ $nombre = test_input($nombre);
 $email = $_POST['email'] ?? null;
 $email = filter_var($email, FILTER_VALIDATE_EMAIL);
 
-$contraseña = $_POST['nombre'] ?? null;
-$contraseña = test_input($nombre);
+$password = $_POST['password'] ?? null;
+$password = test_input($password);
+
+$password2 = $_POST['password2'] ?? null;
+$password2 = test_input($password2);
 
 $errores = [];
 
@@ -31,23 +34,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($email)) {
         $errores[] = 'Usted debe ingresar un Email';
     }
-    if (empty($contraseña)) {
+    if (empty($password) || empty($password2)) {
         $errores[] = 'Usted debe ingresar una Contraseña';
     }
-    if (getUserByEmail($conexion, $email)) {
+    if ($password !== $password2) {
+        $errores[] = 'Las contraseñas no coinciden.';
+    }
+    if (getUserByEmail($conexion, $email) == true) {
+        var_dump(getUserByEmail($conexion, $email));
         $errores[] = 'El Email ingresado ya esta en uso.';
     }
 
     if (empty($errores)) {
         
         addUser($conexion, [
-            'id'=> count($usuarios)+1, // Revisar <--
             'nombre'=>$nombre,
             'email'=>$email,
-            'contraseña'=>$contraseña,
+            'password'=>$password,
         ]);
 
-        header("Location: /nexus/pages/login.php");
+        header("Location: /nexus/auth/login.php");
         exit;
     }
 }
@@ -98,6 +104,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                         <form action="" method="post">
                             <div class="form-group my-3">
+                                <label for="email">Nombre</label>
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    name="nombre"
+                                    class="form-control"
+                                    required
+                                    placeholder="Nombre"
+                                    value="<?php echo $nombre ?>"/>
+                            </div>
+                            <div class="form-group my-3">
                                 <label for="email">Email</label>
                                 <input
                                     type="email"
@@ -105,7 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     name="email"
                                     class="form-control"
                                     required
-                                    placeholder="Enter email" />
+                                    placeholder="Email"
+                                    value="<?php echo $email ?>"/>
                             </div>
                             <div class="form-group my-3">
                                 <label for="password">Contraseña</label>
@@ -115,7 +133,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     name="password"
                                     class="form-control"
                                     required
-                                    placeholder="Enter password" />
+                                    placeholder="Contraseña"
+                                    value="<?php echo $password ?>"/>
                             </div>
                             <div class="form-group my-3">
                                 <label for="password">Volver a introducir Contraseña</label>
@@ -125,7 +144,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     name="password2"
                                     class="form-control"
                                     required
-                                    placeholder="Enter password" />
+                                    placeholder="Contraseña"
+                                    value="<?php echo $password2 ?>"/>
                             </div>
                             
                             <button type="submit" class="btn btn-primary my-3">Registrarse</button>

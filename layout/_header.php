@@ -13,6 +13,7 @@
             <span class="text-capitalize"> <?php echo htmlspecialchars($user['nombre_usuario'] ?? 'Usuario'); ?> </span>
             <img
                 class="rounded-circle h-100"
+                style="aspect-ratio: 1/1; object-fit:cover"
                 src="<?php echo $user['imagen_perfil'] ?? 'https://res.cloudinary.com/dtnk8oggj/image/upload/v1721083530/boom-recorder/placeholders/v3der7jjr4ljprscr9dj.png'; ?>"
                 alt="Perfil de usuario" />
 

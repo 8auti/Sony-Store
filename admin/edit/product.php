@@ -9,6 +9,7 @@ if ($user['rol_usuario'] !== 'admin') {
 
 $productId = null;
 $isNewProduct = true;
+$productCategoryId = 0;
 $product = array(
   'nombre_producto' => 'Nuevo Producto',
   'url_imagen' => 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg',
@@ -132,17 +133,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <div class="form-group my-3">
     <select class="form-select" aria-label="Default select example" name="id_categoria" id="id_categoria" aria-required="true" aria-invalid="false">
         <option value="">Seleccionar Categoria</option>
-        <option value="1" <?php echo ($productCategoryId == 1) ? 'selected' : ''; ?>>Motherboards</option>
-        <option value="2" <?php echo ($productCategoryId == 2) ? 'selected' : ''; ?>>Procesadores</option>
-        <option value="3" <?php echo ($productCategoryId == 3) ? 'selected' : ''; ?>>Tarjetas Gráficas</option>
-        <option value="4" <?php echo ($productCategoryId == 4) ? 'selected' : ''; ?>>Memorias RAM</option>
-        <option value="5" <?php echo ($productCategoryId == 5) ? 'selected' : ''; ?>>Almacenamiento</option>
-        <option value="6" <?php echo ($productCategoryId == 6) ? 'selected' : ''; ?>>Monitores</option>
-        <option value="7" <?php echo ($productCategoryId == 7) ? 'selected' : ''; ?>>Coolers</option>
-        <option value="8" <?php echo ($productCategoryId == 8) ? 'selected' : ''; ?>>Refrigeracion</option>
-        <option value="9" <?php echo ($productCategoryId == 9) ? 'selected' : ''; ?>>Gabinetes</option>
-        <option value="10" <?php echo ($productCategoryId == 10) ? 'selected' : ''; ?>>Fuentes</option>
-        <option value="11" <?php echo ($productCategoryId == 11) ? 'selected' : ''; ?>>Perifericos</option>
+        <option value="0" <?php echo ($productCategoryId == 1) ? 'selected' : ''; ?>>Motherboards</option>
+        <option value="1" <?php echo ($productCategoryId == 2) ? 'selected' : ''; ?>>Procesadores</option>
+        <option value="2" <?php echo ($productCategoryId == 3) ? 'selected' : ''; ?>>Tarjetas Gráficas</option>
+        <option value="3" <?php echo ($productCategoryId == 4) ? 'selected' : ''; ?>>Memorias RAM</option>
+        <option value="4" <?php echo ($productCategoryId == 5) ? 'selected' : ''; ?>>Almacenamiento</option>
+        <option value="5" <?php echo ($productCategoryId == 6) ? 'selected' : ''; ?>>Monitores</option>
+        <option value="6" <?php echo ($productCategoryId == 7) ? 'selected' : ''; ?>>Coolers</option>
+        <option value="7" <?php echo ($productCategoryId == 8) ? 'selected' : ''; ?>>Refrigeracion</option>
+        <option value="8" <?php echo ($productCategoryId == 9) ? 'selected' : ''; ?>>Gabinetes</option>
+        <option value="9" <?php echo ($productCategoryId == 10) ? 'selected' : ''; ?>>Fuentes</option>
+        <option value="10" <?php echo ($productCategoryId == 11) ? 'selected' : ''; ?>>Perifericos</option>
     </select>
 </div>
 

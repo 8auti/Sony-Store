@@ -56,7 +56,7 @@ function addProduct(PDO $conexion, $data)
     $nombre = $data['nombre'] ?? 'Placeholder';
     $descripcion = $data['descripcion'] ?? 'Placeholder';
     $precio = $data['precio'] ?? '100.0';
-    $id_categoria = $data['id_categoria'] ?? 0; 
+    $id_categoria = $data['id_categoria'] +1 ?? 0; 
     $url_imagen = $data['url_imagen'] ?? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg';
     $stock = $data['stock'] ?? 1;
 
@@ -88,12 +88,14 @@ function setProduct(PDO $conexion, $data)
 
     $stock = $data['stock'] ?? 1;
     $precio = $data['precio'] >= 0 ? $data['precio'] : 0;
+    $id_categoria = $data['id_categoria'] + 1;
+
     $image = strlen(trim($data['url_imagen'])) <= 0 ? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg' : $data['url_imagen'];
 
     $consulta->bindParam(':id_producto', $data['id_producto'], PDO::PARAM_INT);
     $consulta->bindParam(':nombre', $data['nombre'], PDO::PARAM_STR);
     $consulta->bindParam(':nombre_categoria', getCategorias($conexion)[$data['id_categoria']]['nombre_categoria']);
-    $consulta->bindParam(':id_categoria', $data['id_categoria'], PDO::PARAM_INT);
+    $consulta->bindParam(':id_categoria', $id_categoria, PDO::PARAM_INT);
     $consulta->bindParam(':descripcion', $data['descripcion'], PDO::PARAM_STR);
     $consulta->bindParam(':precio', $precio, PDO::PARAM_STR);
     $consulta->bindParam(':url_imagen', $image, PDO::PARAM_STR);

@@ -11,7 +11,10 @@ if ($user['rol_usuario'] !== 'admin') {
 
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
+$filtrarCategoria = $_GET['filtrarCategoria'] ?? null;
+
 $products = getProducts($conexion);
+$products = getProductsByCategory($conexion, $filtrarCategoria);
 
 $length = count($products);
 $elementosPorPagina = 8;
@@ -58,6 +61,7 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                     <div class="col-md-5">
                         <h1>Productos</h1>
                     </div>
+
                     <div class="col-md-5 text-md-end">
                         <div class="row g-2">
                             <div class="col-md-6">
@@ -72,6 +76,27 @@ $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $element
                                 </a>
                             </div>
                         </div>
+                    </div>
+
+                    <div>
+                        <form action="" method="get" class="form-inline d-flex gap-3 mt-3">
+                            <select class="form-select form-select-lg form-control mb-3 bg-dark text-light" aria-label=".form-select-lg example" name="filtrarCategoria">
+                                <option selected>Seleccionar Categoria</option>
+                                <option value="Motherboards">Motherboards</option>
+                                <option value="Procesadores">Procesadores</option>
+                                <option value="Tarjetas Gráficas">Tarjetas Gráficas</option>
+                                <option value="Memorias RAM">Memorias RAM</option>
+                                <option value="Almacenamiento">Almacenamiento</option>
+                                <option value="Monitores">Monitores</option>
+                                <option value="Coolers">Coolers</option>
+                                <option value="Refrigeracion">Refrigeracion</option>
+                                <option value="Gabinetes">Gabinetes</option>
+                                <option value="Fuentes">Fuentes</option>
+                                <option value="Perifericos">Perifericos</option>
+                            </select>
+
+                            <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+                        </form>
                     </div>
                 </div>
 

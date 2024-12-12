@@ -39,6 +39,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     if ($password !== $password2) {
         $errores[] = 'Las contraseñas no coinciden.';
+    } else {
+        if (strlen($password) < 8 || strlen($password) > 24) {
+            $errores[] = 'La contraseña ingresada debe tener de 8 a 24 caracteres.';
+        }
     }
     if (getUserByEmail($conexion, $email) == true) {
         $errores[] = 'El Email ingresado ya esta en uso.';

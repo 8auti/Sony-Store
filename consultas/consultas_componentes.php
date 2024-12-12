@@ -27,7 +27,7 @@ function getProducts(PDO $conexion)
 function getProductsByCategory(PDO $conexion, $categoryName)
 {
     $consulta = $conexion->prepare('
-            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.id_categoria, c.nombre_categoria, p.url_imagen
+            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.id_categoria, c.nombre_categoria, p.url_imagen, p.stock
             FROM productos p
             INNER JOIN categorias c ON p.id_categoria = c.id_categoria
             WHERE c.nombre_categoria = :categoryName
@@ -51,7 +51,7 @@ function addProduct(PDO $conexion, $data)
     $consulta = $conexion->prepare('
         INSERT INTO productos (nombre_producto, descripcion, precio, nombre_categoria, id_categoria, url_imagen, stock)
         VALUES (:nombre, :descripcion, :precio, :nombre_categoria, :id_categoria, :url_imagen, :stock)
-      ');
+    ');
 
     $nombre = $data['nombre'] ?? 'Placeholder';
     $descripcion = $data['descripcion'] ?? 'Placeholder';

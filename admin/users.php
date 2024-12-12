@@ -11,7 +11,9 @@ if ($user['rol_usuario'] !== 'admin') {
 
 $pagina = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-$users = getUsers($conexion, null);
+$filtrarPorRol = $_GET['filtrarRol'] ?? null;
+
+$users = getUsers($conexion, $filtrarPorRol);
 
 $length = count($users);
 $elementosPorPagina = 8;
@@ -53,6 +55,19 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
       <?php require('../layout/_header.php'); ?>
       <div class="container mt-5">
         <h1 class="my-5 text-center">Usuarios</h1>
+
+        <div>
+          <form action="" method="get" class="form-inline d-flex gap-3">
+            <select class="form-select form-select-lg form-control mb-3 bg-dark text-light" aria-label=".form-select-lg example" name="filtrarRol">
+              <option selected>Filtrar Rol</option>
+              <option value="user">Usuario</option>
+              <option value="admin">Admin</option>
+            </select>
+
+            <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+          </form>
+        </div>
+        
         <div class="row justify-content-md-center">
           <div class="col-12">
             <!-- Check if users are available -->

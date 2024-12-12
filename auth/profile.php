@@ -30,13 +30,14 @@ $image_url = filter_var($image_url, FILTER_VALIDATE_URL);
 
 $password = $_POST['password'] ?? null;
 $password = test_input($password);
+$password = strlen($password) > 0 ? $password : null;
 
 $password2 = $_POST['confirmPassword'] ?? null;
 $password2 = test_input($password2);
+$password2 = strlen($password2) > 0 ? $password2 : null;
 
 $errores = [];
-
-$mensajeExito = '';
+$cambios = [];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (empty($nombre)) {
@@ -47,6 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['user']['nombre_usuario']=$nombre;
     $user['nombre_usuario']=$nombre;
     setName($conexion, $user['id_usuario'], $nombre);
+    $cambios[] = 'Se cambio el Nombre con exito.';
   }
 
   if (empty($email)) {
@@ -57,23 +59,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['user']['email_usuario']=$email;
     $user['email_usuario']=$email;
     setEmail($conexion, $user['id_usuario'], $email);
+    $cambios[] = 'Se cambio el Email con exito.';
   }
 
   if ($image_url !== $user['imagen_perfil'] && isset($image_url)) {
     $_SESSION['user']['imagen_perfil']=$image_url;
     $user['imagen_perfil']=$image_url;
     setProfileIcon($conexion, $user['id_usuario'], $image_url);
+    $cambios[] = 'Se cambio la foto de perfil con exito.';
   }
 
-  if (empty($password) || empty($password2)) {
-    $errores[] = 'Usted debe ingresar una Contraseña';
-  }
-  if ($password !== $password2) {
-    $errores[] = 'Las contraseñas no coinciden.';
-  }
-
-  if (empty($errores)) {
-    $mensajeExito = "Cambios a la cuenta realizados con exito.";
+  if (isset($password) && isset($password2)) {
+    // Contraseña es distinta a confirmar contraseña
+    if ($password !== $password2) {
+      $errores[] = 'Las contraseñas no coinciden.';
+    } else {
+      // Minimo y maximo de caracteres
+      if (strlen($password) < 8 || strlen($password) > 24) {
+        $errores[] = 'La contraseña ingresada debe tener de 8 a 24 caracteres.';
+      } else { // Se cumplen todas las condiciones, cambiar la contraseña
+        $_SESSION['user']['password_usuario']=$password;
+        $user['password_usuario']=$password;
+        setPassword($conexion, $user['id_usuario'], $password);
+        $cambios[] = 'Se cambio la Contraseña con exito.';
+      }
+    }
   }
 }
 
@@ -115,11 +125,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="col-md-3">
             <h2 class="text-center mb-5">Perfil de Usuario</h2>
 
-            <h3 class="text-success"> <?php echo $mensajeExito ?> </h3>
+            <ul>
+              <?php foreach ($cambios as $cambio) : ?>
+                <li class="text-light bg-success text-center"><?php echo $cambio ?></li>
+              <?php endforeach ?>
+            </ul>
 
             <ul>
               <?php foreach ($errores as $error) : ?>
-                <li class="text-light bg-danger"><?php echo $error ?></li>
+                <li class="text-light bg-danger text-center"><?php echo $error ?></li>
               <?php endforeach ?>
             </ul>
 

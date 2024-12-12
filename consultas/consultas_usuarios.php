@@ -113,15 +113,16 @@ function setRol(PDO $conexion, $userId, $rol)
 }
 
 
-function setPassword(PDO $conexion, $password)
+function setPassword(PDO $conexion, $userId, $password)
 {
     $consulta = $conexion->prepare('
-            SELECT id_usuario, nombre_usuario, rol_usuario
-            FROM usuarios
-            WHERE password_usuario = :password
-        ');
+    UPDATE usuarios
+    SET password_usuario = :password
+    WHERE id_usuario = :id
+    ');
 
     $consulta->bindValue(':password', $password);
+    $consulta->bindValue(':id', $userId);
 
     $consulta->execute();
 }

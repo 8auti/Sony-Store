@@ -76,15 +76,15 @@ function setProduct(PDO $conexion, $data)
 {
     $consulta = $conexion->prepare('
         UPDATE productos SET 
-          nombre_producto = :nombre,
-          descripcion = :descripcion,
-          nombre_categoria = :nombre_categoria,
-          id_categoria = :id_categoria,
-          precio = :precio,
-          url_imagen = :url_imagen,
-          stock = :stock
+        nombre_producto = :nombre,
+        descripcion = :descripcion,
+        nombre_categoria = :nombre_categoria,
+        id_categoria = :id_categoria,
+        precio = :precio,
+        url_imagen = :url_imagen,
+        stock = :stock
         WHERE id_producto = :id_producto
-      ');
+    ');
 
     $stock = $data['stock'] > 0 ?? 0;
     $precio = $data['precio'] > 0 ?? 0;

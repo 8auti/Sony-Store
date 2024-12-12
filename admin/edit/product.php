@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   } else {
     if (setProduct($conexion, $productData)) {
-      header("Location: /nexus/admin/products.php");
+      header("Location: /nexus/admin/products.php?filtrarCategoria=null");
       exit;
     } else {
       $error = "Error updating product information.";
@@ -131,17 +131,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               <div class="form-group my-3">
                 <select class="form-select" aria-label="Default select example" name="id_categoria" id="id_categoria">
                   <option selected>Seleccionar Categoria</option>
-                  <option value="0">Motherboards</option>
-                  <option value="1">Procesadores</option>
-                  <option value="2">Tarjetas Gráficas</option>
-                  <option value="3">Memorias RAM</option>
-                  <option value="4">Almacenamiento</option>
-                  <option value="5">Monitores</option>
-                  <option value="6">Coolers</option>
-                  <option value="7">Refrigeracion</option>
-                  <option value="8">Gabinetes</option>
-                  <option value="9">Fuentes</option>
-                  <option value="10">Perifericos</option>
+                  <option value="1">Motherboards</option>
+                  <option value="2">Procesadores</option>
+                  <option value="3">Tarjetas Gráficas</option>
+                  <option value="4">Memorias RAM</option>
+                  <option value="5">Almacenamiento</option>
+                  <option value="6">Monitores</option>
+                  <option value="7">Coolers</option>
+                  <option value="8">Refrigeracion</option>
+                  <option value="9">Gabinetes</option>
+                  <option value="10">Fuentes</option>
+                  <option value="11">Perifericos</option>
                 </select>
               </div>
 

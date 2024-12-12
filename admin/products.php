@@ -20,7 +20,6 @@ $length = count($products);
 $elementosPorPagina = 8;
 $paginas = ceil($length / $elementosPorPagina);
 
-
 $products = array_slice($products, ($pagina - 1) * $elementosPorPagina, $elementosPorPagina);
 
 ?>

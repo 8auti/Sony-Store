@@ -61,6 +61,7 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                 <thead>
                   <tr>
                     <th>ID</th>
+                    <th class="d-none d-md-table-cell">IMG</th>
                     <th class="text-center">NOMBRE</th>
                     <th class="d-none d-md-table-cell">EMAIL</th>
                     <th class="text-center">ADMIN</th>
@@ -72,6 +73,11 @@ $users = array_slice($users, ($pagina - 1) * $elementosPorPagina, $elementosPorP
                   <?php foreach ($users as $user): ?>
                     <tr>
                       <td><?php echo htmlspecialchars($user['id_usuario']); ?></td>
+                      <td class="text-center d-none d-md-table-cell"><img
+                          class="rounded-circle h-100 text-center"
+                          style="aspect-ratio: 1/1; object-fit:cover; width: 40px"
+                          src="<?php echo $user['imagen_perfil'] ?? 'https://res.cloudinary.com/dtnk8oggj/image/upload/v1721083530/boom-recorder/placeholders/v3der7jjr4ljprscr9dj.png'; ?>"
+                          alt="Perfil de usuario" /></td>
                       <td><?php echo htmlspecialchars($user['nombre_usuario']); ?></td>
                       <td class="d-none d-md-table-cell">
                         <a href="mailto:<?php echo htmlspecialchars($user['email_usuario']); ?>">

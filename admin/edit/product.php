@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   $productData = array(
     'id_producto' => $_POST['product_id'] ?? '',
     'name' => $_POST['name'] ?? '',
+    'id_categoria' => $_POST['id_categoria'] ?? '',
     'description' => $_POST['description'] ?? '',
     'price' => $_POST['price'] ?? '',
     'stock' => $_POST['stock'] ?? '',
@@ -112,8 +113,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </div>
 
               <div class="form-group my-3">
-                <label for="category">Categoria</label>
-                <input type="text" id="category" name="category" class="form-control" placeholder="Enter category" value="<?php echo htmlspecialchars($category); ?>">
+                <select class="form-select" aria-label="Default select example" name="id_categoria" id="id_categoria">
+                  <option selected>Seleccionar Categoria</option>
+                  <option value="0">Motherboards</option>
+                  <option value="1">Procesadores</option>
+                  <option value="2">Tarjetas Gráficas</option>
+                  <option value="3">Memorias RAM</option>
+                  <option value="4">Almacenamiento</option>
+                  <option value="5">Monitores</option>
+                  <option value="6">Coolers</option>
+                  <option value="7">Refrigeracion</option>
+                  <option value="8">Gabinetes</option>
+                  <option value="9">Fuentes</option>
+                  <option value="10">Perifericos</option>
+                </select>
               </div>
 
               <div class="form-group my-3">

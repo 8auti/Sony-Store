@@ -96,6 +96,8 @@
             UPDATE productos SET 
                 nombre_producto = :nombre_producto,
                 descripcion = :descripcion,
+                id_categoria = :id_categoria,
+                nombre_categoria = :nombre_categoria,
                 precio = :precio,
                 url_imagen = :url_imagen,
                 stock = :stock
@@ -106,6 +108,10 @@
     
         $consulta->bindParam(':id_producto', $data['id_producto'], PDO::PARAM_INT);
         $consulta->bindParam(':nombre_producto', $data['name'], PDO::PARAM_STR);
+
+        $consulta->bindParam(':id_categoria', $data['id_categoria']);
+        $consulta->bindParam(':nombre_categoria', getCategorias($conexion)[$data['id_categoria']]['nombre_categoria']);
+
         $consulta->bindParam(':descripcion', $data['description'], PDO::PARAM_STR);
         $consulta->bindParam(':precio', $data['price'], PDO::PARAM_STR);
         $consulta->bindParam(':url_imagen', $data['image'], PDO::PARAM_STR);

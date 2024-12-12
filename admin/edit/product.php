@@ -12,6 +12,25 @@ $imageUrl = $product['url_imagen'] ?? 'https://via.placeholder.com/150';
 $category = $product['nombre_categoria'] ?? 'Unknown Category';
 $price = $product['precio'] ?? '0.00';
 $description = $product['descripcion'] ?? 'No description available';
+$stock = $product['stock'] ?? 0;
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $productData = array(
+    'id_producto' => $_POST['product_id'] ?? '',
+    'name' => $_POST['name'] ?? '',
+    'description' => $_POST['description'] ?? '',
+    'price' => $_POST['price'] ?? '',
+    'stock' => $_POST['stock'] ?? '',
+    'image' => $_POST['image'] ?? '',
+  );
+
+  if (setProduct($conexion, $productData)) {
+    header("Location: /nexus/admin/products.php");
+    exit;
+  } else {
+    $error = "Error updating product information.";
+  }
+}
 
 ?>
 <!DOCTYPE html>
@@ -44,18 +63,17 @@ $description = $product['descripcion'] ?? 'No description available';
     <main class="col p-3 z-4">
       <!-- Header -->
       <?php require('../../layout/_header.php') ?>
-0
       <div class="container my-5">
-        <a href="/admin/products" class="btn btn-light my-3">Ir Atrás</a>
+        <a href="/nexus/admin/products.php" class="btn btn-light my-3">Ir Atrás</a>
         <div class="row justify-content-md-center">
           <div class="col-md-6">
             <h1>Editar Producto</h1>
 
-            <form action="/admin/update_product.php" method="POST" enctype="multipart/form-data">
+            <form action="#" method="POST" enctype="multipart/form-data">
               <input type="hidden" name="product_id" value="<?php echo htmlspecialchars($productId); ?>">
 
               <div class="form-group my-3">
-                <label for="name">Nombne</label>
+                <label for="name">Nombre</label>
                 <input type="text" id="name" name="name" class="form-control" placeholder="Enter name" value="<?php echo htmlspecialchars($title); ?>">
               </div>
 
@@ -65,8 +83,8 @@ $description = $product['descripcion'] ?? 'No description available';
               </div>
 
               <div class="form-group my-3">
-                <label for="images">Imagen</label>
-                <input type="text" id="images" class="form-control" placeholder="Image URL" value="<?php echo htmlspecialchars($imageUrl); ?>" disabled>
+                <label for="image">Imagen</label>
+                <input type="text" id="image" name="image" class="form-control" placeholder="Image URL" value="<?php echo htmlspecialchars($imageUrl); ?>">
 
                 <!-- Image Scroll Section -->
                 <div class="row my-3 overflow-scroll flex-nowrap">
@@ -77,8 +95,6 @@ $description = $product['descripcion'] ?? 'No description available';
                     </button>
                   </div>
                 </div>
-
-                <input type="file" id="upload" name="image" class="form-control my-3" multiple>
               </div>
 
               <div class="form-group my-3">

@@ -72,9 +72,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($password !== $password2) {
     $errores[] = 'Las contraseñas no coinciden.';
   }
-  //if (getUserByEmail($conexion, $email) == true) {
-  //  $errores[] = 'El Email ingresado ya esta en uso.';
-  //}
 
   if (empty($errores)) {
     $mensajeExito = "Cambios a la cuenta realizados con exito.";

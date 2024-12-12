@@ -25,6 +25,11 @@
                     </div>
                 </a>
             <?php endif; ?>
+            <form action="" method="POST"">
+                <button class=" btn btn-danger" type="submit" name="logout" id="logout" value="true">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                </button>
+            </form>
         <?php else: ?>
             <a href="/nexus/auth/login.php" class="btn bg-grey-300" onMouseOver="this.style.color='white'">Iniciar Sesion</a>
             <a href="/nexus/auth/register.php" class="btn btn-light">Registrarse</a>

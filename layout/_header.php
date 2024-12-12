@@ -43,7 +43,7 @@
             </form>
         <?php else: ?>
             <a href="/nexus/auth/login.php" class="btn bg-grey-300" onMouseOver="this.style.color='white'">Iniciar Sesion</a>
-            <a href="/nexus/auth/register.php" class="btn btn-light">Registrarse</a>
+            <a href="/nexus/auth/register.php" class="btn btn-light text-dark">Registrarse</a>
         <?php endif; ?>
     </div>
 </header>

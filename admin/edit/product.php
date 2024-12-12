@@ -2,6 +2,11 @@
 require_once('../../consultas/conexion.php');
 require_once('../../consultas/consultas_componentes.php');
 
+if ($user['rol_usuario'] !== 'admin') {
+  header("Location: /nexus/index.php");
+  exit;
+}
+
 if (isset($_GET['id'])) {
   $productId = $_GET['id'];
   $product = getProductById($conexion, $productId);

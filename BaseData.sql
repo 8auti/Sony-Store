@@ -29,14 +29,14 @@ CREATE TABLE productos (
     url_imagen VARCHAR(255)
 );
 
-INSERT INTO usuarios(id_usuario, nombre_usuario, password_usuario, email_usuario, rol_usuario) VALUES
-(1, 'pedro sanchez', 'contraseña123', 'pedro.sanchez@email.com', 'admin'),
-(2, 'alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
-(3, 'analia martin', 'pass123', 'ana.martin@email.com', 'user'),
-(4, 'sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user');
+INSERT INTO usuarios(nombre_usuario, password_usuario, email_usuario, rol_usuario) VALUES
+('pedro sanchez', 'contraseña123', 'pedro.sanchez@email.com', 'admin'),
+('alberto martin', 'contraseña789', 'alberto.martin@email.com', 'admin'),
+('analia martin', 'pass123', 'ana.martin@email.com', 'user'),
+('sandra fernandez', 'securepass567', 'sandra.fernandez@email.com', 'user');
 
-INSERT INTO usuarios (id_usuario, nombre_usuario, password_usuario, email_usuario, rol_usuario, imagen_perfil) 
-VALUES (5, 'Momo Admin', 'pass123', 'momo@admin.com', 'admin', 'https://media.0221.com.ar/adjuntos/357/migration/0221/032019/1553553111207.jpg');
+INSERT INTO usuarios (nombre_usuario, password_usuario, email_usuario, rol_usuario, imagen_perfil) 
+VALUES ('Momo Admin', 'pass123', 'momo@admin.com', 'admin', 'https://media.0221.com.ar/adjuntos/357/migration/0221/032019/1553553111207.jpg');
 
 INSERT INTO categorias (id_categoria, nombre_categoria) VALUES
 ('01','Motherboards'),

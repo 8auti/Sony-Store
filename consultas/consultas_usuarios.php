@@ -2,11 +2,10 @@
 function addUser(PDO $conexion, array $data)
 {
     $consulta = $conexion->prepare('
-        INSERT INTO usuarios (id_usuario, nombre_usuario, password_usuario, email_usuario, rol_usuario)
-        VALUES (:id, :nombre, :email, :password, "user")
+        INSERT INTO usuarios (nombre_usuario, email_usuario, password_usuario, rol_usuario)
+        VALUES (:nombre, :email, :password, "user")
         ');
 
-    $consulta->bindValue(':id_usuario', $data['id_usuario']);
     $consulta->bindValue(':nombre', $data['nombre']);
     $consulta->bindValue(':email', $data['email']);
     $consulta->bindValue(':password', $data['password']);
@@ -97,7 +96,7 @@ function setEmail(PDO $conexion, $userId, $email)
 
 function setRol(PDO $conexion, $userId, $rol)
 {
-    if ($rol == 'admin' || $rol == 'user') {
+    if ($rol === 'admin' || $rol === 'user') {
         $consulta = $conexion->prepare('
             UPDATE usuarios
             SET rol_usuario = :rol

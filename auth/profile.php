@@ -63,7 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['user']['imagen_perfil']=$image_url;
     $user['imagen_perfil']=$image_url;
     setProfileIcon($conexion, $user['id_usuario'], $image_url);
-    var_dump($image_url);
   }
 
   if (empty($password) || empty($password2)) {

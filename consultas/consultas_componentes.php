@@ -86,8 +86,8 @@ function setProduct(PDO $conexion, $data)
         WHERE id_producto = :id_producto
     ');
 
-    $stock = $data['stock'] > 0 ?? 0;
-    $precio = $data['precio'] > 0 ?? 0;
+    $stock = $data['stock'] ?? 1;
+    $precio = $data['precio'] >= 0 ? $data['precio'] : 0;
     $image = strlen(trim($data['url_imagen'])) <= 0 ? 'https://www.svgrepo.com/show/508699/landscape-placeholder.svg' : $data['url_imagen'];
 
     $consulta->bindParam(':id_producto', $data['id_producto'], PDO::PARAM_INT);
